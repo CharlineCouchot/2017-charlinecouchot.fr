@@ -2,12 +2,60 @@
 /* <header.scss> */
 
 .header {
+    background:$gris-fonce;
+    color:$blanc;
+    width:33.6%;
+    display: flex;
     flex-wrap: wrap;
+    align-content:center;
+    justify-content: center;
+    text-align: center;
+    padding-left:5%;
+    padding-right:5%;
+    position:relative;
 }
 
 .header__logo {
-    max-width: 70%;
-    display: block;
-    margin-left:auto;
-    margin-right: auto;
+    width:100%;
+    img {
+        display: block;
+        margin-left:auto;
+        margin-right: auto;
+    }
+}
+
+.header__job-name {
+    width:100%;
+    font-family: $font-graviola;
+    color: $blanc;
+    text-transform: uppercase;
+    //font-weight: 700;
+    margin-top: 20px;
+    font-size: 1.35em;
+}
+
+.header__menu {
+    position:absolute;
+    right:calc(0% - 95px);
+    top:0;
+    bottom:0;
+    text-align: left;
+    text-transform: uppercase;
+    font-family: $font-graviola;
+    display: flex;
+    flex-wrap: wrap;
+    align-items:center;
+    
+    a {
+        display: inline-block;
+        padding:10px 15px 9px;
+        background:$gris-fonce;
+        transition: all 0.3s ease;
+        &:hover, &:focus {
+            background:$gris-clair;
+        }
+    }
+    li + li {
+        margin-top:5px;
+    }
 }

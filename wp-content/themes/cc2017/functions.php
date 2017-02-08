@@ -47,7 +47,7 @@
 
     if (function_exists('register_nav_menus')) {
         register_nav_menus(array(
-            'mainmenu' 	=> __( 'Menu Principal', 'sdv' ),
+            'mainmenu' 	=> __( 'Menu principal', 'cc2017' ),
         )); 
     }
 

@@ -5,7 +5,9 @@
 // ---------------------------------
 // Fonts
 
+@include font-face('Graviola', 'graviola', 'graviola', 'normal', 'normal');
 
+$font-graviola: 'Graviola', sans-serif;
 
 // ---------------------------------
 // Colors
