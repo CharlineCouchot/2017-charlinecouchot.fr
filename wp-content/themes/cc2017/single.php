@@ -1,9 +1,9 @@
 <?php
 /*
  * @package WordPress
- * @subpackage SdV Gestion
+ * @subpackage CC 2017
  */
-    
+
  get_header(); ?>
 
 <?php get_footer(); ?>

@@ -102,9 +102,8 @@ a img.aligncenter {
 
 .wp-caption .wp-caption-text,
 .gallery-caption {
-    @include r(320)  {font:300 1.55rem/1.8 sans-serif;}
-    @include r(480)  {font:300 1.8rem/1.8 sans-serif;}
-    @include r(768)  {font:300 1.9rem/1.7 sans-serif;}
-    @include r(1024) {font:300 2rem/3.1rem sans-serif;}
-    @include r(1280) {font:300 2rem/3.1rem sans-serif;}
+    @include respond-to("phone-up") {font:300 1.55rem/1.8 sans-serif;}
+    @include respond-to("small-up") {font:300 1.8rem/1.8 sans-serif;}
+    @include respond-to("medium-up") {font:300 1.9rem/1.7 sans-serif;}
+    @include respond-to("large-up") {font:300 2rem/3.1rem sans-serif;}
 }

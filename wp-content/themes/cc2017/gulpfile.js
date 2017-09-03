@@ -11,7 +11,9 @@
 // Configuration du projet
 var gulp = require('gulp'),
     browserSync = require('browser-sync'),
-    autoprefixer = require('gulp-autoprefixer'),
+    postcss = require('gulp-postcss'),
+    unprefix = require("postcss-unprefix"),
+    autoprefixer = require('autoprefixer'),
     imagemin = require('gulp-imagemin'),
     newer = require('gulp-newer'),
     concat = require('gulp-concat'),
@@ -31,20 +33,41 @@ gulp.task('browser-sync', function () {
     browserSync.init(files, {
         watchTask: true,
         open: 'external',
-        host: 'cc2017.dev',
-        proxy: 'cc2017.dev',
+        host: 'local.charlinecouchot.fr',
+        proxy: 'local.charlinecouchot.fr',
         port: 3000,
         injectChanges: true,
-        ghostMode: false
+        ghostMode: false,
+        notify: {
+          styles:[
+              "display: none",
+              "padding: 15px",
+              "font-family: sans-serif",
+              "position: fixed",
+              "font-size: 0.9em",
+              "z-index: 9999",
+              "bottom: 0px",
+              "right: 0px",
+              "border-bottom-left-radius: 5px",
+              "background-color: #1B2032",
+              "margin: 0",
+              "color: white",
+              "text-align: center"
+          ]
+      }
     });
 });
 
 // SASS PROCESS
 gulp.task('css', function () {
+    var processors = [
+  		unprefix,
+  		autoprefixer,
+  	];
     return gulp.src('./assets/css/*.scss')
         .pipe(sourcemaps.init())
         .pipe(sass().on('error', sass.logError))
-        .pipe(autoprefixer('last 4 version'))
+        .pipe(postcss(processors))
         .pipe(gulp.dest('./'))
         .pipe(sourcemaps.write())
         .pipe(gulp.dest('./'))
@@ -52,13 +75,16 @@ gulp.task('css', function () {
         .pipe(notify({message: 'Styles task complete',onLast: true}));
 });
 
+gulp.task('js-hint',function(){
+  return gulp.src('./assets/js/custom.js')
+    .pipe(jshint('./.jshintrc'))
+    .pipe(jshint.reporter('default'));
+});
 
 gulp.task('js',function(){
   return gulp.src(['./assets/js/plugins/*.js', './assets/js/custom.js'])
     .pipe(sourcemaps.init())
     .pipe(concat('scripts.js'))
-    .pipe(jshint('./.jshintrc'))
-    .pipe(jshint.reporter('default'))
     .pipe(sourcemaps.write())
     .pipe(gulp.dest('./assets/js'))
     .pipe(browserSync.reload({stream:true, once: true}))
@@ -80,9 +106,9 @@ gulp.task('images', function () {
 
 
 // TÂCHE PAR DEFAUT
-gulp.task('default', ['css', 'js', 'images', 'browser-sync'], function () {
+gulp.task('default', ['css', 'js-hint', 'js', 'images', 'browser-sync'], function () {
     gulp.watch('./assets/img/**/*', ['images']);
     gulp.watch('./assets/css/**/*.scss', ['css']);
-    gulp.watch('./assets/js/**/*.js', ['js']);
+    gulp.watch('./assets/js/**/*.js', ['js-hint', 'js']);
 
 });

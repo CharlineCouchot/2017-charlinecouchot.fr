@@ -6,11 +6,17 @@ Description: Thème Wordpress pour le portfolio professionnel de Charline Coucho
 Version: 1.0.0
 Text Domain: cc2017
 */
+
+
+
 // ---------------------------------
 //   Mixins & Variables
 
+@import "partials/breakpoints";
 @import "partials/mixins";
 @import "partials/variables";
+@import "partials/icon-font";
+
 
 // ---------------------------------
 //   Normalize & Santize
@@ -18,12 +24,18 @@ Text Domain: cc2017
 @import "vendor/normalize";
 @import "vendor/sanitize";
 
+@import "vendor/alpha/tether";
+@import "vendor/alpha/bootstrap";
+@import "vendor/alpha/owl.carousel";
+@import "vendor/alpha/owl.theme";
+@import "vendor/alpha/alpha";
+
+
 // ---------------------------------
 //   Structure
 
 @import "partials/structure";
 @import "partials/utils";
-@import "partials/icon-font";
 
 // ---------------------------------
 //   WPCore

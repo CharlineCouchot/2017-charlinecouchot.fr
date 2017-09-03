@@ -16,29 +16,14 @@ html {
     min-height:100%;
 }
 body {
-    font:400 16px/1.4 -apple-system, '.SFNSText-Regular', 'Roboto', 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif;
-    color:$gris-fonce;
-    margin:0;
-    background:$blanc-fonce;
-    height:100%;
-    min-height:100%;
+    //font:400 16px/1.4 -apple-system, '.SFNSText-Regular', 'Roboto', 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    //color:$gris-fonce;
+    //margin:0;
+    //background:$blanc-fonce;
+    //height:100%;
+    //min-height:100%;
 }
 
-.page {
-    display: flex;
-    flex-wrap:nowrap;
-    height: 100%;
-}
-
-.content__container {
-    width:66.4%;
-    overflow-y:scroll;
-    overflow-x: hidden;
-    padding:20px 130px;
-    .content {
-        overflow: hidden;
-    }
-}
 
 /* ---------------------------------
    Resets & Utilities */
