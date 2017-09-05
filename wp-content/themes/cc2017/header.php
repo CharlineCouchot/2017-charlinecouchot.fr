@@ -59,8 +59,13 @@
           <div class="name-block">
               <div class="name-block-container">
                   <div class="name-block-titles">
-                    <h1 class="name-block-title"><span><?php echo __('Bienvenue. Je suis ', 'cc2017'); ?></span><?php echo bloginfo('name'); ?></h1>
-                    <h2 class="name-block-subtitle"><?php echo bloginfo('description'); ?></h2>
+                    <?php if ( !is_single() ) { ?>
+                      <h1 class="name-block-title"><span><?php echo __('Bienvenue. Je suis ', 'cc2017'); ?></span><?php /* echo bloginfo('name'); */ ?></h1>
+                      <h2 class="name-block-subtitle"><?php echo bloginfo('description'); ?></h2>
+                    <?php } else { ?>
+                      <div class="name-block-title"><span><?php echo __('Bienvenue. Je suis ', 'cc2017'); ?></span><?php /* echo bloginfo('name'); */ ?></div>
+                      <div class="name-block-subtitle"><?php echo bloginfo('description'); ?></div>
+                    <?php } ?>
                   </div>
                   <div class="name-block-btns">
                     <a class="name-block-btn btn btn-download" href="<?php echo $option_cvLink; ?>"><?php echo __('Télécharger mon CV', 'cc2017'); ?></a>

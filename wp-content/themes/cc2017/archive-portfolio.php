@@ -7,8 +7,8 @@
 get_header(); ?>
 <div class="block-content">
   <h2 class="block-title"><?php echo __('Portfolio', 'cc2017'); ?></h2>
-  <?php if(have_posts()) : ?>
-  <?php $categories = get_terms([
+  <?php if(have_posts()) :
+    $categories = get_terms([
       'taxonomy' => 'portfolio_type'
     ]);
     $cls = '';

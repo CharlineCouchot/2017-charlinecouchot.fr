@@ -151,8 +151,9 @@ strong {
   letter-spacing: 2px;
   overflow: hidden;
 
-  &:hover {
-    color: #666;
+  &:hover,
+  &:focus {
+    color: #666 !important;
     background-color: #FFF;
     border: 2px solid #666;
     letter-spacing: 3px;
@@ -1241,6 +1242,7 @@ span#close {
   }
 
   .name-block-title {
+    @extend h1;
     font-size: 36px;
     line-height: 1.1;
     @include respond-to(large-phone-up) {
@@ -1266,6 +1268,7 @@ span#close {
     }
   }
   .name-block-subtitle {
+    @extend h2;
     font-size: 22px;
     min-height: 22px;
 
@@ -1818,10 +1821,21 @@ span#close {
 }
 .post-title {
   text-align: center;
-  h2 {
+  margin-top: 50px;
+  margin-bottom: 20px;
+  a {
+    text-decoration: none !important;
+    color:black;
+    display: inline-block;
+    &:hover,
+    &:focus {
+      color:inherit;
+    }
+  }
+  h3 {
     font-size: 28px;
-    margin-top: 50px;
-    margin-bottom: 20px;
+    color:inherit;
+    transition: all 300ms ease;
   }
 }
 .post-info {
@@ -1842,7 +1856,7 @@ span#close {
   }
 }
 .post-body {
-  padding: 20px 0;
+  padding: 0 0 20px;
   text-align: center;
   p {
     padding-bottom: 20px;
@@ -1859,6 +1873,12 @@ span#close {
   background-color: #f1f3f6;
   border-color: #f1f3f6;
   color: #727272;
+  text-decoration: none !important;
+
+  &:focus,
+  &:hover {
+    color: #333 !important;
+  }
   .page-item.disabled & {
     background-color: #f1f3f6;
     border-color: #f1f3f6;
@@ -1867,10 +1887,7 @@ span#close {
   .page-item.active & {
     background-color: #666;
     border-color: #666;
-  }
-  &:focus,
-  &:hover {
-    color: #333;
+    color:white !important;
   }
 }
 #blog-header {
@@ -1886,7 +1903,7 @@ span#close {
     z-index: 0;
   }
 }
-.single-post-title {
+.single-post-title-container {
   position: absolute;
   text-align: center;
   top: 50%;
@@ -1894,7 +1911,8 @@ span#close {
   width: 100%;
   z-index: 99;
   color: #FFF;
-  h1 {
+  .single-post-title {
+    @extend h1;
     color: #FFF;
     margin-bottom: 30px;
     font-size: 40px;
