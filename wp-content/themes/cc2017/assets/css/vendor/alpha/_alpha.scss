@@ -76,6 +76,7 @@ h6 {
   text-transform: uppercase;
   font-weight: 500;
   color: #333;
+  letter-spacing: 1px;
 }
 
 h1 {
@@ -1387,10 +1388,8 @@ span#close {
     font-size: 17px
   }
   .skillset-subtitle {
-    -webkit-column-break-inside: avoid;
     column-break-inside: avoid;
     page-break-inside: avoid;
-    -webkit-column-break-before: always;
     break-before: column;
     opacity: 0.6;
   }
@@ -1814,6 +1813,13 @@ span#close {
   margin: 25px 0;
   &:last-child {
     border-bottom: 0;
+    margin-bottom: 0;
+    .post-body {
+      padding-bottom: 0;
+    }
+    .btn.open-post {
+      margin-bottom: 0;
+    }
   }
 }
 .post-thumbnail {
@@ -1949,19 +1955,20 @@ span#close {
   .col-sm-10,
   .col-sm-2 {
     @include respond-to(large-phone-up) {
-      text-align: center;
+      text-align: left;
     }
   }
   img {
     display: block;
     margin: 0 auto 30px;
     width: 150px;
+    border-radius: 100%;
     @include respond-to(large-phone-up) {
       margin:0;
       width: auto;
     }
   }
-  .author-box h3 {
+  h3 {
     font-weight: 700;
     font-size: 14px;
     margin-bottom: 10px;
