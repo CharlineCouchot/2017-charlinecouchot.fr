@@ -1949,7 +1949,7 @@ span#close {
 .author-box {
   background: #F1F3F6;
   overflow: auto;
-  padding: 30px 0 0;
+  padding: 30px 10px;
   margin: 30px 0 0;
   text-align: center;
   .col-sm-10,
@@ -1968,12 +1968,16 @@ span#close {
       width: auto;
     }
   }
-  h3 {
+  .author-name {
+    @extend h3;
     font-weight: 700;
     font-size: 14px;
     margin-bottom: 10px;
-    span {
-      color: #727272;
+    color: #727272;
+    h3 {
+      display: inline;
+      font-size:14px;
+      font-weight: 700;
     }
   }
 }
@@ -1996,30 +2000,35 @@ span#close {
   }
   > li {
     display: inline-block;
+    vertical-align: middle;
     > a {
       display: block;
-      width: 40px;
-      height: 40px;
-      margin: 5px;
-      border: 1px solid #ddd;
-      font-size: 16px;
+      width: 35px;
+      height: 35px;
       color: #ddd;
       padding: 0;
-      line-height: 36px;
-      text-align: center;
-      transition: all 300ms ease;
+      transition: all 500ms ease;
+      text-decoration: none;
       &:hover,
       &:focus {
         color: #666;
-        border: 1px solid #666;
       }
+    }
+    i {
+      line-height: 32px;
+      font-size: 35px;
+      display: block;
     }
   }
 }
 #comments {
   margin-bottom: 50px;
-  h5 {
+  .comments-title, .comment-title {
+    @extend h5;
     font-size: 13px;
+    h2 {
+      font-size: 15px;
+    }
   }
 }
 .comments-list {
@@ -2085,12 +2094,16 @@ span#close {
     max-width: 100px;
     margin-top: 10px;
     width: 100%;
+    border-radius: 100%;
   }
 }
 .comment-date {
   color: #727272;
+  a {
+    text-decoration: none !important;
+  }
 }
-.comment-reply {
+.comment-reply-link {
   color: #333;
   font-size: 12px;
   font-weight: 500;
@@ -2098,13 +2111,16 @@ span#close {
   right: 15px;
   top: 0;
   padding: 5px;
+  text-decoration: none !important;
 }
-#respond h5 {
-  font-size: 14px;
+#respond {
+  .respond-title,
+  .comment-reply-title {
+    @extend h5;
+    font-size: 14px;
+  }
 }
 .comment-respond {
-  padding: 50px 0 0;
-  margin-bottom: 50px;
   .form-control {
     border: none;
     border-bottom: 1px solid #333;
@@ -2114,6 +2130,9 @@ span#close {
     .input-group-addon {
       background: transparent;
       border-radius: 0;
+    }
+    &.logged-in-as {
+      margin:0;
     }
   }
   textarea {
@@ -2143,6 +2162,12 @@ span#close {
 }
 .form-submit {
   text-align: right;
+  margin-bottom: 0;
+  .submit {
+    @extend .btn;
+    @extend .btn-dark;
+    margin-bottom: 0;
+  }
 }
 
 /*-------------------------------------------------------------------
