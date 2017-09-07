@@ -9,7 +9,7 @@
  }
 
 ?>
-<?php /*if ( have_comments() ) :*/ ?>
+<?php if ( have_comments() ) : ?>
   <div id="comments">
     <div class="comments-title">
       <?php $comments_number = get_comments_number(); ?>
@@ -103,4 +103,4 @@
           'fields' => apply_filters( 'comment_form_default_fields', $fields ),
         );
         comment_form($args); ?>
-<?php /*endif;*/ ?>
+<?php endif; ?>

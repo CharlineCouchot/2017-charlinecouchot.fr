@@ -2197,8 +2197,11 @@ span#close {
   color: #666;
 }
 .contact-details {
-   h5,
-   p {
+  h3 {
+    @extend h5;
+  }
+  h3,
+  p {
     margin-bottom: 0;
   }
 }
@@ -2217,10 +2220,14 @@ span#close {
 .alert-success {
   text-align: left;
 }
-#contactForm {
+.wpcf7-form {
   label {
     width:100%;
     display: block;
+    margin-bottom: 0;
+  }
+  br {
+    display: none;
   }
   .form-control {
     background-color: transparent;
