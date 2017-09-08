@@ -65,7 +65,7 @@ get_header(); ?>
     // For more options see: https://developers.google.com/maps/documentation/javascript/reference#MapOptions
     var mapOptions = {
       // How zoomed in you want the map to start at (always required)
-      zoom: 11,
+      zoom: 13,
 
       // The latitude and longitude to center the map (always required)
       center: new google.maps.LatLng(<?php echo $option_latitude; ?>, <?php echo $option_longitude; ?>),
@@ -104,7 +104,7 @@ get_header(); ?>
     // Create the Google Map using our element and options defined above
     var map = new google.maps.Map(mapElement, mapOptions);
 
-    var image = 'wp-content/themes/cc2017/assets/img/map-marker.png';
+    var image = '<?php echo get_template_directory_uri(); ?>/assets/img/map-marker.png';
     // Let's also add a marker while we're at it
     var marker = new google.maps.Marker({
       position: new google.maps.LatLng(<?php echo $option_latitude; ?>, <?php echo $option_longitude; ?>),

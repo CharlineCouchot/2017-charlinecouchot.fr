@@ -769,6 +769,9 @@ strong {
   .no-js & {
     top:0;
     transition: all 350ms linear 0ms;
+    .admin-bar & {
+      top:46px
+    }
     @include respond-to(large-phone-up) {
       top:auto;
       left:0;
@@ -1040,7 +1043,7 @@ span#close {
     position: absolute;
     left: 0; right: 0;
     top: 0; bottom:0;
-    overflow-x: hidden;
+    overflow-x: visible;
     overflow-y: scroll;
     opacity: 0;
     visibility: hidden;
@@ -1083,7 +1086,7 @@ span#close {
 }
 .block-content {
   margin: 0 0 70px;
-  overflow: hidden;
+  //overflow: hidden;
 }
 .block-title {
   font-size: 24px;
@@ -1156,6 +1159,7 @@ span#close {
       height: 100%;
       width: 30%;
       display: table;
+      border-color: transparent;
     }
     @include respond-to(extra-large-up) {
       width: 400px;
@@ -1618,8 +1622,14 @@ span#close {
 .portfolio-container {
   overflow: hidden;
   position: relative;
-  margin-left:0;
-  margin-right: 0;
+  margin-left:-20px;
+  margin-right:-20px;
+  width:calc(100% + 40px);
+  @include respond-to(large-phone-up) {
+    margin-left:-50px;
+    margin-right:-50px;
+    width:calc(100% + 100px);
+  }
 }
 .filters {
   padding-bottom: 30px;
@@ -1897,16 +1907,36 @@ span#close {
   }
 }
 #blog-header {
-  height: 500px;
+  height: 250px;
   position: relative;
+  margin-left:-20px;
+  margin-right:-20px;
+  margin-top: -61px;
+  width:calc(100% + 40px);
+  .admin-bar & {
+    margin-top: -13px;
+  }
+  @include respond-to(large-phone-up) {
+    margin-left:-50px;
+    margin-right:-50px;
+    margin-top: -80px;
+    width:calc(100% + 100px);
+    height: 500px;
+    .admin-bar & {
+      margin-top: -50px;
+    }
+  }
   .overlay {
     position: absolute;
     background: rgba(0, 0, 0, 0.5);
     width: 100%;
-    height: 500px;
+    height: 250px;
     top: 0;
     bottom: 0;
     z-index: 0;
+    @include respond-to(large-phone-up) {
+      height: 500px;
+    }
   }
 }
 .single-post-title-container {
@@ -1921,17 +1951,30 @@ span#close {
     @extend h1;
     color: #FFF;
     margin-bottom: 30px;
-    font-size: 40px;
+    margin-top: 20px;
+    font-size: 35px;
+    line-height: 40px;
+    padding-left:20px;
+    padding-right:20px;
     @include respond-to(large-phone-up) {
       font-size: 50px;
+      line-height: 60px;
+      margin-top: 0;
     }
   }
 }
 #single-post {
+  margin-bottom: 0;
+  @include respond-to(large-phone-up) {
+    margin-bottom: 70px;
+  }
   .post {
     padding: 0;
     border-bottom: 0;
-    margin-bottom: 50px;
+    margin-bottom: 0;
+    @include respond-to(large-phone-up) {
+      margin-bottom: 50px;
+    }
   }
   .post-body {
     text-align: left;
@@ -1986,9 +2029,8 @@ span#close {
   width: 100%;
   clear: both;
   text-align: center;
-  padding: 30px 0;
-  margin: 0 0 70px;
-  border-bottom: 1px solid #F1F3F6;
+  padding: 30px 0 0;
+  margin-bottom: 0;
 
   li {
     &:first-child {
@@ -2023,11 +2065,19 @@ span#close {
 }
 #comments {
   margin-bottom: 50px;
+  margin-top:50px;
+  border-top:1px solid #ededed;
+  padding-top: 50px;
   .comments-title, .comment-title {
     @extend h5;
     font-size: 13px;
+    line-height: 19px;
+    @include respond-to(large-phone-up) {
+      line-height: 27px;
+    }
     h2 {
       font-size: 15px;
+      line-height: 23px;
     }
   }
 }
@@ -2099,18 +2149,28 @@ span#close {
 }
 .comment-date {
   color: #727272;
+  display: block;
+
   a {
     text-decoration: none !important;
+  }
+  @include respond-to(large-phone-up) {
+    display: inline;
+    &:before {
+      content:" | ";
+    }
   }
 }
 .comment-reply-link {
   color: #333;
   font-size: 12px;
+  line-height: 13px;
   font-weight: 500;
   position: absolute;
   right: 15px;
   top: 0;
   padding: 5px;
+  padding-top: 2px;
   text-decoration: none !important;
 }
 #respond {
@@ -2252,5 +2312,13 @@ span#close {
 #map {
   height: 400px;
   margin-top: 50px;
-  width: 100%;
+  margin-left:-20px;
+  margin-right:-20px;
+  width:calc(100% + 40px);
+  @include respond-to(large-phone-up) {
+    margin-left:-50px;
+    margin-right:-50px;
+    margin-bottom: -100px;
+    width:calc(100% + 100px);
+  }
 }

@@ -24,7 +24,7 @@
               <?php echo get_avatar( $comment, 100 ); ?>
             </div>
             <div class="col-sm-10">
-              <div class="comment-title"><?php comment_author(); ?> <span class="comment-date">| <a class="comment-permalink" href="<?php echo htmlspecialchars ( get_comment_link( $comment->comment_ID ) ); ?>"><?php comment_date(); ?></a></span></div>
+              <div class="comment-title"><?php comment_author(); ?> <span class="comment-date"><a class="comment-permalink" href="<?php echo htmlspecialchars ( get_comment_link( $comment->comment_ID ) ); ?>"><?php comment_date(); ?></a></span></div>
               <?php if ($comment->comment_approved == '0') : ?>
                 <em><php _e('Your comment is awaiting moderation.'); ?></em>
               <?php endif; ?>

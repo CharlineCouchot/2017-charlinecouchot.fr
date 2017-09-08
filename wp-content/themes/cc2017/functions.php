@@ -85,7 +85,7 @@
 
 
             wp_register_script('gmaps', 'https://maps.googleapis.com/maps/api/js?key=AIzaSyAmsb2nGLuIl04bt7CWJozRMhThvGa3y1w');
-            wp_enqueue_script('gmaps');
+            if ( is_page_template('page-contact.php') ) { wp_enqueue_script('gmaps'); }
             wp_register_script('scripts', get_template_directory_uri() . '/assets/js/scripts.js');
             wp_enqueue_script('scripts');
             wp_register_style('ie_html5shiv', get_template_directory_uri() . '/js/ie/html5shiv.js');

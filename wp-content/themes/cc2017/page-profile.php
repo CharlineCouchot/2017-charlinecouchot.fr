@@ -169,7 +169,7 @@ get_header(); ?>
   </div>
 <?php endif; ?>
 <?php if( have_rows('services') ): ?>
-<div class="block-content">
+  <div class="block-content">
     <h3 class="block-title"><?php echo __('Services', 'cc2017'); ?></h3>
     <div class="row">
       <?php while( have_rows('services') ) : the_row(); ?>
@@ -188,7 +188,7 @@ get_header(); ?>
         </div>
       <?php endwhile; ?>
     </div>
-</div>
+  </div>
 <?php endif; ?>
 <?php endwhile; endif; ?>
 
