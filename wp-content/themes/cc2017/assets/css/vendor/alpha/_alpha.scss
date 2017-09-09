@@ -240,6 +240,15 @@ strong {
 .lowercase {
   text-transform: lowercase;
 }
+
+.no-js_visible {
+  display: none;
+  visibility: hidden;
+  .no-js & {
+    display: inherit;
+    visibility: inherit;
+  }
+}
 /*-------------------------------------------------------------------
 
                         1. Preloader
@@ -1254,11 +1263,11 @@ span#close {
       font-size: 40px;
     }
     @include respond-to(small-up-portrait) {
-      line-height: 60px;
+      line-height: 55px;
       font-size: 50px;
     }
     @include respond-to(medium-up) {
-      line-height: 60px;
+      line-height: 55px;
       font-size: 50px;
     }
 
@@ -1276,19 +1285,7 @@ span#close {
     @extend h2;
     font-size: 22px;
     min-height: 22px;
-
-    @include respond-to(large-phone-up) {
-      font-size: 22px;
-      min-height: 22px;
-    }
-    @include respond-to(small-up-portrait) {
-      font-size: 26px;
-      min-height: 26px;
-    }
-    @include respond-to(medium-up) {
-      font-size: 26px;
-      min-height: 26px;
-    }
+    min-height: 26px;
   }
   .name-block-btn {
     margin-bottom: 0;
@@ -1770,17 +1767,41 @@ span#close {
   @include respond-to(small-up) {
     width: 50%;
   }
-
 }
-.project-head span {
+.tag {
+  display: inline-block;
+  padding: 5px 8px;
+  border-radius: 3px;
+  background-color: #EDEDED;
+  line-height: 1;
+  & + & {
+    margin-left: 3px
+  }
+}
+.tags h2,
+%tag-title {
   color: #333;
   font-weight: 400;
   margin-right: 5px;
+  text-transform: none;
+  font-size: 16px;
+  display: inline-block;
+  letter-spacing: normal;
 }
-.project-description {
-  margin: 30px 0;
+.project-body {
+  margin:15px 0 0;
+  h2 {
+    @extend %tag-title;
+  }
+  p {
+    margin:0 0 15px;
+  }
+  .tags {
+    margin-top: 20px;
+  }
 }
-.project-media img {
+.project-media {
+  margin-top: 50px;
   margin-bottom: 30px;
 }
 .video-container {
@@ -1808,6 +1829,34 @@ span#close {
   &.left,
   &.right {
     background-image: none;
+  }
+}
+.project-nav,
+.post-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 30px;
+  div {
+    width:calc(100% / 3);
+    &:first-child {
+      text-align: left;
+    }
+    &:last-child {
+      text-align:right;
+    }
+  }
+  i {
+    font-size: 28px;
+  }
+  a {
+    color: inherit;
+    font-weight: 500;
+    text-decoration: none !important;
+    &:hover,
+    &:focus {
+      color: #333;
+    }
   }
 }
 

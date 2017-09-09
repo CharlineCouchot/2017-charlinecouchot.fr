@@ -5,7 +5,7 @@
  */
 
 get_header(); ?>
-<div class="block-content">
+<div class="block-content" id="body-content">
   <h2 class="block-title"><?php echo __('Portfolio', 'cc2017'); ?></h2>
   <?php if(have_posts()) :
     $categories = get_terms([
@@ -40,36 +40,42 @@ get_header(); ?>
                 </div>
                 <div class="portfolio-overlay"></div>
               </div>
-              <img src="<?php echo get_template_directory_uri(); ?>/assets/img/portfolio/masonry/001.jpg" alt="">
+              <?php if ( has_post_thumbnail() ) { ?>
+                <?php $post_thumbnail_id = get_post_thumbnail_id( get_the_ID() ); ?>
+                <img src="<?php the_post_thumbnail_url( 'medium_large' ); ?>" alt="<?php get_post_meta($post_thumbnail_id, '_wp_attachment_image_alt', true); ?>">
+              <?php } ?>
+
             </div>
           </a>
         </div>
       <?php endwhile; ?>
     </div>
+
+    <script>
+    (function($) {
+      "use strict";
+
+      $(window).on('load', function() {
+        //Portfolio masonry
+        var $container = $('#portfolio-container');
+        $container.isotope({
+          masonry: {
+            columnWidth: '.portfolio-item'
+          },
+          itemSelector: '.portfolio-item'
+        });
+        $('#filters').on('click', 'li', function() {
+          $('#filters li').removeClass('active');
+          $(this).addClass('active');
+          var filterValue = $(this).attr('data-filter');
+          $container.isotope({
+            filter: filterValue
+          });
+        });
+      });
+    })(jQuery);
+    </script>
   <?php endif; ?>
 </div>
-<script>
-(function($) {
-  "use strict";
 
-  $(window).on('load', function() {
-    //Portfolio masonry
-    var $container = $('#portfolio-container');
-    $container.isotope({
-      masonry: {
-        columnWidth: '.portfolio-item'
-      },
-      itemSelector: '.portfolio-item'
-    });
-    $('#filters').on('click', 'li', function() {
-      $('#filters li').removeClass('active');
-      $(this).addClass('active');
-      var filterValue = $(this).attr('data-filter');
-      $container.isotope({
-        filter: filterValue
-      });
-    });
-  });
-})(jQuery);
-</script>
 <?php get_footer(); ?>

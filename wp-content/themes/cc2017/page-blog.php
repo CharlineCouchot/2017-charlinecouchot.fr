@@ -4,14 +4,13 @@
 * @subpackage CC2017
 * Template Name: Page Blog
 */
-  get_header();
-  $paged = ( get_query_var( 'paged' ) ) ? get_query_var( 'paged' ) : 1;
+  get_header(); ?>
+<div class="block-content" id="body-content">
+  <?php $paged = ( get_query_var( 'paged' ) ) ? get_query_var( 'paged' ) : 1;
   $query = new WP_Query(array(
 	  'post_type' => 'post',
     'paged' => $paged
-  ));
-?>
-<div class="block-content">
+  )); ?>
   <h2 class="block-title"><?php echo __('Blog', 'cc2017'); ?></h2>
   <?php if($query->have_posts()) : ?>
     <div class="row">

@@ -23,6 +23,7 @@
   <script>
     (function($) {
       "use strict";
+      //$mainContent.load('/contact/ #body-content');
 
       $(window).on('load', function() {
         <?php //is_front_page() { ?>
@@ -33,12 +34,6 @@
           $(".preloader-left").addClass("slide-left");
         });
 
-        //On Click Open Menu Items
-        $('.menu-block, .menu-item').click(function() {
-          $('.page').addClass('menu-open');
-    			$('.inline-menu-container').addClass('showx');
-        });
-
         //On Click Close Blocks
         $('#close').click(function() {
           $('.page').removeClass('menu-open');
@@ -47,71 +42,18 @@
           $('.menu-item').removeClass('active');
         });
 
+        //On Click Close Blog Post And Project Details
+        $('#close-pop').click(function() {
+    			$('.inline-menu-container').addClass('showx');
+          $('.content-blocks.pop').removeClass('showx');
+          $('.content-blocks.pop section').empty();
+        });
+
         $('.menu-block, .menu-item, #close').click(function() {
           $('.content-blocks').animate({
             scrollTop: 0
           }, 800);
         });
-
-        //On Click Open About/Resume Block
-        $('.about-block, .menu-item.about').click(function() {
-
-          var post_link = $(this).attr("href");
-          $('.content-blocks').addClass('showx');
-          $('.menu-item').removeClass('active');
-          $('.menu-item.about').addClass('active');
-        });
-
-        //On Click Open Portfolio Block
-        $('.portfolio-block, .menu-item.portfolio').click(function() {
-          //Portfolio masonry
-          var $container = $('#portfolio-container');
-          $container.isotope({
-            masonry: {
-              columnWidth: '.portfolio-item'
-            },
-            itemSelector: '.portfolio-item'
-          });
-          $('#filters').on('click', 'li', function() {
-            $('#filters li').removeClass('active');
-            $(this).addClass('active');
-            var filterValue = $(this).attr('data-filter');
-            $container.isotope({
-              filter: filterValue
-            });
-          });
-
-          $('.content-blocks').removeClass('showx');
-          $('.content-blocks.portfolio').addClass('showx');
-          $('.menu-item').removeClass('active');
-          $('.menu-item.portfolio').addClass('active');
-        });
-
-        //On Click Open Blog Block
-        $('.blog-block, .menu-item.blog').click(function() {
-          $('.content-blocks').removeClass('showx');
-          $('.content-blocks.blog').addClass('showx');
-          $('.menu-item').removeClass('active');
-          $('.menu-item.blog').addClass('active');
-        });
-
-        //On Click Open Contact Block
-        $('.contact-block, .menu-item.contact').click(function() {
-          $('.content-blocks').removeClass('showx');
-          $('.content-blocks.contact').addClass('showx');
-          $('.menu-item').removeClass('active');
-          $('.menu-item.contact').addClass('active');
-        });
-
-        /*$.ajaxSetup({cache:false});
-        $(".post-link").click(function(){
-
-
-          $("#single-post-container").html("content loading");
-          $("#single-post-container").load(post_link);
-          return false;
-        });*/
-
       });
     })(jQuery);
   </script>

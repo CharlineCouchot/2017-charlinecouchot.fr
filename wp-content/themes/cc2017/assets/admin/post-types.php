@@ -2,6 +2,45 @@
 // Déclarations des types de contenus & taxonomies ----------
 
 // Register Custom Taxonomy
+function portfolio_skills() {
+
+	$labels = array(
+		'name'                       => _x( 'Compétences', 'Taxonomy General Name', 'cc2017' ),
+		'singular_name'              => _x( 'Compétence', 'Taxonomy Singular Name', 'cc2017' ),
+		'menu_name'                  => __( 'Compétences', 'cc2017' ),
+		'all_items'                  => __( 'Toutes les compétences', 'cc2017' ),
+		'parent_item'                => __( 'Compétence parente', 'cc2017' ),
+		'parent_item_colon'          => __( 'Compétence parente :', 'cc2017' ),
+		'new_item_name'              => __( 'Ajouter une compétence', 'cc2017' ),
+		'add_new_item'               => __( 'Ajouter une compétence', 'cc2017' ),
+		'edit_item'                  => __( 'Éditer la compétence', 'cc2017' ),
+		'update_item'                => __( 'Mettre à jour la compétence', 'cc2017' ),
+		'view_item'                  => __( 'Voir la compétence', 'cc2017' ),
+		'separate_items_with_commas' => __( 'Séparer les éléments par une virgule', 'cc2017' ),
+		'add_or_remove_items'        => __( 'Ajouter ou supprimer des compétences', 'cc2017' ),
+		'choose_from_most_used'      => __( 'Choisir parmi les plus utilisées', 'cc2017' ),
+		'popular_items'              => __( 'Éléments populaires', 'cc2017' ),
+		'search_items'               => __( 'Rechercher une compétence', 'cc2017' ),
+		'not_found'                  => __( 'Introuvable', 'cc2017' ),
+		'no_terms'                   => __( 'Pas de résultat', 'cc2017' ),
+		'items_list'                 => __( 'Liste des résultats', 'cc2017' ),
+		'items_list_navigation'      => __( 'Naviguer les compétences', 'cc2017' ),
+	);
+	$args = array(
+		'labels'                     => $labels,
+		'hierarchical'               => false,
+		'public'                     => true,
+		'show_ui'                    => true,
+		'show_admin_column'          => true,
+		'show_in_nav_menus'          => true,
+		'show_tagcloud'              => true,
+	);
+	register_taxonomy( 'portfolio_skills', array( 'portfolio' ), $args );
+}
+
+add_action( 'init', 'portfolio_skills', 0 );
+
+// Register Custom Taxonomy
 function portfolio_type() {
 
 	$labels = array(
@@ -36,10 +75,9 @@ function portfolio_type() {
 		'show_tagcloud'              => true,
 	);
 	register_taxonomy( 'portfolio_type', array( 'portfolio' ), $args );
-
 }
-add_action( 'init', 'portfolio_type', 0 );
 
+add_action( 'init', 'portfolio_type', 0 );
 
 // Register Custom Post Type
 function portfolio_post_type() {
@@ -78,7 +116,7 @@ function portfolio_post_type() {
 		'description'           => __( 'Post Type Description', 'cc2017' ),
 		'labels'                => $labels,
 		'supports'              => array( 'title', 'editor', 'thumbnail', 'custom-fields', ),
-		'taxonomies'            => array( 'portfolio_type' ),
+		'taxonomies'            => array( 'portfolio_type', 'portfolio_skills' ),
 		'hierarchical'          => false,
 		'public'                => true,
 		'show_ui'               => true,

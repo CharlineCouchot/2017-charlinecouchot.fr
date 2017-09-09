@@ -4,13 +4,7 @@
 
 (function($) {
   "use strict";
-
   $(window).on('load', function() {
-
-
-
-
-
 
     //Portfolio Modal
     /*$('.open-project').click(function() {
@@ -29,13 +23,6 @@
       $('.content-blocks.pop section').load(postUrl);
       return false;
     });*/
-
-    //On Click Close Blog Post And Project Details
-    $('#close-pop').click(function() {
-			$('.inline-menu-container').addClass('showx');
-      $('.content-blocks.pop').removeClass('showx');
-      $('.content-blocks.pop section').empty();
-    });
 
   });
 
