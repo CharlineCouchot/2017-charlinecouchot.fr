@@ -52,28 +52,27 @@ get_header(); ?>
     </div>
 
     <script>
-    (function($) {
-      "use strict";
-
-      $(window).on('load', function() {
-        //Portfolio masonry
-        var $container = $('#portfolio-container');
+    function ajaxReload() {
+      var $container = jQuery('#portfolio-container');
+      $container.isotope({
+        masonry: {
+          columnWidth: '.portfolio-item'
+        },
+        itemSelector: '.portfolio-item'
+      });
+      jQuery('#filters').on('click', 'li', function() {
+        jQuery('#filters li').removeClass('active');
+        jQuery(this).addClass('active');
+        var filterValue = jQuery(this).attr('data-filter');
         $container.isotope({
-          masonry: {
-            columnWidth: '.portfolio-item'
-          },
-          itemSelector: '.portfolio-item'
-        });
-        $('#filters').on('click', 'li', function() {
-          $('#filters li').removeClass('active');
-          $(this).addClass('active');
-          var filterValue = $(this).attr('data-filter');
-          $container.isotope({
-            filter: filterValue
-          });
+          filter: filterValue
         });
       });
-    })(jQuery);
+    }
+
+    jQuery(window).on('load', function() {
+        ajaxReload();
+    });
     </script>
   <?php endif; ?>
 </div>

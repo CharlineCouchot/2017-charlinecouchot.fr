@@ -21,38 +21,20 @@
   <?php wp_footer(); ?>
 
   <script>
+
+    jQuery(document).ready(function($) {
+      <?php if(is_front_page()) { ?>
+        $('.inline-menu-container').removeClass('showx');
+        $('.page').removeClass('menu-open');
+      <?php } ?>
+    });
+
     (function($) {
       "use strict";
-      //$mainContent.load('/contact/ #body-content');
 
       $(window).on('load', function() {
-        <?php //is_front_page() { ?>
-          //$('.page').removeClass('menu-open');
-        <?php //} ?>
-
         $(".preloader").fadeOut("slow", function() {
           $(".preloader-left").addClass("slide-left");
-        });
-
-        //On Click Close Blocks
-        $('#close').click(function() {
-          $('.page').removeClass('menu-open');
-    			$('.inline-menu-container').removeClass('showx');
-          $('.content-blocks').removeClass('showx');
-          $('.menu-item').removeClass('active');
-        });
-
-        //On Click Close Blog Post And Project Details
-        $('#close-pop').click(function() {
-    			$('.inline-menu-container').addClass('showx');
-          $('.content-blocks.pop').removeClass('showx');
-          $('.content-blocks.pop section').empty();
-        });
-
-        $('.menu-block, .menu-item, #close').click(function() {
-          $('.content-blocks').animate({
-            scrollTop: 0
-          }, 800);
         });
       });
     })(jQuery);

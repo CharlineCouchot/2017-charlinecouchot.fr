@@ -49,12 +49,12 @@
 </head>
 
 <body <?php body_class(); ?>>
-  <!--div class="preloader">
+  <div class="preloader">
       <div class="anim pulse"><i class="ion-ios-bolt-outline" aria-hidden="true"></i></div>
   </div>
   <div class="preloader-left"></div>
-  <div class="preloader-right"></div-->
-  <section class="page<?php if ( !is_front_page() ) { echo ' menu-open'; } else { echo ' menu-open'; } ?>">
+  <div class="preloader-right"></div>
+  <section class="page menu-open">
       <div class="gradient-overlay"></div>
       <div class="container">
           <div class="name-block">
@@ -83,7 +83,7 @@
 
                     <?php } ?>
                     <script>
-                      /*var typed = new Typed("#typed", {
+                      var typed = new Typed("#typed", {
                   	    stringsElement: '#typed-strings',
                   	    typeSpeed: 50,
                         backSpeed: 50,
@@ -91,7 +91,7 @@
                   	    startDelay: 500,
                   	    backDelay: 3000,
                   	    contentType: 'html',
-                    	});*/
+                    	});
                     </script>
                   </div>
                   <div class="name-block-btns">
@@ -110,7 +110,7 @@
                 $locations = get_nav_menu_locations();
                 $menu = wp_get_nav_menu_object( $locations[ $menu_name ] );
                 $menuitems = wp_get_nav_menu_items( $menu->term_id, array( 'order' => 'DESC' ) ); ?>
-          <nav class="menu-blocks-container" role="navigation"aria-hidden="true">
+          <nav class="menu-blocks-container" role="navigation" aria-hidden="true">
             <ul class="menu-blocks">
             <?php foreach( $menuitems as $item ) {?>
                 <?php $link = $item->url;
@@ -126,7 +126,7 @@
               <?php } ?>
             </ul>
         </nav>
-          <div class="inline-menu-container<?php if ( !is_front_page() ) { echo ' showx'; } else { echo ' showx'; } ?>">
+          <div class="inline-menu-container showx">
               <?php /*<span class="status<?php if( $option_freelance === true ) { ?> available<?php } else { ?> unavailable<?php } ?>">
                 if( $option_freelance === true ) { ?>
                   <?php echo __('Je suis disponible en freelance', 'cc2017'); ?>
@@ -139,9 +139,9 @@
                   'theme_location' => 'mainmenu',
                   'container' => 'ul' ) );
                 ?>
-                <span id="close" class="menu-item" aria-label="<?php echo __('Fermer le panneau', 'cc2017'); ?>"><i class="ion-ios-close-empty" aria-hidden="true"></i></span>
+                <a id="close" href="#" class="menu-item" aria-label="<?php echo __('Fermer le panneau', 'cc2017'); ?>"><i class="ion-ios-close-empty" aria-hidden="true"></i></a>
               </nav>
           </div>
           <div class="content-block">
-            <div class="content-blocks<?php if ( !is_front_page() ) { echo ' showx'; } else { echo ' showx'; } ?>">
+            <div class="content-blocks showx">
               <section class="content" id="content-box">

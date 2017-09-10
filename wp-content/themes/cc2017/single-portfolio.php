@@ -62,20 +62,19 @@ get_header(); ?>
             </div>
           </div>
           <script>
-          (function($) {
-            "use strict";
-
-            $(window).on('load', function() {
-              //Portfolio masonry
-              var $container = $('.project-media');
+            function ajaxReload() {
+              var $container = jQuery('.project-media');
               $container.isotope({
                 masonry: {
                   columnWidth: '.portfolio-item'
                 },
                 itemSelector: '.portfolio-item'
               });
+            }
+            
+            jQuery(window).on('load', function() {
+                ajaxReload();
             });
-          })(jQuery);
           </script>
     <?php endwhile; endif; ?>
   </div>

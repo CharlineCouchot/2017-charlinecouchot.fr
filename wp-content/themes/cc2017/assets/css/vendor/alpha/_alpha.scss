@@ -887,7 +887,7 @@ strong {
     }
   }
 }
-span#close {
+a#close {
   float: right;
   padding: 0 20px 0 10px;
   font-size: 15px;
@@ -940,7 +940,8 @@ span#close {
     width: 70%;
   }
 
-  &:hover {
+  &:hover,
+  &:focus {
     opacity: 0.7;
   }
   .content-blocks.pop.showx & {
@@ -1327,7 +1328,8 @@ span#close {
     width: 35px;
     transition: all 500ms ease;
     font-size: 0;
-    &:hover {
+    &:hover,
+    &:focus {
       color: #333;
     }
   }
