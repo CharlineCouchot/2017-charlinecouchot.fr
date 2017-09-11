@@ -27,10 +27,12 @@ jQuery(document).ready(function($) {
       URL = '',
       $siteURL = 'http://' + top.location.host.toString(),
       $location = window.location,
+      $pathname = window.location.pathname,
       $ajaxSpinner = $('#ajax-loader'),
       $el,
       $href,
       $title,
+      $bodyClasses,
       $allLinks = $('a');
 
   $(document).on( "click", "a[href^='"+$siteURL+"']:not([href*='/wp-admin/']):not([href*='/wp-login.php']):not([href$='.pdf']):not([href$='/feed/'])", function() {
@@ -52,16 +54,26 @@ jQuery(document).ready(function($) {
           scrollTop: 0
         }, 0);
 
+
         $title = responseText.match(/<title>([^<]*)/)[1];
         $title = decodeEntities($title);
         document.title = $title;
+
+        $bodyClasses = responseText.match(/<body.*class=["']([^"']*)["'].*>/)[1];
+        $('body').attr('class', $bodyClasses);
+        
         history.pushState({}, $title, $el.attr('href'));
 
         $el.addClass('current-link').parent().addClass('current-menu-item');
         $mainContent.animate({ opacity : '1' });
 
-        if (typeof ajaxReload == 'function') {
-          ajaxReload();
+        if(jQuery('.project-media').length > 0) {
+          jQuery('.project-media').isotope({
+            masonry: {
+              columnWidth: '.portfolio-item'
+            },
+            itemSelector: '.portfolio-item'
+          });
         }
       });
     }

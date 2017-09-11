@@ -62,8 +62,7 @@ get_header(); ?>
             </div>
           </div>
           <script>
-            function ajaxReload() {
-              console.log('projet ouvert !');
+            jQuery(window).on('load', function() {
               var $container = jQuery('.project-media');
               $container.isotope({
                 masonry: {
@@ -71,10 +70,6 @@ get_header(); ?>
                 },
                 itemSelector: '.portfolio-item'
               });
-            }
-
-            jQuery(window).on('load', function() {
-                ajaxReload();
             });
           </script>
     <?php endwhile; endif; ?>
