@@ -61,7 +61,7 @@
               <div class="name-block-container">
                   <div class="name-block-titles">
                     <?php if ( !is_single() ) { ?>
-                      <h1 class="name-block-title"><span><?php echo __('Bienvenue. Je suis ', 'cc2017'); ?></span><?php echo bloginfo('name'); ?></h1>
+                      <!--h1 class="name-block-title"><span><?php echo __('Bienvenue. Je suis ', 'cc2017'); ?></span><?php echo bloginfo('name'); ?></h1-->
                       <h2 class="name-block-subtitle">
                         <div id="typed-strings">
                           <?php while( have_rows('general-subtitle', 'option') ) : the_row(); ?>
@@ -71,7 +71,7 @@
                         <div id="typed"></div>
                       </h2>
                     <?php } else { ?>
-                      <div class="name-block-title"><span><?php echo __('Bienvenue. Je suis ', 'cc2017'); ?></span><?php echo bloginfo('name'); ?></div>
+                      <!--div class="name-block-title"><span><?php echo __('Bienvenue. Je suis ', 'cc2017'); ?></span><?php echo bloginfo('name'); ?></div-->
                       <div class="name-block-subtitle">
                         <div id="typed-strings">
                           <?php while( have_rows('general-subtitle', 'option') ) : the_row(); ?>
@@ -83,7 +83,7 @@
 
                     <?php } ?>
                     <script>
-                      var typed = new Typed("#typed", {
+                      /*var typed = new Typed("#typed", {
                   	    stringsElement: '#typed-strings',
                   	    typeSpeed: 50,
                         backSpeed: 50,
@@ -91,7 +91,7 @@
                   	    startDelay: 500,
                   	    backDelay: 3000,
                   	    contentType: 'html',
-                    	});
+                    	});*/
                     </script>
                   </div>
                   <div class="name-block-btns">

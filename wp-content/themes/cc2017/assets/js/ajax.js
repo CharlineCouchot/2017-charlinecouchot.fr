@@ -1,16 +1,20 @@
 jQuery(document).ready(function($) {
-  $('.menu-block a').click(function() {
+  $('.menu-block a').click(function(e) {
+    //e.preventDefault();
     $('.content-blocks').addClass('showx');
     $('.inline-menu-container').addClass('showx');
     $('.page').addClass('menu-open');
     $('inline-menu-container .current-menu-item a').focus();
+    //return false;
   });
 
-  $('#close').click(function() {
+  $('#close').click(function(e) {
+    e.preventDefault();
     $('.page').removeClass('menu-open');
     $('.inline-menu-container').removeClass('showx');
     $('.content-blocks').removeClass('showx');
     $('.menu-item').removeClass('active');
+    return false;
   });
 
   function decodeEntities(encodedString) {
@@ -19,36 +23,22 @@ jQuery(document).ready(function($) {
     return textArea.value;
   }
 
-  console.log(window.location.pathname);
-
   var $mainContent = $('#content-box'),
       URL = '',
       $siteURL = 'http://' + top.location.host.toString(),
-      $internalLinks = $("a[href^='"+$siteURL+"']:not([href*='/wp-admin/']):not([href*='/wp-login.php']):not([href$='/feed/']"),
       $location = window.location,
-      $pathname : window.location.pathname,
       $ajaxSpinner = $('#ajax-loader'),
       $el,
       $href,
       $title,
       $allLinks = $('a');
 
-  if($pathname != '/') {
-
-  }
-
-  $internalLinks.each(function() {
-    $(this).addClass('internal-link');
-    if ($(this).attr('href') == $location) {
-      $(this).addClass('current-link').parent().addClass('current-menu-item');
-    }
-
-  }).click(function(e) {
-    e.preventDefault();
+  $(document).on( "click", "a[href^='"+$siteURL+"']:not([href*='/wp-admin/']):not([href*='/wp-login.php']):not([href$='.pdf']):not([href$='/feed/'])", function() {
     $el = $(this);
     $href = $el.attr('href');
 
     if ($href != $location) {
+
       $mainContent.animate({ opacity : '0' });
 
       $('.current-menu-item').removeClass('current-menu-item');
@@ -75,6 +65,6 @@ jQuery(document).ready(function($) {
         }
       });
     }
-
+    return false;
   });
 });

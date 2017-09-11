@@ -29,7 +29,7 @@
               <p class="post-info">
                 <span class="post-date"><?php the_date(); ?></span>
                 <span class="slash"></span>
-                <span class="post-catetory"><?php echo get_the_category_list(', '); ?></span>
+                <span class="post-catetory"><?php foreach((get_the_category()) as $category) { echo '<span>' . $category->cat_name . '</span>'; } ?></span>
               </p>
             </div>
             <div class="post-body">
