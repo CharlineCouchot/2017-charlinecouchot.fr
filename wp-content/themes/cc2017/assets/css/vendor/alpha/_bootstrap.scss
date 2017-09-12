@@ -630,25 +630,25 @@ pre code {
     width: 100%
 }
 
-@media (min-width:576px) {
+@include respond-to(phone-up) {
     .container {
         max-width: 540px
     }
 }
 
-@media (min-width:768px) {
+@include respond-to(large-phone-up) {
     .container {
         max-width: 720px
     }
 }
 
-@media (min-width:992px) {
+@include respond-to(small-up) {
     .container {
         max-width: 960px
     }
 }
 
-@media (min-width:1200px) {
+@include respond-to(large-up) {
     .container {
         max-width: 1140px
     }
@@ -907,7 +907,7 @@ pre code {
     order: 12
 }
 
-@media (min-width:576px) {
+@include respond-to(phone-up) {
     .col-sm {
         -ms-flex-preferred-size: 0;
         flex-basis: 0;
@@ -1031,7 +1031,7 @@ pre code {
     }
 }
 
-@media (min-width:768px) {
+@include respond-to(large-phone-up) {
     .col-md {
         -ms-flex-preferred-size: 0;
         flex-basis: 0;
@@ -1155,7 +1155,7 @@ pre code {
     }
 }
 
-@media (min-width:992px) {
+@include respond-to(small-up) {
     .col-lg {
         -ms-flex-preferred-size: 0;
         flex-basis: 0;
@@ -1279,7 +1279,7 @@ pre code {
     }
 }
 
-@media (min-width:1200px) {
+@include respond-to(large-up) {
     .col-xl {
         -ms-flex-preferred-size: 0;
         flex-basis: 0;
@@ -1625,7 +1625,7 @@ pre code {
     background-color: rgba(255, 255, 255, .075)
 }
 
-@media (max-width:991px) {
+@include respond-to(small) {
     .table-responsive {
         display: block;
         width: 100%;
@@ -1985,7 +1985,7 @@ select.form-control-lg:not([size]):not([multiple]) {
     width: 100%
 }
 
-@media (min-width:576px) {
+@include respond-to(phone-up) {
     .form-inline label {
         display: -ms-flexbox;
         display: flex;
@@ -3527,7 +3527,7 @@ tbody.collapse.show {
     background-size: 100% 100%
 }
 
-@media (max-width:575px) {
+@include respond-to(phone) {
     .navbar-expand-sm>.container,
     .navbar-expand-sm>.container-fluid {
         padding-right: 0;
@@ -3535,7 +3535,7 @@ tbody.collapse.show {
     }
 }
 
-@media (min-width:576px) {
+@include respond-to(phone-up) {
     .navbar-expand-sm {
         -ms-flex-direction: row;
         flex-direction: row;
@@ -3573,7 +3573,7 @@ tbody.collapse.show {
     }
 }
 
-@media (max-width:767px) {
+@include respond-to(large-phone) {
     .navbar-expand-md>.container,
     .navbar-expand-md>.container-fluid {
         padding-right: 0;
@@ -3581,7 +3581,7 @@ tbody.collapse.show {
     }
 }
 
-@media (min-width:768px) {
+@include respond-to(large-phone-up) {
     .navbar-expand-md {
         -ms-flex-direction: row;
         flex-direction: row;
@@ -3619,7 +3619,7 @@ tbody.collapse.show {
     }
 }
 
-@media (max-width:991px) {
+@include respond-to(small) {
     .navbar-expand-lg>.container,
     .navbar-expand-lg>.container-fluid {
         padding-right: 0;
@@ -3627,7 +3627,7 @@ tbody.collapse.show {
     }
 }
 
-@media (min-width:992px) {
+@include respond-to(small-up) {
     .navbar-expand-lg {
         -ms-flex-direction: row;
         flex-direction: row;
@@ -3665,7 +3665,7 @@ tbody.collapse.show {
     }
 }
 
-@media (max-width:1199px) {
+@include respond-to(large) {
     .navbar-expand-xl>.container,
     .navbar-expand-xl>.container-fluid {
         padding-right: 0;
@@ -3673,7 +3673,7 @@ tbody.collapse.show {
     }
 }
 
-@media (min-width:1200px) {
+@include respond-to(large-up) {
     .navbar-expand-xl {
         -ms-flex-direction: row;
         flex-direction: row;
@@ -3954,7 +3954,7 @@ tbody.collapse.show {
     border-bottom-left-radius: calc(.25rem - 1px)
 }
 
-@media (min-width:576px) {
+@include respond-to(phone-up) {
     .card-deck {
         display: -ms-flexbox;
         display: flex;
@@ -3975,7 +3975,7 @@ tbody.collapse.show {
     }
 }
 
-@media (min-width:576px) {
+@include respond-to(phone-up) {
     .card-group {
         display: -ms-flexbox;
         display: flex;
@@ -4023,7 +4023,7 @@ tbody.collapse.show {
     margin-bottom: .75rem
 }
 
-@media (min-width:576px) {
+@include respond-to(phone-up) {
     .card-columns {
         -webkit-column-count: 3;
         column-count: 3;
@@ -4289,7 +4289,7 @@ tbody.collapse.show {
     border-radius: .3rem
 }
 
-@media (min-width:576px) {
+@include respond-to(phone-up) {
     .jumbotron {
         padding: 4rem 2rem
     }
@@ -4919,7 +4919,7 @@ button.close {
     overflow: scroll
 }
 
-@media (min-width:576px) {
+@include respond-to(phone-up) {
     .modal-dialog {
         max-width: 500px;
         margin: 30px auto
@@ -4929,7 +4929,7 @@ button.close {
     }
 }
 
-@media (min-width:992px) {
+@include respond-to(small-up) {
     .modal-lg {
         max-width: 800px
     }
@@ -5697,7 +5697,7 @@ a.bg-dark:hover {
     display: inline-flex!important
 }
 
-@media (min-width:576px) {
+@include respond-to(phone-up) {
     .d-sm-none {
         display: none!important
     }
@@ -5726,7 +5726,7 @@ a.bg-dark:hover {
     }
 }
 
-@media (min-width:768px) {
+@include respond-to(large-phone-up) {
     .d-md-none {
         display: none!important
     }
@@ -5755,7 +5755,7 @@ a.bg-dark:hover {
     }
 }
 
-@media (min-width:992px) {
+@include respond-to(small-up) {
     .d-lg-none {
         display: none!important
     }
@@ -5784,7 +5784,7 @@ a.bg-dark:hover {
     }
 }
 
-@media (min-width:1200px) {
+@include respond-to(large-up) {
     .d-xl-none {
         display: none!important
     }
@@ -6037,7 +6037,7 @@ a.bg-dark:hover {
     align-self: stretch!important
 }
 
-@media (min-width:576px) {
+@include respond-to(phone-up) {
     .flex-sm-row {
         -ms-flex-direction: row!important;
         flex-direction: row!important
@@ -6156,7 +6156,7 @@ a.bg-dark:hover {
     }
 }
 
-@media (min-width:768px) {
+@include respond-to(large-phone-up) {
     .flex-md-row {
         -ms-flex-direction: row!important;
         flex-direction: row!important
@@ -6275,7 +6275,7 @@ a.bg-dark:hover {
     }
 }
 
-@media (min-width:992px) {
+@include respond-to(small-up) {
     .flex-lg-row {
         -ms-flex-direction: row!important;
         flex-direction: row!important
@@ -6394,7 +6394,7 @@ a.bg-dark:hover {
     }
 }
 
-@media (min-width:1200px) {
+@include respond-to(large-up) {
     .flex-xl-row {
         -ms-flex-direction: row!important;
         flex-direction: row!important
@@ -6525,7 +6525,7 @@ a.bg-dark:hover {
     float: none!important
 }
 
-@media (min-width:576px) {
+@include respond-to(phone-up) {
     .float-sm-left {
         float: left!important
     }
@@ -6537,7 +6537,7 @@ a.bg-dark:hover {
     }
 }
 
-@media (min-width:768px) {
+@include respond-to(large-phone-up) {
     .float-md-left {
         float: left!important
     }
@@ -6549,7 +6549,7 @@ a.bg-dark:hover {
     }
 }
 
-@media (min-width:992px) {
+@include respond-to(small-up) {
     .float-lg-left {
         float: left!important
     }
@@ -6561,7 +6561,7 @@ a.bg-dark:hover {
     }
 }
 
-@media (min-width:1200px) {
+@include respond-to(large-up) {
     .float-xl-left {
         float: left!important
     }
@@ -7053,7 +7053,7 @@ a.bg-dark:hover {
     margin-bottom: auto!important
 }
 
-@media (min-width:576px) {
+@include respond-to(phone-up) {
     .m-sm-0 {
         margin: 0!important
     }
@@ -7355,7 +7355,7 @@ a.bg-dark:hover {
     }
 }
 
-@media (min-width:768px) {
+@include respond-to(large-phone-up) {
     .m-md-0 {
         margin: 0!important
     }
@@ -7657,7 +7657,7 @@ a.bg-dark:hover {
     }
 }
 
-@media (min-width:992px) {
+@include respond-to(small-up) {
     .m-lg-0 {
         margin: 0!important
     }
@@ -7959,7 +7959,7 @@ a.bg-dark:hover {
     }
 }
 
-@media (min-width:1200px) {
+@include respond-to(large-up) {
     .m-xl-0 {
         margin: 0!important
     }
@@ -8287,7 +8287,7 @@ a.bg-dark:hover {
     text-align: center!important
 }
 
-@media (min-width:576px) {
+@include respond-to(phone-up) {
     .text-sm-left {
         text-align: left!important
     }
@@ -8299,7 +8299,7 @@ a.bg-dark:hover {
     }
 }
 
-@media (min-width:768px) {
+@include respond-to(large-phone-up) {
     .text-md-left {
         text-align: left!important
     }
@@ -8311,7 +8311,7 @@ a.bg-dark:hover {
     }
 }
 
-@media (min-width:992px) {
+@include respond-to(small-up) {
     .text-lg-left {
         text-align: left!important
     }
@@ -8323,7 +8323,7 @@ a.bg-dark:hover {
     }
 }
 
-@media (min-width:1200px) {
+@include respond-to(large-up) {
     .text-xl-left {
         text-align: left!important
     }

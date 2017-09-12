@@ -41,6 +41,10 @@ body {
   overflow-x: hidden;
 }
 
+#wpadminbar {
+  z-index: 9996 !important
+}
+
 a {
   transition: all 300ms ease;
 

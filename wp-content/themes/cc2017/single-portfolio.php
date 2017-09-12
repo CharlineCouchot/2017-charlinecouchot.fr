@@ -41,7 +41,7 @@ get_header(); ?>
             <div class="project-media row isotope">
               <?php foreach( $option_gallery as $image ): ?>
                 <div class="col-md-4 col-sm-6 col-xs-12 portfolio-item">
-                  <a href="<?php echo $image['url']; ?>">
+                  <a href="<?php echo $image['url']; ?>" data-fancybox="group" data-caption="<?php echo $image['title']; ?>">
                     <div class="portfolio-column">
                       <img src="<?php echo $image['sizes']['medium_large']; ?>" alt="<?php echo $image['alt']; ?>">
                     </div>

@@ -21,23 +21,12 @@
   <?php wp_footer(); ?>
 
   <script>
-
     jQuery(document).ready(function($) {
       <?php if(is_front_page()) { ?>
         $('.inline-menu-container').removeClass('showx');
         $('.page').removeClass('menu-open');
       <?php } ?>
     });
-
-    (function($) {
-      "use strict";
-
-      $(window).on('load', function() {
-        $(".preloader").fadeOut("slow", function() {
-          $(".preloader-left").addClass("slide-left");
-        });
-      });
-    })(jQuery);
   </script>
 </body>
 </html>

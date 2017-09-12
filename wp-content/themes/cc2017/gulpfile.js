@@ -9,20 +9,23 @@
 
 
 // Configuration du projet
-var gulp = require('gulp'),
+var autoprefixer = require('autoprefixer'),
     browserSync = require('browser-sync'),
-    postcss = require('gulp-postcss'),
-    unprefix = require("postcss-unprefix"),
-    autoprefixer = require('autoprefixer'),
-    imagemin = require('gulp-imagemin'),
-    newer = require('gulp-newer'),
+    gulp = require('gulp'),
+    cmq = require('gulp-group-css-media-queries'),
     concat = require('gulp-concat'),
+    filter = require('gulp-filter'),
+    imagemin = require('gulp-imagemin'),
     jshint = require('gulp-jshint'),
+    newer = require('gulp-newer'),
     notify = require('gulp-notify'),
-    sass = require('gulp-sass'),
+    postcss = require('gulp-postcss'),
+    rename = require('gulp-rename'),
     rimraf = require('gulp-rimraf'),
-    sourcemaps = require('gulp-sourcemaps');
-
+    sass = require('gulp-sass'),
+    sourcemaps = require('gulp-sourcemaps'),
+    uglify = require('gulp-uglify'),
+    minifycss = require('gulp-uglifycss');
 
 // BROWSER SYNC
 gulp.task('browser-sync', function () {
@@ -65,13 +68,22 @@ gulp.task('css', function () {
   	];
     return gulp.src('./assets/css/*.scss')
         .pipe(sourcemaps.init())
-        .pipe(sass().on('error', sass.logError))
-        .pipe(postcss(processors))
-        .pipe(gulp.dest('./'))
-        .pipe(sourcemaps.write())
-        .pipe(gulp.dest('./'))
-        .pipe(browserSync.reload({stream:true}))
-        .pipe(notify({message: 'Styles task complete',onLast: true}));
+  			.pipe(sass().on('error', sass.logError))
+  			.pipe(sourcemaps.write({includeContent: false}))
+  			.pipe(sourcemaps.init({loadMaps: true}))
+  			.pipe(postcss(processors))
+  			.pipe(sourcemaps.write('.'))
+  			.pipe(gulp.dest('./'))
+  			.pipe(filter('**/*.css')) // Filtering stream to only css files
+  			.pipe(cmq()) // Combines Media Queries
+  			.pipe(browserSync.reload({stream:true})) // Inject Styles when style file is created
+  			.pipe(rename({ suffix: '.min' }))
+  			.pipe(minifycss({
+  				maxLineLen: 80
+  			}))
+  			.pipe(gulp.dest('./'))
+  			.pipe(browserSync.reload({stream:true})) // Inject Styles when min style file is created
+  			.pipe(notify({ message: 'Styles task complete', onLast: true }))
 });
 
 gulp.task('js-hint',function(){
@@ -81,11 +93,17 @@ gulp.task('js-hint',function(){
 });
 
 gulp.task('js',function(){
-  return gulp.src(['./assets/js/plugins/*.js', './assets/js/custom.js'])
+  return gulp.src(['./assets/js/plugins/*.js', './assets/js/ajax.js', './assets/js/custom.js'])
     .pipe(sourcemaps.init())
     .pipe(concat('scripts.js'))
     .pipe(sourcemaps.write())
     .pipe(gulp.dest('./assets/js'))
+		.pipe(rename( {
+			basename: "scripts",
+			suffix: '.min'
+		}))
+		.pipe(uglify())
+		.pipe(gulp.dest('./assets/js/'))
     .pipe(browserSync.reload({stream:true, once: true}))
     .pipe(notify({message: 'Custom scripts task complete',onLast: true}));
 });

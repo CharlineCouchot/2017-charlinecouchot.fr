@@ -50,30 +50,6 @@ get_header(); ?>
         </div>
       <?php endwhile; ?>
     </div>
-
-    <script>
-    function ajaxReload() {
-      var $container = jQuery('#portfolio-container');
-      $container.isotope({
-        masonry: {
-          columnWidth: '.portfolio-item'
-        },
-        itemSelector: '.portfolio-item'
-      });
-      jQuery('#filters').on('click', 'li', function() {
-        jQuery('#filters li').removeClass('active');
-        jQuery(this).addClass('active');
-        var filterValue = jQuery(this).attr('data-filter');
-        $container.isotope({
-          filter: filterValue
-        });
-      });
-    }
-
-    jQuery(window).on('load', function() {
-        ajaxReload();
-    });
-    </script>
   <?php endif; ?>
 </div>
 
