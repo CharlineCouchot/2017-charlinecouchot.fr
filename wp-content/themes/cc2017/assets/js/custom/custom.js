@@ -1,5 +1,11 @@
+/**
+ * scripts.js
+ */
+
 function ajaxReload() {
-  if(jQuery('#portfolio-container').length > 0) {
+  "use strict";
+
+  if (jQuery('#portfolio-container').length > 0) {
     jQuery('#portfolio-container').isotope({
       masonry: {
         columnWidth: '.portfolio-item'
@@ -16,7 +22,7 @@ function ajaxReload() {
     });
   }
 
-  if(jQuery('.project-media').length > 0) {
+  if (jQuery('.project-media').length > 0) {
     jQuery('.project-media').isotope({
       masonry: {
         columnWidth: '.portfolio-item'
@@ -26,26 +32,36 @@ function ajaxReload() {
   }
 
   jQuery('[data-fancybox="group"]').fancybox({
-    // Should display toolbar (buttons at the top)
-	toolbar : true,
-
-	// What buttons should appear in the top right corner.
-	// Buttons will be created using templates from `btnTpl` option
-	// and they will be placed into toolbar (class="fancybox-toolbar"` element)
-  	buttons : [
-  		'close'
-  	],
-  	smallBtn : true,
+    toolbar: true,
+    buttons: [
+      'close'
+    ],
+    smallBtn: true,
   });
 }
+
 function decodeEntities(encodedString) {
+  "use strict";
+
   var textArea = document.createElement('textarea');
   textArea.innerHTML = encodedString;
   return textArea.value;
 }
 
+jQuery(window).on('load', function() {
+  "use strict";
+
+  ajaxReload();
+
+  jQuery(".preloader").fadeOut("slow", function() {
+    jQuery(".preloader-left").addClass("slide-left");
+  });
+});
+
 jQuery(document).ready(function($) {
-  $('.menu-block a').click(function(e) {
+  "use strict";
+
+  $('.menu-block a').click(function() {
     //e.preventDefault();
     $('.content-blocks').addClass('showx');
     $('.inline-menu-container').addClass('showx');
@@ -66,25 +82,26 @@ jQuery(document).ready(function($) {
 
 
   var $mainContent = $('#content-box'),
-      URL = '',
-      $siteURL = 'http://' + top.location.host.toString(),
-      $location = window.location,
-      $pathname = window.location.pathname,
-      $ajaxSpinner = $('#ajax-loader'),
-      $el,
-      $href,
-      $title,
-      $bodyClasses,
-      $allLinks = $('a');
+    URL = '',
+    $siteURL = 'http://' + top.location.host.toString(),
+    $location = window.location,
+    //$ajaxSpinner = $('#ajax-loader'),
+    $el,
+    $href,
+    $title,
+    $bodyClasses,
+    $allLinks = $('a');
 
-  $(document).on( "click", "a[href^='"+$siteURL+"']:not([href*='/wp-admin/']):not([href*='/wp-login.php']):not([href$='/feed/']):not([href$='.pdf']):not([href$='.png']):not([href$='.jpg']):not([href$='.gif'])", function() {
+  $(document).on("click", "a[href^='" + $siteURL + "']:not([href*='/wp-admin/']):not([href*='/wp-login.php']):not([href$='/feed/']):not([href$='.pdf']):not([href$='.png']):not([href$='.jpg']):not([href$='.gif'])", function() {
     $el = $(this);
     $href = $el.attr('href');
 
 
-    if ($href != $location) {
+    if ($href !== $location) {
 
-      $mainContent.animate({ opacity : '0' });
+      $mainContent.animate({
+        opacity: '0'
+      });
 
       $('.current-menu-item').removeClass('current-menu-item');
       $allLinks.removeClass('current-link');
@@ -92,7 +109,7 @@ jQuery(document).ready(function($) {
       URL = $el.attr('href');
       URL = URL + ' #body-content';
 
-      $mainContent.load(URL, function(responseText){
+      $mainContent.load(URL, function(responseText) {
         $('.content').animate({
           scrollTop: 0
         }, 0);
@@ -109,7 +126,9 @@ jQuery(document).ready(function($) {
 
         $el.addClass('current-link').parent().addClass('current-menu-item');
 
-        $mainContent.animate({ opacity : '1' });
+        $mainContent.animate({
+          opacity: '1'
+        });
 
         setTimeout(ajaxReload, 100);
       });

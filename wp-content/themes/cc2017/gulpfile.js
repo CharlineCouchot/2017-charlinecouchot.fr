@@ -25,7 +25,8 @@ var autoprefixer = require('autoprefixer'),
     sass = require('gulp-sass'),
     sourcemaps = require('gulp-sourcemaps'),
     uglify = require('gulp-uglify'),
-    minifycss = require('gulp-uglifycss');
+    minifycss = require('gulp-uglifycss'),
+    runSequence = require('run-sequence');
 
 // BROWSER SYNC
 gulp.task('browser-sync', function () {
@@ -86,28 +87,37 @@ gulp.task('css', function () {
   			.pipe(notify({ message: 'Styles task complete', onLast: true }))
 });
 
-gulp.task('js-hint',function(){
-  return gulp.src('./assets/js/custom.js')
-    .pipe(jshint('./.jshintrc'))
-    .pipe(jshint.reporter('default'));
+// VENDOR SCRIPTS
+gulp.task('vendorJs', function() {
+	return gulp.src('./assets/js/vendor/*.js')
+		.pipe(concat('vendor.concat.js'))
+		.pipe(gulp.dest('./assets/js/vendor'));
 });
 
-gulp.task('js',function(){
-  return gulp.src(['./assets/js/plugins/*.js', './assets/js/ajax.js', './assets/js/custom.js'])
+// CUSTOM SCRIPTS
+gulp.task('customJs', function() {
+	return gulp.src('./assets/js/custom/*.js')
     .pipe(jshint('./.jshintrc'))
-    .pipe(jshint.reporter('default'))
-    .pipe(sourcemaps.init())
-    .pipe(concat('scripts.js'))
-    .pipe(sourcemaps.write())
-    .pipe(gulp.dest('./assets/js'))
+    .pipe(jshint.reporter('jshint-stylish'))
+		.pipe(concat('custom.concat.js'))
+		.pipe(gulp.dest('./assets/js/custom'));
+});
+
+// CUSTOM SCRIPTS
+gulp.task('compileJs', function() {
+	return gulp.src(['./assets/js/vendor.concat.js', './assets/js/custom.concat.js'])
+		.pipe(concat('scripts.js'))
 		.pipe(rename( {
 			basename: "scripts",
 			suffix: '.min'
 		}))
 		.pipe(uglify())
-		.pipe(gulp.dest('./assets/js/'))
-    .pipe(browserSync.reload({stream:true, once: true}))
-    .pipe(notify({message: 'Custom scripts task complete',onLast: true}));
+		.pipe(gulp.dest('./assets/js'))
+		.pipe(notify({ message: 'Compile scripts task complete'}));
+});
+
+gulp.task('js', function(callback) {
+  runSequence(['vendorJs', 'customJs'],'compileJs',callback);
 });
 
 // IMAGES
@@ -125,9 +135,9 @@ gulp.task('images', function () {
 
 
 // TÂCHE PAR DEFAUT
-gulp.task('default', ['css', 'js-hint', 'js', 'images', 'browser-sync'], function () {
+gulp.task('default', ['css', 'js', 'images', 'browser-sync'], function () {
     gulp.watch('./assets/img/**/*', ['images']);
     gulp.watch('./assets/css/**/*.scss', ['css']);
-    gulp.watch('./assets/js/**/*.js', ['js']);
-
+    gulp.watch('./assets/js/vendor/**/*.js', ['vendorJs', 'compileJs', browserSync.reload]);
+    gulp.watch('./assets/js/custom/**/*.js', ['customJs', 'compileJs', browserSync.reload]);
 });
