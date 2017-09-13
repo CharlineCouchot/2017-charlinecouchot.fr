@@ -4,7 +4,7 @@
 * @subpackage CC2017
 */
 
- $option_bg                 = get_field('general-bg', 'option');
+ /*$option_bg                 = get_field('general-bg', 'option');
  $option_gradientStart      = get_field('general-gradient-start', 'option');
  $option_gradientEnd        = get_field('general-gradient-end', 'option');
  $option_gradientDirection  = get_field('general-gradient-direction', 'option');
@@ -17,7 +17,7 @@
  $option_freelance          = get_field('general-freelance', 'option');
  $option_email              = get_field('general-email', 'option');
  $option_address            = get_field('general-address', 'option');
- $option_subtitle           = get_field('general-subtitle', 'option');
+ $option_subtitle           = get_field('general-subtitle', 'option');*/
 ?>
 
 <!DOCTYPE html>
@@ -61,7 +61,11 @@
               <div class="name-block-container">
                   <div class="name-block-titles">
                     <?php if ( !is_single() ) { ?>
-                      <!--h1 class="name-block-title"><span><?php echo __('Bienvenue. Je suis ', 'cc2017'); ?></span><?php echo bloginfo('name'); ?></h1-->
+                      <h1 class="name-block-title">
+                        <span><?php echo __('Bienvenue. Je suis ', 'cc2017'); ?></span>
+                        <img src="<?php echo get_template_directory_uri(); ?>/assets/img/cc2017-logo_final_wob.png" class="name-block-logo" alt="" aria-hidden="true">
+                        <span class="sr-only"><?php echo bloginfo('name'); ?></span>
+                      </h1>
                       <h2 class="name-block-subtitle">
                         <div id="typed-strings">
                           <?php while( have_rows('general-subtitle', 'option') ) : the_row(); ?>
@@ -71,7 +75,11 @@
                         <div id="typed"></div>
                       </h2>
                     <?php } else { ?>
-                      <!--div class="name-block-title"><span><?php echo __('Bienvenue. Je suis ', 'cc2017'); ?></span><?php echo bloginfo('name'); ?></div-->
+                      <div class="name-block-title">
+                        <span><?php echo __('Bienvenue. Je suis ', 'cc2017'); ?></span>
+                        <img src="<?php echo get_template_directory_uri(); ?>/assets/img/cc2017-logo_final_wob.png" class="name-block-logo" alt="" aria-hidden="true">
+                        <span class="sr-only"><?php echo bloginfo('name'); ?></span>
+                      </div>
                       <div class="name-block-subtitle">
                         <div id="typed-strings">
                           <?php while( have_rows('general-subtitle', 'option') ) : the_row(); ?>
@@ -80,19 +88,7 @@
                         </div>
                         <div id="typed"></div>
                       </div>
-
                     <?php } ?>
-                    <script>
-                      /*var typed = new Typed("#typed", {
-                  	    stringsElement: '#typed-strings',
-                  	    typeSpeed: 50,
-                        backSpeed: 50,
-                  	    loop: true,
-                  	    startDelay: 500,
-                  	    backDelay: 3000,
-                  	    contentType: 'html',
-                    	});*/
-                    </script>
                   </div>
                   <div class="name-block-btns">
                     <a class="name-block-btn btn btn-download" href="<?php echo $option_cvLink; ?>"><?php echo __('Télécharger mon CV', 'cc2017'); ?></a>
