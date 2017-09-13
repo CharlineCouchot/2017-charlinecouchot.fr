@@ -1,0 +1,1030 @@
+msgid ""
+msgstr ""
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"Project-Id-Version: SdV Gestion\n"
+"POT-Creation-Date: 2016-04-27 10:18+0200\n"
+"PO-Revision-Date: 2016-04-27 10:20+0200\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.8.5\n"
+"X-Poedit-Basepath: ..\n"
+"X-Poedit-WPHeader: style.css\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;esc_attr__;"
+"esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c;_n_noop:1,2;"
+"_nx_noop:3c,1,2;__ngettext_noop:1,2\n"
+"Last-Translator: \n"
+"Language: fr_FR\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPathExcluded-0: *.js\n"
+
+#: assets/admin/post-types.php:7
+msgctxt "Post Type General Name"
+msgid "Projets"
+msgstr "Projets"
+
+#: assets/admin/post-types.php:8
+msgctxt "Post Type Singular Name"
+msgid "Projet"
+msgstr "Projet"
+
+#: assets/admin/post-types.php:9 assets/admin/post-types.php:10
+msgid "Projets"
+msgstr "Projets"
+
+#: assets/admin/post-types.php:11
+msgid "Projets archivés"
+msgstr "Projets archivés"
+
+#: assets/admin/post-types.php:12
+msgid "Projet parent:"
+msgstr "Projet parent:"
+
+#: assets/admin/post-types.php:13
+msgid "Tous les projets"
+msgstr "Tous les projets"
+
+#: assets/admin/post-types.php:14
+msgid "Ajouter un projet"
+msgstr "Ajouter un projet"
+
+#: assets/admin/post-types.php:15
+msgid "Ajouter"
+msgstr "Ajouter"
+
+#: assets/admin/post-types.php:16
+msgid "Nouveau projet"
+msgstr "Nouveau projet"
+
+#: assets/admin/post-types.php:17
+msgid "Éditer le projet"
+msgstr "Éditer le projet"
+
+#: assets/admin/post-types.php:18
+msgid "Mettre à jour"
+msgstr "Mettre à jour"
+
+#: assets/admin/post-types.php:19
+msgid "Voir le projet"
+msgstr "Voir le projet"
+
+#: assets/admin/post-types.php:20
+msgid "Rechercher un projet"
+msgstr "Rechercher un projet"
+
+#: assets/admin/post-types.php:21 assets/admin/post-types.php:77
+#: assets/admin/post-types.php:115 assets/admin/post-types.php:153
+#: assets/admin/post-types.php:191 assets/admin/post-types.php:229
+msgid "Introuvable"
+msgstr "Introuvable"
+
+#: assets/admin/post-types.php:22
+msgid "Rien dans la corbeille"
+msgstr "Rien dans la corbeille"
+
+#: assets/admin/post-types.php:23
+msgid "Image à la une"
+msgstr "Image à la une"
+
+#: assets/admin/post-types.php:24
+msgid "Mettre une image à la une"
+msgstr "Mettre une image à la une"
+
+#: assets/admin/post-types.php:25
+msgid "Retirer l'image à la une"
+msgstr "Retirer l'image à la une"
+
+#: assets/admin/post-types.php:26
+msgid "Utiliser comme image à la une"
+msgstr "Utiliser comme image à la une"
+
+#: assets/admin/post-types.php:27
+msgid "Insérer dans le projet"
+msgstr "Insérer dans le projet"
+
+#: assets/admin/post-types.php:28
+msgid "Téléchargés sur ce projet"
+msgstr "Téléchargés sur ce projet"
+
+#: assets/admin/post-types.php:29
+msgid "Liste de projets"
+msgstr "Liste de projets"
+
+#: assets/admin/post-types.php:30
+msgid "Navigation des projets"
+msgstr "Navigation des projets"
+
+#: assets/admin/post-types.php:31
+msgid "Filtrer les projets"
+msgstr "Filtrer les projets"
+
+#: assets/admin/post-types.php:34
+msgid "Projet"
+msgstr "Projet"
+
+#: assets/admin/post-types.php:35
+msgid "Projets Wordpress chez SdV"
+msgstr "Projets Wordpress chez SdV"
+
+#: assets/admin/post-types.php:61
+msgctxt "Taxonomy General Name"
+msgid "Serveurs"
+msgstr "Serveurs"
+
+#: assets/admin/post-types.php:62
+msgctxt "Taxonomy Singular Name"
+msgid "Serveur"
+msgstr "Serveur"
+
+#: assets/admin/post-types.php:63
+msgid "Serveurs"
+msgstr "Serveurs"
+
+#: assets/admin/post-types.php:64
+msgid "Tous les serveurs"
+msgstr "Tous les serveurs"
+
+#: assets/admin/post-types.php:65
+msgid "Serveur parent"
+msgstr "Serveur parent"
+
+#: assets/admin/post-types.php:66
+msgid "Serveur parent :"
+msgstr "Serveur parent :"
+
+#: assets/admin/post-types.php:67
+msgid "Nouveau serveur"
+msgstr "Nouveau serveur"
+
+#: assets/admin/post-types.php:68
+msgid "Ajouter un serveur"
+msgstr "Ajouter un serveur"
+
+#: assets/admin/post-types.php:69
+msgid "Éditer le serveur"
+msgstr "Éditer le serveur"
+
+#: assets/admin/post-types.php:70
+msgid "Mettre à jour le serveur"
+msgstr "Mettre à jour le serveur"
+
+#: assets/admin/post-types.php:71
+msgid "Voir le serveur"
+msgstr "Voir le serveur"
+
+#: assets/admin/post-types.php:72
+msgid "Séparer les serveurs avec une virgule"
+msgstr "Séparer les serveurs avec une virgule"
+
+#: assets/admin/post-types.php:73
+msgid "Ajouter ou supprimer des serveurs"
+msgstr "Ajouter ou supprimer des serveurs"
+
+#: assets/admin/post-types.php:74
+msgid "Choisir parmi les serveurs les plus utilisés"
+msgstr "Choisir parmi les serveurs les plus utilisés"
+
+#: assets/admin/post-types.php:75
+msgid "Serveurs populaires"
+msgstr "Serveurs populaires"
+
+#: assets/admin/post-types.php:76
+msgid "Rechercher un serveur"
+msgstr "Rechercher un serveur"
+
+#: assets/admin/post-types.php:78
+msgid "Aucun serveur"
+msgstr "Aucun serveur"
+
+#: assets/admin/post-types.php:79
+msgid "Liste de serveurs"
+msgstr "Liste de serveurs"
+
+#: assets/admin/post-types.php:80
+msgid "Navigation de la liste des serveurs"
+msgstr "Navigation de la liste des serveurs"
+
+#: assets/admin/post-types.php:99
+msgctxt "Taxonomy General Name"
+msgid "Clients"
+msgstr "Clients"
+
+#: assets/admin/post-types.php:100
+msgctxt "Taxonomy Singular Name"
+msgid "Client"
+msgstr "Client"
+
+#: assets/admin/post-types.php:101
+msgid "Clients"
+msgstr "Clients"
+
+#: assets/admin/post-types.php:102
+msgid "Tous les clients"
+msgstr "Tous les clients"
+
+#: assets/admin/post-types.php:103
+msgid "Client parent"
+msgstr "Client parent"
+
+#: assets/admin/post-types.php:104
+msgid "Client parent :"
+msgstr "Client parent :"
+
+#: assets/admin/post-types.php:105
+msgid "Nouveau client"
+msgstr "Nouveau client"
+
+#: assets/admin/post-types.php:106
+msgid "Ajouter un client"
+msgstr "Ajouter un client"
+
+#: assets/admin/post-types.php:107
+msgid "Éditer le client"
+msgstr "Éditer le client"
+
+#: assets/admin/post-types.php:108
+msgid "Mettre à jour le client"
+msgstr "Mettre à jour le client"
+
+#: assets/admin/post-types.php:109
+msgid "Voir le client"
+msgstr "Voir le client"
+
+#: assets/admin/post-types.php:110
+msgid "Séparer les clients avec une virgule"
+msgstr "Séparer les clients avec une virgule"
+
+#: assets/admin/post-types.php:111
+msgid "Ajouter ou supprimer des clients"
+msgstr "Ajouter ou supprimer des clients"
+
+#: assets/admin/post-types.php:112
+msgid "Choisir parmi les clients les plus utilisés"
+msgstr "Choisir parmi les clients les plus utilisés"
+
+#: assets/admin/post-types.php:113
+msgid "Clients populaires"
+msgstr "Clients populaires"
+
+#: assets/admin/post-types.php:114
+msgid "Rechercher un client"
+msgstr "Rechercher un client"
+
+#: assets/admin/post-types.php:116 assets/admin/post-types.php:154
+msgid "Aucun client"
+msgstr "Aucun client"
+
+#: assets/admin/post-types.php:117
+msgid "Liste de clients"
+msgstr "Liste de clients"
+
+#: assets/admin/post-types.php:118
+msgid "Navigation de la liste des clients"
+msgstr "Navigation de la liste des clients"
+
+#: assets/admin/post-types.php:137
+msgctxt "Taxonomy General Name"
+msgid "Types de site"
+msgstr "Types de site"
+
+#: assets/admin/post-types.php:138
+msgctxt "Taxonomy Singular Name"
+msgid "Type de site"
+msgstr "Type de site"
+
+#: assets/admin/post-types.php:139
+msgid "Types de site"
+msgstr "Types de site"
+
+#: assets/admin/post-types.php:140
+msgid "Tous les types"
+msgstr "Tous les types"
+
+#: assets/admin/post-types.php:141
+msgid "Type parent"
+msgstr "Type parent"
+
+#: assets/admin/post-types.php:142
+msgid "Type parent :"
+msgstr "Type parent :"
+
+#: assets/admin/post-types.php:143
+msgid "Nouveau type"
+msgstr "Nouveau type"
+
+#: assets/admin/post-types.php:144
+msgid "Ajouter un type"
+msgstr "Ajouter un type"
+
+#: assets/admin/post-types.php:145
+msgid "Éditer le type"
+msgstr "Éditer le type"
+
+#: assets/admin/post-types.php:146
+msgid "Mettre à jour le type"
+msgstr "Mettre à jour le type"
+
+#: assets/admin/post-types.php:147
+msgid "Voir le type"
+msgstr "Voir le type"
+
+#: assets/admin/post-types.php:148
+msgid "Séparer les types avec une virgule"
+msgstr "Séparer les types avec une virgule"
+
+#: assets/admin/post-types.php:149
+msgid "Ajouter ou supprimer des types"
+msgstr "Ajouter ou supprimer des types"
+
+#: assets/admin/post-types.php:150
+msgid "Choisir parmi les types les plus utilisés"
+msgstr "Choisir parmi les types les plus utilisés"
+
+#: assets/admin/post-types.php:151
+msgid "Types populaires"
+msgstr "Types populaires"
+
+#: assets/admin/post-types.php:152
+msgid "Rechercher un type"
+msgstr "Rechercher un type"
+
+#: assets/admin/post-types.php:155
+msgid "Liste de types"
+msgstr "Liste de types"
+
+#: assets/admin/post-types.php:156
+msgid "Navigation de la liste des types"
+msgstr "Navigation de la liste des types"
+
+#: assets/admin/post-types.php:175
+msgctxt "Taxonomy General Name"
+msgid "Versionnings"
+msgstr "Versionnings"
+
+#: assets/admin/post-types.php:176
+msgctxt "Taxonomy Singular Name"
+msgid "Versionning"
+msgstr "Versionning"
+
+#: assets/admin/post-types.php:177
+msgid "Versionning"
+msgstr "Versionning"
+
+#: assets/admin/post-types.php:178
+msgid "Tous les types de versionnings"
+msgstr "Tous les types de versionnings"
+
+#: assets/admin/post-types.php:179
+msgid "Versionning parent"
+msgstr "Versionning parent"
+
+#: assets/admin/post-types.php:180
+msgid "Versionning parent :"
+msgstr "Versionning parent :"
+
+#: assets/admin/post-types.php:181
+msgid "Nouveau versionning"
+msgstr "Nouveau versionning"
+
+#: assets/admin/post-types.php:182
+msgid "Ajouter un versionning"
+msgstr "Ajouter un versionning"
+
+#: assets/admin/post-types.php:183
+msgid "Éditer le type de versionning"
+msgstr "Éditer le type de versionning"
+
+#: assets/admin/post-types.php:184
+msgid "Mettre à jour le type de versionning"
+msgstr "Mettre à jour le type de versionning"
+
+#: assets/admin/post-types.php:185
+msgid "Voir le types de versionning"
+msgstr "Voir le types de versionning"
+
+#: assets/admin/post-types.php:186
+msgid "Séparer les types de versionning avec une virgule"
+msgstr "Séparer les types de versionning avec une virgule"
+
+#: assets/admin/post-types.php:187
+msgid "Ajouter ou supprimer des types de versionning"
+msgstr "Ajouter ou supprimer des types de versionning"
+
+#: assets/admin/post-types.php:188
+msgid "Choisir parmi les types de versionning les plus utilisés"
+msgstr "Choisir parmi les types de versionning les plus utilisés"
+
+#: assets/admin/post-types.php:189
+msgid "Types de versionning populaires"
+msgstr "Types de versionning populaires"
+
+#: assets/admin/post-types.php:190
+msgid "Rechercher un type de versionning"
+msgstr "Rechercher un type de versionning"
+
+#: assets/admin/post-types.php:192
+msgid "Aucun type de versionning"
+msgstr "Aucun type de versionning"
+
+#: assets/admin/post-types.php:193
+msgid "Liste de types de versionning"
+msgstr "Liste de types de versionning"
+
+#: assets/admin/post-types.php:194
+msgid "Navigation de la liste des types de versionning"
+msgstr "Navigation de la liste des types de versionning"
+
+#: assets/admin/post-types.php:213
+msgctxt "Taxonomy General Name"
+msgid "Types de maintenance"
+msgstr "Types de maintenance"
+
+#: assets/admin/post-types.php:214
+msgctxt "Taxonomy Singular Name"
+msgid "Type de maintenance"
+msgstr "Type de maintenance"
+
+#: assets/admin/post-types.php:215
+msgid "Maintenance"
+msgstr "Maintenance"
+
+#: assets/admin/post-types.php:216
+msgid "Tous les types de maintenance"
+msgstr "Tous les types de maintenance"
+
+#: assets/admin/post-types.php:217
+msgid "Maintenance parente"
+msgstr "Maintenance parente"
+
+#: assets/admin/post-types.php:218
+msgid "Maintenance parente :"
+msgstr "Maintenance parente :"
+
+#: assets/admin/post-types.php:219
+msgid "Nouveau type de maintenance"
+msgstr "Nouveau type de maintenance"
+
+#: assets/admin/post-types.php:220
+msgid "Ajouter un type de maintenance"
+msgstr "Ajouter un type de maintenance"
+
+#: assets/admin/post-types.php:221
+msgid "Éditer le type de maintenance"
+msgstr "Éditer le type de maintenance"
+
+#: assets/admin/post-types.php:222
+msgid "Mettre à jour le type de maintenance"
+msgstr "Mettre à jour le type de maintenance"
+
+#: assets/admin/post-types.php:223
+msgid "Voir le type de maintenance"
+msgstr "Voir le type de maintenance"
+
+#: assets/admin/post-types.php:224
+msgid "Séparer les types de maintenance avec une virgule"
+msgstr "Séparer les types de maintenance avec une virgule"
+
+#: assets/admin/post-types.php:225
+msgid "Ajouter ou supprimer des types de maintenance"
+msgstr "Ajouter ou supprimer des types de maintenance"
+
+#: assets/admin/post-types.php:226
+msgid "Choisir parmi les types de maintenance les plus utilisés"
+msgstr "Choisir parmi les types de maintenance les plus utilisés"
+
+#: assets/admin/post-types.php:227
+msgid "Types de maintenance populaires"
+msgstr "Types de maintenance populaires"
+
+#: assets/admin/post-types.php:228
+msgid "Rechercher un type de maintenance"
+msgstr "Rechercher un type de maintenance"
+
+#: assets/admin/post-types.php:230
+msgid "Aucun type de maintenance"
+msgstr "Aucun type de maintenance"
+
+#: assets/admin/post-types.php:231
+msgid "Liste de type de maintenance"
+msgstr "Liste de type de maintenance"
+
+#: assets/admin/post-types.php:232
+msgid "Navigation de la liste de maintenance"
+msgstr "Navigation de la liste de maintenance"
+
+#: assets/admin/reco-plugins/class-tgm-plugin-activation.php:333
+msgid "Install Required Plugins"
+msgstr "Install Required Plugins"
+
+#: assets/admin/reco-plugins/class-tgm-plugin-activation.php:334
+msgid "Install Plugins"
+msgstr "Install Plugins"
+
+#: assets/admin/reco-plugins/class-tgm-plugin-activation.php:335
+#, php-format
+msgid "Installing Plugin: %s"
+msgstr "Installing Plugin: %s"
+
+#: assets/admin/reco-plugins/class-tgm-plugin-activation.php:336
+msgid "Something went wrong with the plugin API."
+msgstr "Something went wrong with the plugin API."
+
+#: assets/admin/reco-plugins/class-tgm-plugin-activation.php:338
+#, php-format
+msgid "This theme requires the following plugin: %1$s."
+msgid_plural "This theme requires the following plugins: %1$s."
+msgstr[0] "This theme requires the following plugin: %1$s."
+msgstr[1] "This theme requires the following plugins: %1$s."
+
+#: assets/admin/reco-plugins/class-tgm-plugin-activation.php:343
+#, php-format
+msgid "This theme recommends the following plugin: %1$s."
+msgid_plural "This theme recommends the following plugins: %1$s."
+msgstr[0] "This theme recommends the following plugin: %1$s."
+msgstr[1] "This theme recommends the following plugins: %1$s."
+
+#: assets/admin/reco-plugins/class-tgm-plugin-activation.php:348
+#, php-format
+msgid ""
+"Sorry, but you do not have the correct permissions to install the %1$s "
+"plugin."
+msgid_plural ""
+"Sorry, but you do not have the correct permissions to install the %1$s "
+"plugins."
+msgstr[0] ""
+"Sorry, but you do not have the correct permissions to install the %1$s "
+"plugin."
+msgstr[1] ""
+"Sorry, but you do not have the correct permissions to install the %1$s "
+"plugins."
+
+#: assets/admin/reco-plugins/class-tgm-plugin-activation.php:353
+#, php-format
+msgid ""
+"The following plugin needs to be updated to its latest version to ensure "
+"maximum compatibility with this theme: %1$s."
+msgid_plural ""
+"The following plugins need to be updated to their latest version to ensure "
+"maximum compatibility with this theme: %1$s."
+msgstr[0] ""
+"The following plugin needs to be updated to its latest version to ensure "
+"maximum compatibility with this theme: %1$s."
+msgstr[1] ""
+"The following plugins need to be updated to their latest version to ensure "
+"maximum compatibility with this theme: %1$s."
+
+#: assets/admin/reco-plugins/class-tgm-plugin-activation.php:358
+#, php-format
+msgid "There is an update available for: %1$s."
+msgid_plural "There are updates available for the following plugins: %1$s."
+msgstr[0] "There is an update available for: %1$s."
+msgstr[1] "There are updates available for the following plugins: %1$s."
+
+#: assets/admin/reco-plugins/class-tgm-plugin-activation.php:363
+#, php-format
+msgid ""
+"Sorry, but you do not have the correct permissions to update the %1$s plugin."
+msgid_plural ""
+"Sorry, but you do not have the correct permissions to update the %1$s "
+"plugins."
+msgstr[0] ""
+"Sorry, but you do not have the correct permissions to update the %1$s plugin."
+msgstr[1] ""
+"Sorry, but you do not have the correct permissions to update the %1$s "
+"plugins."
+
+#: assets/admin/reco-plugins/class-tgm-plugin-activation.php:368
+#, php-format
+msgid "The following required plugin is currently inactive: %1$s."
+msgid_plural "The following required plugins are currently inactive: %1$s."
+msgstr[0] "The following required plugin is currently inactive: %1$s."
+msgstr[1] "The following required plugins are currently inactive: %1$s."
+
+#: assets/admin/reco-plugins/class-tgm-plugin-activation.php:373
+#, php-format
+msgid "The following recommended plugin is currently inactive: %1$s."
+msgid_plural "The following recommended plugins are currently inactive: %1$s."
+msgstr[0] "The following recommended plugin is currently inactive: %1$s."
+msgstr[1] "The following recommended plugins are currently inactive: %1$s."
+
+#: assets/admin/reco-plugins/class-tgm-plugin-activation.php:378
+#, php-format
+msgid ""
+"Sorry, but you do not have the correct permissions to activate the %1$s "
+"plugin."
+msgid_plural ""
+"Sorry, but you do not have the correct permissions to activate the %1$s "
+"plugins."
+msgstr[0] ""
+"Sorry, but you do not have the correct permissions to activate the %1$s "
+"plugin."
+msgstr[1] ""
+"Sorry, but you do not have the correct permissions to activate the %1$s "
+"plugins."
+
+#: assets/admin/reco-plugins/class-tgm-plugin-activation.php:383
+msgid "Begin installing plugin"
+msgid_plural "Begin installing plugins"
+msgstr[0] "Begin installing plugin"
+msgstr[1] "Begin installing plugins"
+
+#: assets/admin/reco-plugins/class-tgm-plugin-activation.php:388
+msgid "Begin updating plugin"
+msgid_plural "Begin updating plugins"
+msgstr[0] "Begin updating plugin"
+msgstr[1] "Begin updating plugins"
+
+#: assets/admin/reco-plugins/class-tgm-plugin-activation.php:393
+msgid "Begin activating plugin"
+msgid_plural "Begin activating plugins"
+msgstr[0] "Begin activating plugin"
+msgstr[1] "Begin activating plugins"
+
+#: assets/admin/reco-plugins/class-tgm-plugin-activation.php:397
+msgid "Return to Required Plugins Installer"
+msgstr "Return to Required Plugins Installer"
+
+#: assets/admin/reco-plugins/class-tgm-plugin-activation.php:398
+msgid "Return to the dashboard"
+msgstr "Return to the dashboard"
+
+#: assets/admin/reco-plugins/class-tgm-plugin-activation.php:399
+#: assets/admin/reco-plugins/class-tgm-plugin-activation.php:3029
+msgid "Plugin activated successfully."
+msgstr "Plugin activated successfully."
+
+#: assets/admin/reco-plugins/class-tgm-plugin-activation.php:400
+#: assets/admin/reco-plugins/class-tgm-plugin-activation.php:2832
+msgid "The following plugin was activated successfully:"
+msgid_plural "The following plugins were activated successfully:"
+msgstr[0] "The following plugin was activated successfully:"
+msgstr[1] "The following plugins were activated successfully:"
+
+#: assets/admin/reco-plugins/class-tgm-plugin-activation.php:401
+#, php-format
+msgid "No action taken. Plugin %1$s was already active."
+msgstr "No action taken. Plugin %1$s was already active."
+
+#: assets/admin/reco-plugins/class-tgm-plugin-activation.php:402
+#, php-format
+msgid ""
+"Plugin not activated. A higher version of %s is needed for this theme. "
+"Please update the plugin."
+msgstr ""
+"Plugin not activated. A higher version of %s is needed for this theme. "
+"Please update the plugin."
+
+#: assets/admin/reco-plugins/class-tgm-plugin-activation.php:403
+#, php-format
+msgid "All plugins installed and activated successfully. %1$s"
+msgstr "All plugins installed and activated successfully. %1$s"
+
+#: assets/admin/reco-plugins/class-tgm-plugin-activation.php:404
+msgid "Dismiss this notice"
+msgstr "Dismiss this notice"
+
+#: assets/admin/reco-plugins/class-tgm-plugin-activation.php:405
+msgid "Please contact the administrator of this site for help."
+msgstr "Please contact the administrator of this site for help."
+
+#: assets/admin/reco-plugins/class-tgm-plugin-activation.php:520
+msgid "This plugin needs to be updated to be compatible with your theme."
+msgstr "This plugin needs to be updated to be compatible with your theme."
+
+#: assets/admin/reco-plugins/class-tgm-plugin-activation.php:521
+msgid "Update Required"
+msgstr "Update Required"
+
+#: assets/admin/reco-plugins/class-tgm-plugin-activation.php:635
+msgid "Set the parent_slug config variable instead."
+msgstr "Set the parent_slug config variable instead."
+
+#: assets/admin/reco-plugins/class-tgm-plugin-activation.php:828
+#: assets/admin/reco-plugins/class-tgm-plugin-activation.php:3438
+msgid "Return to the Dashboard"
+msgstr "Return to the Dashboard"
+
+#: assets/admin/reco-plugins/class-tgm-plugin-activation.php:935
+msgid ""
+"The remote plugin package does not contain a folder with the desired slug "
+"and renaming did not work."
+msgstr ""
+"The remote plugin package does not contain a folder with the desired slug "
+"and renaming did not work."
+
+#: assets/admin/reco-plugins/class-tgm-plugin-activation.php:935
+#: assets/admin/reco-plugins/class-tgm-plugin-activation.php:938
+msgid ""
+"Please contact the plugin provider and ask them to package their plugin "
+"according to the WordPress guidelines."
+msgstr ""
+"Please contact the plugin provider and ask them to package their plugin "
+"according to the WordPress guidelines."
+
+#: assets/admin/reco-plugins/class-tgm-plugin-activation.php:938
+msgid ""
+"The remote plugin package consists of more than one file, but the files are "
+"not packaged in a folder."
+msgstr ""
+"The remote plugin package consists of more than one file, but the files are "
+"not packaged in a folder."
+
+#: assets/admin/reco-plugins/class-tgm-plugin-activation.php:1116
+#: assets/admin/reco-plugins/class-tgm-plugin-activation.php:2828
+msgctxt "plugin A *and* plugin B"
+msgid "and"
+msgstr "and"
+
+#: assets/admin/reco-plugins/class-tgm-plugin-activation.php:1881
+#, php-format
+msgctxt "%s = version number"
+msgid "TGMPA v%s"
+msgstr "TGMPA v%s"
+
+#: assets/admin/reco-plugins/class-tgm-plugin-activation.php:2167
+msgid "Required"
+msgstr "Required"
+
+#: assets/admin/reco-plugins/class-tgm-plugin-activation.php:2170
+msgid "Recommended"
+msgstr "Recommended"
+
+#: assets/admin/reco-plugins/class-tgm-plugin-activation.php:2186
+msgid "WordPress Repository"
+msgstr "WordPress Repository"
+
+#: assets/admin/reco-plugins/class-tgm-plugin-activation.php:2189
+msgid "External Source"
+msgstr "External Source"
+
+#: assets/admin/reco-plugins/class-tgm-plugin-activation.php:2192
+msgid "Pre-Packaged"
+msgstr "Pre-Packaged"
+
+#: assets/admin/reco-plugins/class-tgm-plugin-activation.php:2209
+msgid "Not Installed"
+msgstr "Not Installed"
+
+#: assets/admin/reco-plugins/class-tgm-plugin-activation.php:2213
+msgid "Installed But Not Activated"
+msgstr "Installed But Not Activated"
+
+#: assets/admin/reco-plugins/class-tgm-plugin-activation.php:2215
+msgid "Active"
+msgstr "Active"
+
+#: assets/admin/reco-plugins/class-tgm-plugin-activation.php:2221
+msgid "Required Update not Available"
+msgstr "Required Update not Available"
+
+#: assets/admin/reco-plugins/class-tgm-plugin-activation.php:2224
+msgid "Requires Update"
+msgstr "Requires Update"
+
+#: assets/admin/reco-plugins/class-tgm-plugin-activation.php:2227
+msgid "Update recommended"
+msgstr "Update recommended"
+
+#: assets/admin/reco-plugins/class-tgm-plugin-activation.php:2235
+#, php-format
+msgctxt "%1$s = install status, %2$s = update status"
+msgid "%1$s, %2$s"
+msgstr "%1$s, %2$s"
+
+#: assets/admin/reco-plugins/class-tgm-plugin-activation.php:2280
+#, php-format
+msgctxt "plugins"
+msgid "All <span class=\"count\">(%s)</span>"
+msgid_plural "All <span class=\"count\">(%s)</span>"
+msgstr[0] "All <span class=\"count\">(%s)</span>"
+msgstr[1] "All <span class=\"count\">(%s)</span>"
+
+#: assets/admin/reco-plugins/class-tgm-plugin-activation.php:2283
+#, php-format
+msgid "To Install <span class=\"count\">(%s)</span>"
+msgid_plural "To Install <span class=\"count\">(%s)</span>"
+msgstr[0] "To Install <span class=\"count\">(%s)</span>"
+msgstr[1] "To Install <span class=\"count\">(%s)</span>"
+
+#: assets/admin/reco-plugins/class-tgm-plugin-activation.php:2286
+#, php-format
+msgid "Update Available <span class=\"count\">(%s)</span>"
+msgid_plural "Update Available <span class=\"count\">(%s)</span>"
+msgstr[0] "Update Available <span class=\"count\">(%s)</span>"
+msgstr[1] "Update Available <span class=\"count\">(%s)</span>"
+
+#: assets/admin/reco-plugins/class-tgm-plugin-activation.php:2289
+#, php-format
+msgid "To Activate <span class=\"count\">(%s)</span>"
+msgid_plural "To Activate <span class=\"count\">(%s)</span>"
+msgstr[0] "To Activate <span class=\"count\">(%s)</span>"
+msgstr[1] "To Activate <span class=\"count\">(%s)</span>"
+
+#: assets/admin/reco-plugins/class-tgm-plugin-activation.php:2371
+msgctxt "as in: \"version nr unknown\""
+msgid "unknown"
+msgstr "unknown"
+
+#: assets/admin/reco-plugins/class-tgm-plugin-activation.php:2379
+msgid "Installed version:"
+msgstr "Installed version:"
+
+#: assets/admin/reco-plugins/class-tgm-plugin-activation.php:2387
+msgid "Minimum required version:"
+msgstr "Minimum required version:"
+
+#: assets/admin/reco-plugins/class-tgm-plugin-activation.php:2399
+msgid "Available version:"
+msgstr "Available version:"
+
+#: assets/admin/reco-plugins/class-tgm-plugin-activation.php:2422
+#, php-format
+msgid ""
+"No plugins to install, update or activate. <a href=\"%1$s\">Return to the "
+"Dashboard</a>"
+msgstr ""
+"No plugins to install, update or activate. <a href=\"%1$s\">Return to the "
+"Dashboard</a>"
+
+#: assets/admin/reco-plugins/class-tgm-plugin-activation.php:2436
+msgid "Plugin"
+msgstr "Plugin"
+
+#: assets/admin/reco-plugins/class-tgm-plugin-activation.php:2437
+msgid "Source"
+msgstr "Source"
+
+#: assets/admin/reco-plugins/class-tgm-plugin-activation.php:2438
+msgid "Type"
+msgstr "Type"
+
+#: assets/admin/reco-plugins/class-tgm-plugin-activation.php:2442
+msgid "Version"
+msgstr "Version"
+
+#: assets/admin/reco-plugins/class-tgm-plugin-activation.php:2443
+msgid "Status"
+msgstr "Status"
+
+#: assets/admin/reco-plugins/class-tgm-plugin-activation.php:2491
+#, php-format
+msgctxt "%2$s = plugin name in screen reader markup"
+msgid "Install %2$s"
+msgstr "Install %2$s"
+
+#: assets/admin/reco-plugins/class-tgm-plugin-activation.php:2495
+#, php-format
+msgctxt "%2$s = plugin name in screen reader markup"
+msgid "Update %2$s"
+msgstr "Update %2$s"
+
+#: assets/admin/reco-plugins/class-tgm-plugin-activation.php:2500
+#, php-format
+msgctxt "%2$s = plugin name in screen reader markup"
+msgid "Activate %2$s"
+msgstr "Activate %2$s"
+
+#: assets/admin/reco-plugins/class-tgm-plugin-activation.php:2570
+msgid "Upgrade message from the plugin author:"
+msgstr "Upgrade message from the plugin author:"
+
+#: assets/admin/reco-plugins/class-tgm-plugin-activation.php:2603
+msgid "Install"
+msgstr "Install"
+
+#: assets/admin/reco-plugins/class-tgm-plugin-activation.php:2609
+msgid "Update"
+msgstr "Update"
+
+#: assets/admin/reco-plugins/class-tgm-plugin-activation.php:2612
+msgid "Activate"
+msgstr "Activate"
+
+#: assets/admin/reco-plugins/class-tgm-plugin-activation.php:2643
+msgid "No plugins were selected to be installed. No action taken."
+msgstr "No plugins were selected to be installed. No action taken."
+
+#: assets/admin/reco-plugins/class-tgm-plugin-activation.php:2645
+msgid "No plugins were selected to be updated. No action taken."
+msgstr "No plugins were selected to be updated. No action taken."
+
+#: assets/admin/reco-plugins/class-tgm-plugin-activation.php:2681
+msgid "No plugins are available to be installed at this time."
+msgstr "No plugins are available to be installed at this time."
+
+#: assets/admin/reco-plugins/class-tgm-plugin-activation.php:2683
+msgid "No plugins are available to be updated at this time."
+msgstr "No plugins are available to be updated at this time."
+
+#: assets/admin/reco-plugins/class-tgm-plugin-activation.php:2788
+msgid "No plugins were selected to be activated. No action taken."
+msgstr "No plugins were selected to be activated. No action taken."
+
+#: assets/admin/reco-plugins/class-tgm-plugin-activation.php:2814
+msgid "No plugins are available to be activated at this time."
+msgstr "No plugins are available to be activated at this time."
+
+#: assets/admin/reco-plugins/class-tgm-plugin-activation.php:3028
+msgid "Plugin activation failed."
+msgstr "Plugin activation failed."
+
+#: assets/admin/reco-plugins/class-tgm-plugin-activation.php:3362
+#, php-format
+msgid "Updating Plugin %1$s (%2$d/%3$d)"
+msgstr "Updating Plugin %1$s (%2$d/%3$d)"
+
+#: assets/admin/reco-plugins/class-tgm-plugin-activation.php:3364
+#, php-format
+msgid "An error occurred while installing %1$s: <strong>%2$s</strong>."
+msgstr "An error occurred while installing %1$s: <strong>%2$s</strong>."
+
+#: assets/admin/reco-plugins/class-tgm-plugin-activation.php:3365
+#, php-format
+msgid "The installation of %1$s failed."
+msgstr "The installation of %1$s failed."
+
+#: assets/admin/reco-plugins/class-tgm-plugin-activation.php:3369
+msgid ""
+"The installation and activation process is starting. This process may take a "
+"while on some hosts, so please be patient."
+msgstr ""
+"The installation and activation process is starting. This process may take a "
+"while on some hosts, so please be patient."
+
+#: assets/admin/reco-plugins/class-tgm-plugin-activation.php:3370
+#, php-format
+msgid "%1$s installed and activated successfully."
+msgstr "%1$s installed and activated successfully."
+
+#: assets/admin/reco-plugins/class-tgm-plugin-activation.php:3370
+#: assets/admin/reco-plugins/class-tgm-plugin-activation.php:3376
+msgid "Show Details"
+msgstr "Show Details"
+
+#: assets/admin/reco-plugins/class-tgm-plugin-activation.php:3370
+#: assets/admin/reco-plugins/class-tgm-plugin-activation.php:3376
+msgid "Hide Details"
+msgstr "Hide Details"
+
+#: assets/admin/reco-plugins/class-tgm-plugin-activation.php:3371
+msgid "All installations and activations have been completed."
+msgstr "All installations and activations have been completed."
+
+#: assets/admin/reco-plugins/class-tgm-plugin-activation.php:3372
+#, php-format
+msgid "Installing and Activating Plugin %1$s (%2$d/%3$d)"
+msgstr "Installing and Activating Plugin %1$s (%2$d/%3$d)"
+
+#: assets/admin/reco-plugins/class-tgm-plugin-activation.php:3375
+msgid ""
+"The installation process is starting. This process may take a while on some "
+"hosts, so please be patient."
+msgstr ""
+"The installation process is starting. This process may take a while on some "
+"hosts, so please be patient."
+
+#: assets/admin/reco-plugins/class-tgm-plugin-activation.php:3376
+#, php-format
+msgid "%1$s installed successfully."
+msgstr "%1$s installed successfully."
+
+#: assets/admin/reco-plugins/class-tgm-plugin-activation.php:3377
+msgid "All installations have been completed."
+msgstr "All installations have been completed."
+
+#: assets/admin/reco-plugins/class-tgm-plugin-activation.php:3378
+#, php-format
+msgid "Installing Plugin %1$s (%2$d/%3$d)"
+msgstr "Installing Plugin %1$s (%2$d/%3$d)"
+
+#: functions.php:120
+#, php-format
+msgid "Page %s"
+msgstr "Page %s"
+
+#: functions.php:163
+msgctxt "Documentation"
+msgid "Créer"
+msgstr "Créer"
+
+#. Theme Name of the plugin/theme
+msgid "SdV Gestion"
+msgstr "SdV Gestion"
+
+#. Description of the plugin/theme
+msgid ""
+"Thème Wordpress pour le site de gestion des projets Wordpress au sein de SdV "
+"Plurimédia."
+msgstr ""
+"Thème Wordpress pour le site de gestion des projets Wordpress au sein de SdV "
+"Plurimédia."
+
+#. Author of the plugin/theme
+msgid "SdV Plurimedia"
+msgstr "SdV Plurimedia"
+
+#. Author URI of the plugin/theme
+msgid "http://www.sdv.fr"
+msgstr "http://www.sdv.fr"

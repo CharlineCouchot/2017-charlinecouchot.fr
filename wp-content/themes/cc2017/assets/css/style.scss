@@ -1,0 +1,50 @@
+/*
+Theme Name: Charline Couchot 2017
+Author: Charline Couchot
+Author URI: http://www.charlinecouchot.fr
+Description: Thème Wordpress pour le portfolio professionnel de Charline Couchot
+Version: 1.0.0
+Text Domain: cc2017
+*/
+
+
+
+// ---------------------------------
+//   Mixins & Variables
+
+@import "partials/breakpoints";
+@import "partials/mixins";
+@import "partials/variables";
+@import "partials/icon-font";
+
+
+// ---------------------------------
+//   Normalize & Santize
+
+@import "vendor/normalize";
+@import "vendor/sanitize";
+
+@import "vendor/alpha/tether";
+@import "vendor/alpha/bootstrap";
+@import "vendor/alpha/owl.carousel";
+@import "vendor/alpha/owl.theme";
+@import "vendor/alpha/alpha";
+
+
+// ---------------------------------
+//   Structure
+
+@import "partials/structure";
+@import "partials/utils";
+
+// ---------------------------------
+//   WPCore
+
+@import "partials/wpcore";
+
+// ---------------------------------
+//   Blocks
+
+@import "partials/block/header";
+@import "partials/block/footer";
+@import "partials/block/content";

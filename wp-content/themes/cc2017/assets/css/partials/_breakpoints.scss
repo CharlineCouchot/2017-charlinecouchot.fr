@@ -1,0 +1,10 @@
+// ---------------------------------
+// Breakpoints
+
+// Best practise : (max-width: $BP) and (min-width: ($BP + 1))
+$phone: 480px !default;
+$large-phone: 736px !default;
+$small: 980px !default;
+$medium: 1024px !default;
+$large: 1280px !default;
+$extra-large: 1920px !default;

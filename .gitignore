@@ -91,6 +91,6 @@ Thumbs.db
 !composer.json
 
 # on versionne également le thème utilisé sur le site
-wp-content/plugins/
+!wp-content/plugins/
 !wp-content/themes/cc2017/
 wp-content/themes/cc2017/node_modules/
