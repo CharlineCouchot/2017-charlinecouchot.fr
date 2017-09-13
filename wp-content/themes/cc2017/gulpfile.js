@@ -89,7 +89,7 @@ gulp.task('css', function () {
 
 // VENDOR SCRIPTS
 gulp.task('vendorJs', function() {
-	return gulp.src('./assets/js/vendor/*.js')
+	return gulp.src(['./assets/js/vendor/*.js','./bower_components/**/*.js'])
 		.pipe(concat('vendor.concat.js'))
 		.pipe(gulp.dest('./assets/js/vendor'));
 });
