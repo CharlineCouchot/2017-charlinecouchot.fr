@@ -41,6 +41,10 @@ body {
   overflow-x: hidden;
 }
 
+#wpadminbar {
+  z-index: 9996 !important
+}
+
 a {
   transition: all 300ms ease;
 
@@ -871,11 +875,15 @@ strong {
 
     &.current-menu-item a,
     a:focus,
-    a:hover {
+    a:hover,
+    .post-template-default &.menu-item.blog a,
+    .portfolio-template-default &.menu-item.portfolio a {
       color: #333;
     }
 
-    &.current-menu-item {
+    &.current-menu-item,
+    .post-template-default &.menu-item.blog,
+    .portfolio-template-default &.menu-item.portfolio {
       cursor: text;
       pointer-events: none;
       a:hover,
