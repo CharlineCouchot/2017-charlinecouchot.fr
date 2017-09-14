@@ -1279,7 +1279,21 @@ a#close {
       line-height: 55px;
       font-size: 50px;
     }
-
+    .name-block-logo {
+      max-width: 100%;
+      display: block;
+      margin-top: 5px;
+      margin-bottom: -10px;
+      @include respond-to(large-phone-up) {
+        max-width: 360px;
+      }
+      @include respond-to(small-up-portrait) {
+        max-width: 360px;
+      }
+      @include respond-to(medium-up) {
+        max-width: 360px;
+      }
+    }
     span {
       font-size: 22px;
       font-weight: 300;
@@ -1292,9 +1306,13 @@ a#close {
   }
   .name-block-subtitle {
     @extend h2;
-    font-size: 22px;
-    min-height: 22px;
+    font-size: 19px;
+    line-height: 19px;
     min-height: 26px;
+    @include respond-to(large-phone-up) {
+      font-size: 22px;
+      line-height: 22px;
+    }
   }
   .name-block-btn {
     margin-bottom: 0;

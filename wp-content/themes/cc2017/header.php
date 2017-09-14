@@ -4,7 +4,7 @@
 * @subpackage CC2017
 */
 
- /*$option_bg                 = get_field('general-bg', 'option');
+ $option_bg                 = get_field('general-bg', 'option');
  $option_gradientStart      = get_field('general-gradient-start', 'option');
  $option_gradientEnd        = get_field('general-gradient-end', 'option');
  $option_gradientDirection  = get_field('general-gradient-direction', 'option');
@@ -17,7 +17,7 @@
  $option_freelance          = get_field('general-freelance', 'option');
  $option_email              = get_field('general-email', 'option');
  $option_address            = get_field('general-address', 'option');
- $option_subtitle           = get_field('general-subtitle', 'option');*/
+ $option_subtitle           = get_field('general-subtitle', 'option');
 ?>
 
 <!DOCTYPE html>

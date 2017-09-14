@@ -25,9 +25,18 @@ var autoprefixer = require('autoprefixer'),
     sass = require('gulp-sass'),
     sourcemaps = require('gulp-sourcemaps'),
     uglify = require('gulp-uglify'),
+    gutil = require('gulp-util'),
     minifycss = require('gulp-uglifycss'),
     runSequence = require('run-sequence');
 
+// PLUGINS BOWER
+var bowerDirectory = './bower_components/',
+    bowerDependencies = [
+      './assets/js/vendor/**/*.js',
+      bowerDirectory + 'isotope/dist/isotope.pkgd.min.js',
+      bowerDirectory + 'fancybox/dist/jquery.fancybox.min.js',
+      bowerDirectory + 'typed.js/lib/typed.min.js'
+    ]
 // BROWSER SYNC
 gulp.task('browser-sync', function () {
     var files = [
@@ -89,9 +98,9 @@ gulp.task('css', function () {
 
 // VENDOR SCRIPTS
 gulp.task('vendorJs', function() {
-	return gulp.src(['./assets/js/vendor/*.js','./bower_components/**/*.js'])
+	return gulp.src(bowerDependencies)
 		.pipe(concat('vendor.concat.js'))
-		.pipe(gulp.dest('./assets/js/vendor'));
+		.pipe(gulp.dest('./assets/js/concat'))
 });
 
 // CUSTOM SCRIPTS
@@ -100,20 +109,17 @@ gulp.task('customJs', function() {
     .pipe(jshint('./.jshintrc'))
     .pipe(jshint.reporter('jshint-stylish'))
 		.pipe(concat('custom.concat.js'))
-		.pipe(gulp.dest('./assets/js/custom'));
+    .pipe(gulp.dest('./assets/js/concat'))
 });
 
 // CUSTOM SCRIPTS
 gulp.task('compileJs', function() {
-	return gulp.src(['./assets/js/vendor.concat.js', './assets/js/custom.concat.js'])
-		.pipe(concat('scripts.js'))
-		.pipe(rename( {
-			basename: "scripts",
-			suffix: '.min'
-		}))
-		.pipe(uglify())
+  return gulp.src('./assets/js/concat/**/*.js')
+		.pipe(concat('scripts.min.js'))
+    .pipe(uglify())
+    .on('error', function (err) { gutil.log(gutil.colors.red('[Error]'), err.toString()); })
 		.pipe(gulp.dest('./assets/js'))
-		.pipe(notify({ message: 'Compile scripts task complete'}));
+		.pipe(notify({ message: 'Compile scripts task complete', onLast: true }));
 });
 
 gulp.task('js', function(callback) {
