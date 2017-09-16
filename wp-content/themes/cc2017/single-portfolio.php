@@ -11,11 +11,11 @@ get_header(); ?>
             $option_date  = get_field_object('portfolio-date');
             $option_skills  = get_field_object('portfolio-skills');
             $option_link  = get_field_object('portfolio-link');
+            $option_place  = get_field_object('portfolio-place');
             $option_gallery  = get_field('portfolio-gallery');
-            $cat = get_terms([
-              'taxonomy' => 'portfolio_type'
-            ]);
-            $category = $cat[1]->term_taxonomy_id;?>
+            $cat = wp_get_post_terms( $post->ID, 'portfolio_type' );
+            $category = $cat[0]->term_taxonomy_id;?>
+          <h1 class="block-title"><?php the_title(); ?></h1>
         <?php if($option_gallery && $category == 19) { ?>
           <div class="project-media row isotope">
             <?php foreach( $option_gallery as $image ): ?>
@@ -30,7 +30,6 @@ get_header(); ?>
           </div>
         <?php } ?>
         <div class="project-head">
-          <h1 class="block-title"><?php the_title(); ?></h1>
             <?php if($option_client['value']) { ?>
               <div class="tags"><h2><?php echo __('Client', 'cc2017'); ?> :</h2> <?php echo $option_client['value']; ?></div>
             <?php } ?>
@@ -46,7 +45,7 @@ get_header(); ?>
               </div>
             <?php } ?>
             <?php if($option_place['value']) { ?>
-              <div class="tags"><h2><?php echo __('Lieu', 'cc2017'); ?> :</h2> <?php echo $option_date['value']; ?></div>
+              <div class="tags"><h2><?php echo __('Lieu', 'cc2017'); ?> :</h2> <?php echo $option_place['value']; ?></div>
             <?php } ?>
         </div>
         <div class="project-body">
@@ -74,7 +73,7 @@ get_header(); ?>
             <?php previous_post_link( '&leftarrow; %link', __('Projet précédent', 'cc2017')); ?>
           </div>
           <div>
-            <a id="close-project" href="#"><i class="ion-grid"></i></a>
+            <a id="close-project" href="<?php echo get_post_type_archive_link( 'portfolio' ); ?>"><i class="ion-grid"></i></a>
           </div>
           <div>
             <?php next_post_link( '%link &rightarrow;', __('Projet suivant', 'cc2017')); ?>

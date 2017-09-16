@@ -69,17 +69,6 @@
                           <?php endwhile; ?>
                         </div>
                         <div id="typed"></div>
-                        <script type="text/javascript">
-                          var typed = new Typed("#typed", {
-                            stringsElement: '#typed-strings',
-                            typeSpeed: 50,
-                            backSpeed: 50,
-                            loop: true,
-                            startDelay: 500,
-                            backDelay: 3000,
-                            contentType: 'html',
-                          });
-                        </script>
                       </h2>
                     <?php } else { ?>
                       <div class="name-block-title">
@@ -96,6 +85,17 @@
                         <div id="typed"></div>
                       </div>
                     <?php } ?>
+                    <script type="text/javascript">
+                      var typed = new Typed("#typed", {
+                        stringsElement: '#typed-strings',
+                        typeSpeed: 50,
+                        backSpeed: 50,
+                        loop: true,
+                        startDelay: 500,
+                        backDelay: 3000,
+                        contentType: 'html',
+                      });
+                    </script>
                   </div>
                   <div class="name-block-btns">
                     <a class="name-block-btn btn btn-download" href="<?php echo $option_cvLink; ?>"><?php echo __('Télécharger mon CV', 'cc2017'); ?></a>
