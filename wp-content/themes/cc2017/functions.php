@@ -89,7 +89,7 @@
             wp_register_script('ie_respond', get_template_directory_uri() . '/js/ie/respond.min.js');
             wp_script_add_data('ie_respond', 'conditional', 'lt IE 9');
 
-            wp_register_script('scripts', get_template_directory_uri() . '/assets/js/script.min.js');
+            wp_register_script('scripts', get_template_directory_uri() . '/assets/js/scripts.min.js');
 
             wp_enqueue_script('ie_html5shiv');
             wp_enqueue_script('ie_respond');
