@@ -29,7 +29,9 @@ get_header(); ?>
     </div>
     <div class="portfolio-container row isotope" id="portfolio-container">
       <?php while(have_posts()) : the_post(); ?>
-        <div class="col-md-4 col-sm-6 col-xs-12 portfolio-item no-gutter <?php echo $cls; ?>">
+        <?php $cat = wp_get_post_terms( $post->ID, 'portfolio_type' );
+        $category = $cat[0]->slug; ?>
+        <div class="col-md-4 col-sm-6 col-xs-12 portfolio-item no-gutter <?php echo $category; ?>">
           <a class="open-project" href="<?php the_permalink(); ?>">
             <div class="portfolio-column">
               <div class="portfolio-hover ">
