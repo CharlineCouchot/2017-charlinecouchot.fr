@@ -43,6 +43,8 @@
         } ?>
       </div>
     </div>
+  <?php else : ?>
+    <p><?php echo __('Désolée, il n\'y a pas encore de contenu ici. Revenez plus tard !','cc2017'); ?></p>
   <?php wp_reset_postdata(); endif; ?>
 </div>
 <?php get_footer(); ?>

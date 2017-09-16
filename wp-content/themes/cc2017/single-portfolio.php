@@ -44,6 +44,7 @@ get_header(); ?>
                   <span class="tag"><?php print $value->name; ?></span>
                 <?php } ?>
               </div>
+            <?php } ?>
             <?php if($option_place['value']) { ?>
               <div class="tags"><h2><?php echo __('Lieu', 'cc2017'); ?> :</h2> <?php echo $option_date['value']; ?></div>
             <?php } ?>
