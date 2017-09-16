@@ -378,7 +378,7 @@ strong {
   height: 100%;
   position: fixed;
   width: 100%;
-  opacity: 0.2;
+  opacity: 0.3;
 }
 
 /*-------------------------------------------------------------------
@@ -1079,8 +1079,14 @@ a#close {
     transition: all 350ms linear;
     z-index: 1;
     padding: 70px 20px 0;
+    .admin-bar & {
+      padding: 116px 20px 0;
+    }
     @include respond-to(large-phone-up) {
       padding: 80px 50px 0;
+      .admin-bar & {
+        padding: 113px 50px 0;
+      }
     }
 
     a {
