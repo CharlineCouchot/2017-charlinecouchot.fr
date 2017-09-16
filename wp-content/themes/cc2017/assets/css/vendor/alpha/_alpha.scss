@@ -155,6 +155,7 @@ strong {
   z-index: 20;
   letter-spacing: 2px;
   overflow: hidden;
+  white-space: normal;
 
   &:hover,
   &:focus {
@@ -188,7 +189,7 @@ strong {
     position: absolute;
     content: '\f407';
     font-family: 'Ionicons';
-    top: 12px;
+    top: calc(50% - 12px);
     right: 16px;
     font-size: 24px;
   }
@@ -351,6 +352,7 @@ strong {
   overflow-y: scroll;
   background-size: cover;
   background-position: center center;
+  background-blend-mode: hard-light;
   z-index: 0;
   @include respond-to(large-phone-up) {
     overflow-y: hidden;
@@ -371,11 +373,12 @@ strong {
     transform: translateY(-1934px);
   }
 }
-.gradient-overlay {
+.light-overlay {
+  background-color: #000;
   height: 100%;
   position: fixed;
   width: 100%;
-  opacity: 0.7;
+  opacity: 0.2;
 }
 
 /*-------------------------------------------------------------------
@@ -467,7 +470,7 @@ strong {
     &:hover {
       border-bottom: 1px solid rgba(255, 255, 255, 0.5);
       @include respond-to(large-phone-up) {
-        background: rgba(0, 0, 0, 0.1);
+        background: rgba(0, 0, 0, 0.3);
         &:after {
           opacity: 1;
           transform: scale(1);
@@ -479,7 +482,7 @@ strong {
   &.about-block a {
     @include respond-to(large-phone-up) {
       left: -151px;
-      top: 351px;
+      top: 411px;
       border-right-width: 0;
     }
     @include respond-to(small-up-landscape) {
@@ -489,7 +492,7 @@ strong {
       border-left-width:0;
     }
     @include respond-to(small-up-portrait) {
-      left: -145px;
+      left: -119px;
       top: 440px;
       border-right-width: 0;
     }
@@ -512,7 +515,7 @@ strong {
   &.portfolio-block a {
     @include respond-to(large-phone-up) {
       left: 17px;
-      top: 599px;
+      top: 659px;
       border-top-width: 0;
       border-right-width:0;
     }
@@ -523,7 +526,7 @@ strong {
       border-left-width:0;
     }
     @include respond-to(small-up-portrait) {
-      left: 78px;
+      left: 104px;
       top: 771px;
       border-right-width: 0;
       border-top-width: 0;
@@ -547,7 +550,7 @@ strong {
   &.blog-block a {
     @include respond-to(large-phone-up) {
       left: 299px;
-      top: 250px;
+      top: 310px;
       border-top-width: 0;
     }
     @include respond-to(small-up-landscape) {
@@ -558,8 +561,8 @@ strong {
       border-left-width:0;
     }
     @include respond-to(small-up-portrait) {
-      left: 400px;
-      top: 481px;
+      left: 440px;
+      top: 501px;
       border-top-width: 0;
       border-bottom-width: 0;
       border-right-width: 1px;
@@ -584,7 +587,7 @@ strong {
   &.contact-block a {
     @include respond-to(large-phone-up) {
       left: 467px;
-      top: 498px;
+      top: 558px;
       border-top-width: 0;
     }
     @include respond-to(small-up-landscape) {
@@ -593,8 +596,8 @@ strong {
       border-top-width:0;
     }
     @include respond-to(small-up-portrait) {
-      left: 623px;
-      top: 812px;
+      left: 663px;
+      top: 832px;
       border-top-width: 1px;
     }
     @include respond-to(medium-up) {
@@ -637,7 +640,7 @@ strong {
   }
   .about-block & {
     @include respond-to(large-phone-up) {
-      padding: 0px 0 0 200px;
+      //padding: 0px 0 0 200px;
     }
     @include respond-to(small-up-landscape) {
       padding: 150px 0 0 44px;
@@ -850,24 +853,31 @@ strong {
   }
 }
 .inline-menu {
-  float: right;
   margin-bottom: 0;
   white-space: nowrap;
   display: flex;
+  justify-content: flex-end;
   @include respond-to(large-phone-up) {
     margin-right: 20px;
   }
-
+  ul {
+    margin-bottom: 0;
+    max-width: calc(100% - 41.25px);
+    display: flex;
+    padding-left: 10px
+  }
   li {
-    display: inline-block;
+    display: block;
     cursor: pointer;
     font-weight: 600;
     line-height: 42px;
-    padding: 0 10px;
+    padding: 0 15px 0 0;
     color: #666;
-    font-size: 15px;
+    font-size: 14.5px;
+    white-space: nowrap;
     @include respond-to(large-phone-up) {
-      font-size: 16px
+      font-size: 16px;
+      padding: 0 20px 0 0;
     }
     @include respond-to(medium-up) {
       padding: 0 15px;
@@ -901,6 +911,7 @@ a#close {
   font-size: 15px;
   font-weight: 600;
   line-height: 42px;
+  height: 40px;
   @include respond-to(large-phone-up) {
     padding: 0 10px;
   }
@@ -1067,12 +1078,9 @@ a#close {
     visibility: hidden;
     transition: all 350ms linear;
     z-index: 1;
-    padding: 100px 20px 50px;
+    padding: 70px 20px 0;
     @include respond-to(large-phone-up) {
-      padding: 120px 50px 50px;
-    }
-    @include respond-to(medium-up) {
-      padding: 120px 50px 30px;
+      padding: 80px 50px 0;
     }
 
     a {
@@ -1145,11 +1153,15 @@ a#close {
     position: absolute;
     transform: rotate(-34deg);
     left: 70px;
-    top: -200px;
+    top: -140px;
   }
   @include respond-to(small-up) {
     width: 700px;
     height: 700px;
+  }
+  @include respond-to(small-up-portrait) {
+    left: 110px;
+    top: -180px;
   }
   @include respond-to(small-up-landscape) {
     left: -190px;
@@ -1205,8 +1217,8 @@ a#close {
   @include respond-to(large-phone-up) {
     transform: rotate(34deg);
     position: relative;
-    top: 80px;
-    left: 75px;
+    top: 60px;
+    left: 100px;
     width: auto;
   }
   @include respond-to(small-up-landscape) {
@@ -1218,20 +1230,21 @@ a#close {
     vertical-align: middle;
   }
   @include respond-to(small-up-portrait) {
-    top: 55px;
-    left: 90px;
+    top: 70px;
+    left: 130px;
   }
   .page.menu-open & {
     @include respond-to(large-phone-up) {
-      margin-top: 45px;
+      margin-top: 20px;
       margin-left: -30px;
     }
     @include respond-to(small-up-landscape) {
-      padding: 0 30px;
+      padding: 0 15px;
       transform: rotate(0deg);
+      margin-left:0;
     }
     @include respond-to(small-up-portrait) {
-      top: 0px;
+      top: 25px;
       left: 120px;
       padding-top: 0;
       padding-bottom: 0;
@@ -1239,8 +1252,15 @@ a#close {
   }
   //.name-block-titles,
   .name-block-btns {
+    transition: all 500ms linear;
     @include respond-to(large-phone-landscape) {
       width: 50%;
+    }
+    .page.menu-open & {
+      @include respond-to(small-up-portrait) {
+        opacity: 0;
+        visibility: hidden;
+      }
     }
   }
   .name-block-titles {
@@ -1284,11 +1304,20 @@ a#close {
       display: block;
       margin-top: 5px;
       margin-bottom: -10px;
+      -webkit-filter: drop-shadow(0 0 5px rgba(255,255,255,0.9));
+      -ms-filter: "progid:DXImageTransform.Microsoft.Dropshadow(OffX=0, OffY=0, Color='#FFF')";
+      filter: "progid:DXImageTransform.Microsoft.Dropshadow(OffX=0, OffY=0, Color='#FFF')";
       @include respond-to(large-phone-up) {
-        max-width: 360px;
+        max-width: 330px;
+      }
+      @include respond-to(small-up-landscape) {
+        max-width: 330px;
+        .page.menu-open & {
+          max-width: 100%;
+        }
       }
       @include respond-to(small-up-portrait) {
-        max-width: 360px;
+        max-width: 450px;
       }
       @include respond-to(medium-up) {
         max-width: 360px;
@@ -1305,6 +1334,7 @@ a#close {
     }
   }
   .name-block-subtitle {
+    transition: all 500ms linear;
     @extend h2;
     font-size: 19px;
     line-height: 19px;
@@ -1312,6 +1342,11 @@ a#close {
     @include respond-to(large-phone-up) {
       font-size: 22px;
       line-height: 22px;
+    }
+    @include respond-to(small-up-landscape) {
+      .page.menu-open & {
+        min-height: 44px;
+      }
     }
   }
   .name-block-btn {
@@ -1489,7 +1524,7 @@ a#close {
     display: none;
   }
   &.experience:after {
-    @extend .ion-trophy:before;
+    @extend .ion-briefcase:before;
     @include respond-to(small-up) {
       display: inline-block;
     }
@@ -1657,7 +1692,7 @@ a#close {
   }
 }
 .filters {
-  padding-bottom: 30px;
+  margin:0 0 20px;
   .no-js & {
     display: none;
     visibility: hidden;
@@ -1673,7 +1708,7 @@ a#close {
   }
   ul {
     display: inline-block;
-    margin: 20px 0;
+    margin-bottom: 0;
     li {
       font-weight: 500;
       display: inline-block;

@@ -36,13 +36,9 @@
       color: <?php echo $option_gradientStart; ?>;
     }
     .page {
-      background-image: url("<?php echo $option_bg; ?>");
-    }
-    .gradient-overlay {
-      background: <?php echo $option_gradientStart; ?>;
-      background: -moz-linear-gradient(<?php echo $option_gradientDirection; ?>, <?php echo $option_gradientStart; ?> 0%, <?php echo $option_gradientEnd; ?> 100%);
-      background: -webkit-linear-gradient(<?php echo $option_gradientDirection; ?>, <?php echo $option_gradientStart; ?> 0%,<?php echo $option_gradientEnd; ?> 100%);
-      background: linear-gradient(<?php echo $option_gradientDirection; ?>, <?php echo $option_gradientStart; ?> 0%,<?php echo $option_gradientEnd; ?> 100%);
+      background-image: url("<?php echo $option_bg; ?>"), -moz-linear-gradient(<?php echo $option_gradientDirection; ?>, <?php echo $option_gradientStart; ?> 0%, <?php echo $option_gradientEnd; ?> 100%);
+      background-image: url("<?php echo $option_bg; ?>"), -webkit-linear-gradient(<?php echo $option_gradientDirection; ?>, <?php echo $option_gradientStart; ?> 0%,<?php echo $option_gradientEnd; ?> 100%);
+      background-image: url("<?php echo $option_bg; ?>"), linear-gradient(<?php echo $option_gradientDirection; ?>, <?php echo $option_gradientStart; ?> 0%,<?php echo $option_gradientEnd; ?> 100%);
       filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='<?php echo $option_gradientStart; ?>', endColorstr='<?php echo $option_gradientEnd; ?>',GradientType=1 );
     }
     </style>
@@ -55,7 +51,7 @@
   <div class="preloader-left"></div>
   <div class="preloader-right"></div>
   <section class="page menu-open">
-      <div class="gradient-overlay"></div>
+      <div class="light-overlay"></div>
       <div class="container">
           <div class="name-block">
               <div class="name-block-container">
@@ -73,6 +69,17 @@
                           <?php endwhile; ?>
                         </div>
                         <div id="typed"></div>
+                        <script type="text/javascript">
+                          var typed = new Typed("#typed", {
+                            stringsElement: '#typed-strings',
+                            typeSpeed: 50,
+                            backSpeed: 50,
+                            loop: true,
+                            startDelay: 500,
+                            backDelay: 3000,
+                            contentType: 'html',
+                          });
+                        </script>
                       </h2>
                     <?php } else { ?>
                       <div class="name-block-title">

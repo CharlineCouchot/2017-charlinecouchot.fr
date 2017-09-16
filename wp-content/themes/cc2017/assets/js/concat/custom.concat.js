@@ -5,18 +5,6 @@
 function ajaxReload() {
   "use strict";
 
-  if (jQuery('#typed').length > 0) {
-    var typed = new Typed("#typed", {
-      stringsElement: '#typed-strings',
-      typeSpeed: 50,
-      backSpeed: 50,
-      loop: true,
-      startDelay: 500,
-      backDelay: 3000,
-      contentType: 'html',
-    });
-  }
-
   if (jQuery('#portfolio-container').length > 0) {
     jQuery('#portfolio-container').isotope({
       masonry: {
