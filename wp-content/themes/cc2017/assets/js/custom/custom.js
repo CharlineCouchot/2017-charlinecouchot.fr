@@ -68,7 +68,7 @@ jQuery(document).ready(function($) {
     $('inline-menu-container .current-menu-item a').focus();
   });
 
-  $('#close').click(function() {
+  $('#close, .page.menu-open .name-block-title').click(function() {
     $('.page').removeClass('menu-open');
     $('.inline-menu-container').removeClass('showx');
     $('.content-blocks').removeClass('showx');

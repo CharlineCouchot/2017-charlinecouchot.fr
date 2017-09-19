@@ -1305,6 +1305,9 @@ a#close {
     @extend h1;
     font-size: 36px;
     line-height: 1.1;
+    .page.menu-open & {
+      cursor: pointer;
+    }
     @include respond-to(large-phone-up) {
       font-size: 40px;
     }
