@@ -36,7 +36,6 @@ wp-content/*
 # unless explicitly whitelisted at the end of this file
 wp-content/mu-plugins/*
 wp-content/themes/*
-wp-content/plugins/*
 
 # ignore all files starting with . or ~
 .*
@@ -50,7 +49,6 @@ bower_components/
 # ignore OS generated files
 ehthumbs.db
 Thumbs.db
-.DS_Store
 
 # ignore Editor files
 *.sublime-project
@@ -94,5 +92,6 @@ Thumbs.db
 !composer.json
 
 # on versionne également le thème utilisé sur le site
+wp-content/plugins/
 !wp-content/themes/cc2017/
 wp-content/themes/cc2017/node_modules/
