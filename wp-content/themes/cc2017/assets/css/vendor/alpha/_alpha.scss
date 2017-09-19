@@ -1740,13 +1740,18 @@ a#close {
 }
 .portfolio-item {
   padding-bottom: 30px;
-  &.no-gutter {
-    padding: 0;
-  }
   img {
     width: 100%;
     transition: all 5s;
   }
+  &.no-gutter {
+    padding: 0;
+  }
+  &.photographie,
+  &.photography {
+    padding:15px;
+  }
+
 }
 .portfolio-column {
   overflow: hidden;
