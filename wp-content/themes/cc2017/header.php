@@ -48,7 +48,9 @@
 
 <body <?php body_class(); ?>>
   <div class="preloader">
-      <div class="anim pulse"><i class="ion-ios-bolt-outline" aria-hidden="true"></i></div>
+      <div class="anim pulse">
+        <img src="<?php echo get_template_directory_uri(); ?>/assets/img/loading.png" width="100" height="100" class="preloader__img" alt="" aria-hidden="true">
+      </div>
   </div>
   <div class="preloader-left"></div>
   <div class="preloader-right"></div>
