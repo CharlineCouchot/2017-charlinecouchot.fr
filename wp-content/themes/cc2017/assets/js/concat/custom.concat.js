@@ -68,7 +68,7 @@ jQuery(document).ready(function($) {
     $('inline-menu-container .current-menu-item a').focus();
   });
 
-  $('#close').click(function() {
+  $('#close, .page.menu-open .name-block-title').click(function() {
     $('.page').removeClass('menu-open');
     $('.inline-menu-container').removeClass('showx');
     $('.content-blocks').removeClass('showx');
@@ -78,7 +78,7 @@ jQuery(document).ready(function($) {
 
   var $mainContent = $('#content-box'),
     URL = '',
-    $siteURL = 'https://' + top.location.host.toString(),
+    $siteURL = 'http://' + top.location.host.toString(),
     $location = window.location.href,
     //$ajaxSpinner = $('#ajax-loader'),
     $el,
@@ -125,7 +125,7 @@ jQuery(document).ready(function($) {
           opacity: '1'
         });
 
-        setTimeout(ajaxReload, 100);
+        setTimeout(ajaxReload, 300);
       });
     }
     return false;

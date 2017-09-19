@@ -678,7 +678,7 @@ strong {
     transition: all 1000ms ease;
     font-size: 20px;
     line-height: 2em;
-    margin: 15px 40px;
+    margin: 10px 40px;
     @include respond-to(large-phone-landscape) {
       margin: 9px 40px;
     }
@@ -725,8 +725,6 @@ strong {
   .menu-block a:focus &,
   .menu-block a:hover & {
     &:before {
-      top: -40px;
-      left: -20px;
       @include respond-to(large-phone-up) {
         top: -20px;
         left: -40px;
@@ -864,7 +862,8 @@ strong {
     margin-bottom: 0;
     max-width: calc(100% - 41.25px);
     display: flex;
-    padding-left: 10px
+    padding-left: 10px;
+    overflow-x: scroll;
   }
   li {
     display: block;
@@ -907,19 +906,23 @@ strong {
 }
 a#close {
   float: right;
-  padding: 0 20px 0 10px;
+  padding: 0 10px;
   font-size: 15px;
   font-weight: 600;
   line-height: 42px;
   height: 40px;
   @include respond-to(large-phone-up) {
-    padding: 0 10px;
+    padding-right: 0;
   }
   i {
-    font-size: 30px;
-    display: inline-block;
+    font-size: 51px;
     vertical-align: middle;
+    display: inline-block;
     margin-top: -6px;
+    @include respond-to(large-phone-up) {
+      font-size: 37px;
+      display: inline;
+    }
   }
   .no-js & {
     display: none;
@@ -1000,7 +1003,7 @@ a#close {
 
 .content-block {
   position: fixed;
-  bottom: calc(0px - 100%);
+  bottom: calc(0px - 150%);
   left:0;
   width: 100%;
   height: 100vh;
@@ -1117,11 +1120,15 @@ a#close {
   }
 }
 .block-content {
-  margin: 0 0 70px;
+  margin: 0 0 40px;
   //overflow: hidden;
+  @include respond-to(large-phone-up) {
+    margin: 0 0 70px;
+  }
 }
 .block-title {
   font-size: 24px;
+  line-height: 29px;
   text-transform: uppercase;
   color: #333;
   padding-bottom: 15px;
@@ -1207,7 +1214,7 @@ a#close {
   transform: rotate(0deg);
   transform-origin: 50% 50%;
   transition: all 500ms linear;
-  padding-top: 45px;
+  padding-top: 35px;
   padding-bottom: 15px;
   width:100%;
   .admin-bar & {
@@ -1259,8 +1266,12 @@ a#close {
   //.name-block-titles,
   .name-block-btns {
     transition: all 500ms linear;
+    text-align: center;
     @include respond-to(large-phone-landscape) {
       width: 50%;
+    }
+    @include respond-to(large-phone-up) {
+      text-align: left;
     }
     .page.menu-open & {
       @include respond-to(small-up-portrait) {
@@ -1294,6 +1305,9 @@ a#close {
     @extend h1;
     font-size: 36px;
     line-height: 1.1;
+    .page.menu-open & {
+      cursor: pointer;
+    }
     @include respond-to(large-phone-up) {
       font-size: 40px;
     }
@@ -1309,12 +1323,13 @@ a#close {
       max-width: 100%;
       display: block;
       margin-top: 5px;
-      margin-bottom: -10px;
+
       -webkit-filter: drop-shadow(0 0 5px rgba(255,255,255,0.9));
       -ms-filter: "progid:DXImageTransform.Microsoft.Dropshadow(OffX=0, OffY=0, Color='#FFF')";
       filter: "progid:DXImageTransform.Microsoft.Dropshadow(OffX=0, OffY=0, Color='#FFF')";
       @include respond-to(large-phone-up) {
         max-width: 330px;
+        margin-bottom: -10px;
       }
       @include respond-to(small-up-landscape) {
         max-width: 330px;
@@ -1331,11 +1346,13 @@ a#close {
     }
     span {
       font-size: 22px;
+      line-height: 22px;
       font-weight: 300;
       display: block;
       text-transform: none;
       @include respond-to(large-phone-up) {
         font-size: 26px;
+        line-height: 26px;
       }
     }
   }
@@ -1357,7 +1374,7 @@ a#close {
   }
   .name-block-btn {
     margin-bottom: 0;
-    margin-top: 10px;
+    margin-top: 0;
     @include respond-to(large-phone-up) {
       margin-top: 20px;
     }
@@ -1366,12 +1383,14 @@ a#close {
 .social {
   margin: 15px 0 0 0;
   transition: all 500ms linear;
+  text-align: center;
   @include respond-to(small-up-landscape) {
     position: absolute;
     bottom: 15%;
   }
 
   @include respond-to(large-phone-up) {
+    text-align: left;
     .page.menu-open & {
       opacity: 0;
     }
@@ -1395,9 +1414,11 @@ a#close {
     width: 35px;
     transition: all 500ms ease;
     font-size: 0;
+    text-shadow: 0 0 15px rgba(0, 0, 0, 0);
     &:hover,
     &:focus {
       color: #333;
+      text-shadow: 0 0 15px rgba(0, 0, 0, 0.9);
     }
   }
   i {
@@ -1420,11 +1441,20 @@ a#close {
 
 /* About section */
 .subheading {
-  font-size: 30px;
+  font-size: 22px;
   font-weight: 300;
-  line-height: 2em;
-  margin-bottom: 30px;
+  line-height: 2.2rem;
+  margin-bottom: 15px;
   text-transform: none;
+  @include respond-to(large-phone-up) {
+    font-size: 26px;
+    line-height: 2.6rem;
+  }
+  @include respond-to(small-up) {
+    font-size: 30px;
+    line-height: 2em;
+    margin-bottom: 30px
+  }
 }
 .link {
   font-style: italic;
@@ -1452,8 +1482,10 @@ a#close {
 }
 
 .skillset {
-  margin-bottom: 20px;
   font-size: 14px;
+  & + .skillset {
+    margin-top: 20px;
+  }
   .skillset-title {
     font-size: 17px
   }
@@ -1464,8 +1496,26 @@ a#close {
     opacity: 0.6;
   }
   .skill-subset-container {
-    column-count: 3;
-    column-gap: 20px;
+    & + .skill-subset-container {
+      margin-top: 20px;
+    }
+    @include respond-to(large-phone-up) {
+      column-count: 3;
+      column-gap: 20px;
+      & + .skill-subset-container {
+        margin-bottom: 0;
+      }
+    }
+  }
+  .skill-subset {
+    & + .skill-subset {
+      margin-top: 15px;
+    }
+    @include respond-to(large-phone-up) {
+      & + .skill-subset {
+        margin-top: 0;
+      }
+    }
   }
 }
 .skill {
@@ -1543,8 +1593,14 @@ a#close {
   }
 }
 .exp {
-  padding: 20px 0 0 80px;
+  padding: 0px;
   position: relative;
+  & + .exp {
+    padding-top: 20px
+  }
+  @include respond-to(large-phone-up) {
+    padding: 20px 0 0 80px;
+  }
   @include respond-to(small-up) {
     padding: 20px 20px 0 80px;
   }
@@ -1554,19 +1610,31 @@ a#close {
     border-radius: 50%;
     content: "";
     height: 20px;
-    left: 9px;
     position: absolute;
     text-align: center;
-    top: 24px;
     width: 20px;
+    top: 22px;
+    left: -30px;
+    @include respond-to(large-phone-up) {
+      top: 24px;
+      left: 9px;
+    }
     @include respond-to(small-up) {
       content: "";
+    }
+  }
+  &:first-of-type:after {
+    top: 2px;
+    @include respond-to(large-phone-up) {
+      top: 24px;
     }
   }
 
   .hgroup {
     margin-bottom: 5px;
     display: flex;
+    flex-wrap: wrap;
+    align-items: center;
     @include respond-to(small-up) {
       flex-wrap: wrap;
     }
@@ -1597,7 +1665,7 @@ a#close {
       padding-left: 0;
       position: relative;
       margin-bottom: 0;
-      @include respond-to(small-up) {
+      @include respond-to(large-phone-up) {
         padding-left: 30px;
       }
 
@@ -1606,7 +1674,7 @@ a#close {
         left: 0;
         left: 10px;
         position: absolute;
-        @include respond-to(small-up) {
+        @include respond-to(large-phone-up) {
           content: "/";
         }
       }
@@ -1643,6 +1711,12 @@ a#close {
       list-style-position: outside;
     }
   }
+  p, li {
+    @include respond-to(large-phone) {
+      font-size: 14px;
+      line-height: 1.9;
+    }
+  }
 }
 .exp-holder {
   margin-top: 0;
@@ -1652,8 +1726,9 @@ a#close {
 }
 .service {
   text-align: center;
-  padding-top: 25px;
-
+  @include respond-to(large-phone-up) {
+    padding-top: 25px;
+  }
   .service-title {
     @extend h4;
     margin: 10px 0;
@@ -1740,13 +1815,20 @@ a#close {
 }
 .portfolio-item {
   padding-bottom: 30px;
-  &.no-gutter {
-    padding: 0;
-  }
   img {
     width: 100%;
     transition: all 5s;
   }
+  &.no-gutter {
+    padding:0;
+    img {
+      padding: 7.5px 0;
+      @include respond-to(large-phone-up) {
+        padding: 15px;
+      }
+    }
+  }
+
 }
 .portfolio-column {
   overflow: hidden;
@@ -1870,8 +1952,11 @@ a#close {
   }
 }
 .project-media {
-  margin-top: 50px;
+  margin-top: 0px;
   margin-bottom: 30px;
+  @include respond-to(small-up) {
+    margin-top: 50px;
+  }
 }
 .video-container {
   margin-bottom: 20px;
@@ -1908,11 +1993,22 @@ a#close {
   margin-top: 30px;
   div {
     width:calc(100% / 3);
+    font-size: 14px;
+    line-height: 1.5;
+    @include respond-to(large-phone-up) {
+      font-size: 16px
+    }
     &:first-child {
-      text-align: left;
+      text-align: right;
+      @include respond-to(large-phone-up) {
+        text-align: left;
+      }
     }
     &:last-child {
-      text-align:right;
+      text-align:left;
+      @include respond-to(large-phone-up) {
+        text-align:right;
+      }
     }
   }
   i {
