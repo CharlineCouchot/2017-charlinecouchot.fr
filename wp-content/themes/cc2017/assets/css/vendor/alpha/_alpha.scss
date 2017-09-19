@@ -1320,12 +1320,13 @@ a#close {
       max-width: 100%;
       display: block;
       margin-top: 5px;
-      margin-bottom: -10px;
+
       -webkit-filter: drop-shadow(0 0 5px rgba(255,255,255,0.9));
       -ms-filter: "progid:DXImageTransform.Microsoft.Dropshadow(OffX=0, OffY=0, Color='#FFF')";
       filter: "progid:DXImageTransform.Microsoft.Dropshadow(OffX=0, OffY=0, Color='#FFF')";
       @include respond-to(large-phone-up) {
         max-width: 330px;
+        margin-bottom: -10px;
       }
       @include respond-to(small-up-landscape) {
         max-width: 330px;
@@ -1342,11 +1343,13 @@ a#close {
     }
     span {
       font-size: 22px;
+      line-height: 22px;
       font-weight: 300;
       display: block;
       text-transform: none;
       @include respond-to(large-phone-up) {
         font-size: 26px;
+        line-height: 26px;
       }
     }
   }
