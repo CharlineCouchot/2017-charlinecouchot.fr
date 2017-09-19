@@ -1745,11 +1745,10 @@ a#close {
     transition: all 5s;
   }
   &.no-gutter {
-    padding: 0;
-  }
-  &.photographie,
-  &.photography {
-    padding:15px;
+    padding:0;
+    img {
+      padding: 15px;
+    }
   }
 
 }

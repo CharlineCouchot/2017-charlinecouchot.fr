@@ -125,7 +125,7 @@ jQuery(document).ready(function($) {
           opacity: '1'
         });
 
-        setTimeout(ajaxReload, 100);
+        setTimeout(ajaxReload, 300);
       });
     }
     return false;
