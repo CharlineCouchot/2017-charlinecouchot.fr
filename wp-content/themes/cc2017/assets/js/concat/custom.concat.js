@@ -78,7 +78,7 @@ jQuery(document).ready(function($) {
 
   var $mainContent = $('#content-box'),
     URL = '',
-    $siteURL = 'http://' + top.location.host.toString(),
+    $siteURL = 'https://' + top.location.host.toString(),
     $location = window.location.href,
     //$ajaxSpinner = $('#ajax-loader'),
     $el,

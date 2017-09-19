@@ -35,7 +35,7 @@ var bowerDirectory = './bower_components/',
       './assets/js/vendor/**/*.js',
       bowerDirectory + 'isotope/dist/isotope.pkgd.min.js',
       bowerDirectory + 'fancybox/dist/jquery.fancybox.min.js',
-      //bowerDirectory + 'typed.js/lib/typed.min.js'
+      bowerDirectory + 'typed.js/lib/typed.min.js'
     ]
 // BROWSER SYNC
 gulp.task('browser-sync', function () {
