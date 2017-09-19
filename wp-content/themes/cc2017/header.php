@@ -63,12 +63,12 @@
                         <span class="sr-only"><?php echo bloginfo('name'); ?></span>
                       </h1>
                       <h2 class="name-block-subtitle">
-                        <div id="typed-strings">
-                          <?php while( have_rows('general-subtitle', 'option') ) : the_row(); ?>
-                            <span><?php the_sub_field('general-subtitle-element'); ?></span>
-                          <?php endwhile; ?>
-                        </div>
-                        <div id="typed"></div>
+                        <?php while( have_rows('general-subtitle', 'option') ) : the_row(); ?>
+                          <span><?php the_sub_field('general-subtitle-element'); ?></span>
+                        <?php endwhile; ?>
+                        <!--div id="typed-strings"-->
+                        <!--/div-->
+                        <!--div id="typed"></div-->
                       </h2>
                     <?php } else { ?>
                       <div class="name-block-title">
@@ -77,16 +77,16 @@
                         <span class="sr-only"><?php echo bloginfo('name'); ?></span>
                       </div>
                       <div class="name-block-subtitle">
-                        <div id="typed-strings">
-                          <?php while( have_rows('general-subtitle', 'option') ) : the_row(); ?>
-                            <span><?php the_sub_field('general-subtitle-element'); ?></span>
-                          <?php endwhile; ?>
-                        </div>
-                        <div id="typed"></div>
+                        <?php while( have_rows('general-subtitle', 'option') ) : the_row(); ?>
+                          <span><?php the_sub_field('general-subtitle-element'); ?></span>
+                        <?php endwhile; ?>
+                        <!--div id="typed-strings"-->
+                        <!--/div-->
+                        <!--div id="typed"></div-->
                       </div>
                     <?php } ?>
                     <script type="text/javascript">
-                      var typed = new Typed("#typed", {
+                      /*var typed = new Typed("#typed", {
                         stringsElement: '#typed-strings',
                         typeSpeed: 50,
                         backSpeed: 50,
@@ -94,7 +94,7 @@
                         startDelay: 500,
                         backDelay: 3000,
                         contentType: 'html',
-                      });
+                      });*/
                     </script>
                   </div>
                   <div class="name-block-btns">

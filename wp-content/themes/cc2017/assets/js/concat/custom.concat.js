@@ -62,16 +62,13 @@ jQuery(document).ready(function($) {
   "use strict";
 
   $('.menu-block a').click(function() {
-    //e.preventDefault();
     $('.content-blocks').addClass('showx');
     $('.inline-menu-container').addClass('showx');
     $('.page').addClass('menu-open');
     $('inline-menu-container .current-menu-item a').focus();
-    //return false;
   });
 
-  $('#close').click(function(e) {
-    e.preventDefault();
+  $('#close').click(function() {
     $('.page').removeClass('menu-open');
     $('.inline-menu-container').removeClass('showx');
     $('.content-blocks').removeClass('showx');
@@ -79,11 +76,9 @@ jQuery(document).ready(function($) {
     return false;
   });
 
-
-
   var $mainContent = $('#content-box'),
     URL = '',
-    $siteURL = 'http://' + top.location.host.toString(),
+    $siteURL = 'https://' + top.location.host.toString(),
     $location = window.location.href,
     //$ajaxSpinner = $('#ajax-loader'),
     $el,
@@ -92,10 +87,10 @@ jQuery(document).ready(function($) {
     $bodyClasses,
     $allLinks = $('a');
 
-
   $(document).on("click", "a[href^='" + $siteURL + "']:not([href*='/wp-admin/']):not([href*='/wp-login.php']):not([href$='/feed/']):not([href$='.pdf']):not([href$='.png']):not([href$='.jpg']):not([href$='.gif'])", function() {
     $el = $(this);
     $href = $el.attr('href');
+    $location = window.location.href;
 
     if ($href !== $location) {
 
