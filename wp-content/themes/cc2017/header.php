@@ -32,7 +32,9 @@
 
     <style>
     .content a:hover,
-    .content a:focus {
+    .content a:focus,
+    .social a:hover,
+    .social a:focus {
       color: <?php echo $option_gradientStart; ?>;
     }
     .page {

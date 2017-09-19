@@ -1408,9 +1408,11 @@ a#close {
     width: 35px;
     transition: all 500ms ease;
     font-size: 0;
+    text-shadow: 0 0 15px rgba(0, 0, 0, 0);
     &:hover,
     &:focus {
       color: #333;
+      text-shadow: 0 0 15px rgba(0, 0, 0, 0.9);
     }
   }
   i {
