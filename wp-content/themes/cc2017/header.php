@@ -32,7 +32,9 @@
 
     <style>
     .content a:hover,
-    .content a:focus {
+    .content a:focus,
+    .social a:hover,
+    .social a:focus {
       color: <?php echo $option_gradientStart; ?>;
     }
     .page {
@@ -58,7 +60,7 @@
                   <div class="name-block-titles">
                     <?php if ( !is_single() ) { ?>
                       <h1 class="name-block-title">
-                        <span><?php echo __('Bienvenue. Je suis ', 'cc2017'); ?></span>
+                        <span><?php echo __('Bienvenue.', 'cc2017'); ?></span>
                         <img src="<?php echo get_template_directory_uri(); ?>/assets/img/cc2017-logo_final_wob.png" class="name-block-logo" alt="" aria-hidden="true">
                         <span class="sr-only"><?php echo bloginfo('name'); ?></span>
                       </h1>
