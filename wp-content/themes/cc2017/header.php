@@ -58,45 +58,34 @@
           <div class="name-block">
               <div class="name-block-container">
                   <div class="name-block-titles">
-                    <?php if ( !is_single() ) { ?>
-                      <h1 class="name-block-title">
-                        <span><?php echo __('Bienvenue.', 'cc2017'); ?></span>
-                        <img src="<?php echo get_template_directory_uri(); ?>/assets/img/cc2017-logo_final_wob.png" class="name-block-logo" alt="" aria-hidden="true">
-                        <span class="sr-only"><?php echo bloginfo('name'); ?></span>
-                      </h1>
-                      <h2 class="name-block-subtitle">
+                    <<?php if ( !is_single() ) { echo 'h1' ; } else { echo 'div' ; } ?> class="name-block-title">
+                      <span><?php echo __('Bienvenue.', 'cc2017'); ?></span>
+                      <img src="<?php echo get_template_directory_uri(); ?>/assets/img/cc2017-logo_final_wob.png" class="name-block-logo" alt="" aria-hidden="true">
+                      <span class="sr-only"><?php echo bloginfo('name'); ?></span>
+                    </<?php if ( !is_single() ) { echo 'h1' ; } else { echo 'div' ; } ?>>
+                    <<?php if ( !is_single() ) { echo 'h2' ; } else { echo 'div' ; } ?> class="name-block-subtitle">
+                      <div id="typed-strings">
                         <?php while( have_rows('general-subtitle', 'option') ) : the_row(); ?>
-                          <span><?php the_sub_field('general-subtitle-element'); ?></span>
+                          <?php if(get_sub_field('general-subtitle-element') !== "") { ?>
+                            <span><?php the_sub_field('general-subtitle-element'); ?></span>
+                          <?php } ?>
                         <?php endwhile; ?>
-                        <!--div id="typed-strings"-->
-                        <!--/div-->
-                        <!--div id="typed"></div-->
-                      </h2>
-                    <?php } else { ?>
-                      <div class="name-block-title">
-                        <span><?php echo __('Bienvenue. Je suis ', 'cc2017'); ?></span>
-                        <img src="<?php echo get_template_directory_uri(); ?>/assets/img/cc2017-logo_final_wob.png" class="name-block-logo" alt="" aria-hidden="true">
-                        <span class="sr-only"><?php echo bloginfo('name'); ?></span>
                       </div>
-                      <div class="name-block-subtitle">
-                        <?php while( have_rows('general-subtitle', 'option') ) : the_row(); ?>
-                          <span><?php the_sub_field('general-subtitle-element'); ?></span>
-                        <?php endwhile; ?>
-                        <!--div id="typed-strings"-->
-                        <!--/div-->
-                        <!--div id="typed"></div-->
-                      </div>
-                    <?php } ?>
+                      <div id="typed"></div>
+                    </<?php if ( !is_single() ) { echo 'h2' ; } else { echo 'div' ; } ?>>
                     <script type="text/javascript">
-                      /*var typed = new Typed("#typed", {
-                        stringsElement: '#typed-strings',
-                        typeSpeed: 50,
-                        backSpeed: 50,
-                        loop: true,
-                        startDelay: 500,
-                        backDelay: 3000,
-                        contentType: 'html',
-                      });*/
+                      if( jQuery('#typed') ) {
+                        var typed;
+                        typed = new Typed("#typed", {
+                          stringsElement: '#typed-strings',
+                          typeSpeed: 50,
+                          backSpeed: 50,
+                          loop: true,
+                          startDelay: 500,
+                          backDelay: 3000,
+                          contentType: 'html',
+                        });
+                      }
                     </script>
                   </div>
                   <div class="name-block-btns">

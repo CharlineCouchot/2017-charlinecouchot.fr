@@ -70,13 +70,13 @@ get_header(); ?>
         <?php } ?>
         <div class="project-nav text-center">
           <div>
-            <?php previous_post_link( '&leftarrow; %link', __('Projet précédent', 'cc2017')); ?>
+            <?php next_post_link( '&leftarrow; %link', __('Projet suivant', 'cc2017')); ?>
           </div>
           <div class="project-nav__close">
             <a id="close-project" href="<?php echo get_post_type_archive_link( 'portfolio' ); ?>"><i class="ion-grid"></i></a>
           </div>
           <div>
-            <?php next_post_link( '%link &rightarrow;', __('Projet suivant', 'cc2017')); ?>
+            <?php previous_post_link( '%link &rightarrow;', __('Projet précédent', 'cc2017')); ?>
           </div>
         </div>
         <script>
