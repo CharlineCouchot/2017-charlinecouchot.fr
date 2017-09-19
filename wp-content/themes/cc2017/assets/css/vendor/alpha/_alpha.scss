@@ -1814,7 +1814,10 @@ a#close {
   }
 }
 .portfolio-item {
-  padding-bottom: 30px;
+  padding-bottom: 15px;
+  @include respond-to(large-phone-up) {
+    padding-bottom: 30px;
+  }
   img {
     width: 100%;
     transition: all 5s;
@@ -1954,6 +1957,14 @@ a#close {
 .project-media {
   margin-top: 0px;
   margin-bottom: 30px;
+  .portfolio-item {
+    padding-left: 5px;
+    padding-right: 5px;
+    @include respond-to(large-phone-up) {
+      padding-left:15px;
+      padding-right: 15px;
+    }
+  }
   @include respond-to(small-up) {
     margin-top: 50px;
   }
@@ -2025,6 +2036,9 @@ a#close {
   }
 }
 
+.project-nav + .project-media {
+  margin-top: 30px
+}
 /*-------------------------------------------------------------------
 
                         8. BLOG BLOCK
