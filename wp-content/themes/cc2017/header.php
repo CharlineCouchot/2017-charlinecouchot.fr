@@ -132,7 +132,7 @@
               <?php } ?>
             </ul>
         </nav>
-          <div class="inline-menu-container showx">
+          <div class="menu-inline-container showx">
               <?php /*<span class="status<?php if( $option_freelance === true ) { ?> available<?php } else { ?> unavailable<?php } ?>">
                 if( $option_freelance === true ) { ?>
                   <?php echo __('Je suis disponible en freelance', 'cc2017'); ?>
@@ -140,7 +140,7 @@
                   <?php echo __('Je ne suis pas disponible en freelance', 'cc2017'); ?>
                 <?php }
               </span>*/ ?>
-              <nav role="navigation" class="inline-menu" aria-label="<?php echo __('Navigation principale', 'cc2017'); ?>">
+              <nav role="navigation" class="menu-inline" aria-label="<?php echo __('Navigation principale', 'cc2017'); ?>">
                 <?php wp_nav_menu( array(
                   'theme_location' => 'mainmenu',
                   'container' => 'ul' ) );

@@ -1,0 +1,26 @@
+
+// Configuration des variables et mixins
+@import "variables";
+@import "mixins";
+
+@import "tether";
+@import "bootstrap";
+
+
+// Fonts et icônes
+@import url('https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700');
+@include font-face('FontAwesome', 'font-awesome', 'font-awesome', 'normal', 'normal');
+@include font-face('linea', 'linea', 'linea', 'normal', 'normal');
+@include font-face('Ionicons', 'ionicons', 'ionicons', 'normal', 'normal');
+
+@import "icon-font";
+
+// Styles basiques
+@import "type";
+@import "utils";
+
+// Utilités WordPress
+@import "wpcore";
+
+// Styles de page
+@import "structure";

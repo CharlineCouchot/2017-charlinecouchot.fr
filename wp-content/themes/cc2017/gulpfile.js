@@ -1,42 +1,33 @@
-/**
- *
- * Gulpfile setup
- *
- * @since 1.0.0
- * @authors Charline Couchot
- * @package CC2017
- */
+//
+// Gulpfile setup
+//
+// @since 1.0.0
+// @authors Charline Couchot
+// @package CC2017
+//
 
+'use strict'
 
-// Configuration du projet
-var autoprefixer = require('autoprefixer'),
-    browserSync = require('browser-sync'),
-    gulp = require('gulp'),
-    cmq = require('gulp-group-css-media-queries'),
-    concat = require('gulp-concat'),
-    filter = require('gulp-filter'),
-    imagemin = require('gulp-imagemin'),
-    jshint = require('gulp-jshint'),
-    newer = require('gulp-newer'),
-    notify = require('gulp-notify'),
-    postcss = require('gulp-postcss'),
-    rename = require('gulp-rename'),
-    rimraf = require('gulp-rimraf'),
-    sass = require('gulp-sass'),
-    sourcemaps = require('gulp-sourcemaps'),
-    uglify = require('gulp-uglify'),
-    gutil = require('gulp-util'),
-    minifycss = require('gulp-uglifycss'),
-    runSequence = require('run-sequence');
+// Definir Gulp et plugins non-gulp
+var gulp = require('gulp');
+var autoprefixer = require('autoprefixer');
+var browserSync = require('browser-sync');
 
-// PLUGINS BOWER
-var bowerDirectory = './bower_components/',
-    bowerDependencies = [
-      './assets/js/vendor/**/*.js',
-      bowerDirectory + 'isotope/dist/isotope.pkgd.min.js',
-      bowerDirectory + 'fancybox/dist/jquery.fancybox.min.js',
-      bowerDirectory + 'typed.js/lib/typed.min.js'
-    ]
+// Inclure les plugins
+var plugins = require("gulp-load-plugins")();
+
+// Chemins de configuration
+var scssFiles = './assets/css/**/*.scss',
+    jsFiles   = './assets/js/**/*.js',
+    imgFiles  = './assets/img/raw/**/*.{jpg,gif,png,svg}';
+
+// Chemins de destination
+var cssDest  = './',
+    scssDest = './assets/css',
+    jsDest   = './assets/js',
+    imgDest  = './assets/img',
+    fontDest  = './assets/fonts';
+
 // BROWSER SYNC
 gulp.task('browser-sync', function () {
     var files = [
@@ -45,7 +36,8 @@ gulp.task('browser-sync', function () {
     ];
     browserSync.init(files, {
         watchTask: true,
-        open: 'external',
+        //open: 'external',
+        open: false,
         host: 'local.charlinecouchot.fr',
         proxy: 'local.charlinecouchot.fr',
         port: 3000,
@@ -71,79 +63,84 @@ gulp.task('browser-sync', function () {
     });
 });
 
-// SASS PROCESS
+// GESTION DES DEPENDANCES NPM
+gulp.task('dependencies', function() {
+  const filterCss = plugins.filter(['**/*.css', '!**/*.min.css', '!**/docs/**/*', '!**/src/**/*', '!**/*demos.css'], {restore: true});
+  const filterFont = plugins.filter(['**/*.{eot,woff,ttf,svg}'], {restore: true});
+
+  gulp.src(plugins.npmFiles(), { base:'./node_modules/' })
+    .pipe(filterCss)
+    .pipe(plugins.rename({dirname: ''}))
+    .pipe(gulp.dest(scssDest + '/vendor'))
+    .pipe(filterCss.restore)
+    .pipe(filterFont)
+    .pipe(plugins.rename({dirname: ''}))
+    .pipe(gulp.dest(fontDest));
+
+  gulp.src(plugins.npmFiles(), { base:'./node_modules/' })
+    .pipe(plugins.filter(['**/*.min.js']))
+    .pipe(plugins.rename({dirname: ''}))
+    .pipe(gulp.dest(jsDest + '/vendor'));
+});
+
+// COMPILATION SASS
 gulp.task('css', function () {
-    var processors = [
-  		autoprefixer,
-  	];
-    return gulp.src('./assets/css/*.scss')
-        .pipe(sourcemaps.init())
-  			.pipe(sass().on('error', sass.logError))
-  			.pipe(sourcemaps.write({includeContent: false}))
-  			.pipe(sourcemaps.init({loadMaps: true}))
-  			.pipe(postcss(processors))
-  			.pipe(sourcemaps.write('.'))
-  			.pipe(gulp.dest('./'))
-  			.pipe(filter('**/*.css')) // Filtering stream to only css files
-  			.pipe(cmq()) // Combines Media Queries
-  			.pipe(browserSync.reload({stream:true})) // Inject Styles when style file is created
-  			.pipe(rename({ suffix: '.min' }))
-  			.pipe(minifycss({
-  				maxLineLen: 80
-  			}))
-  			.pipe(gulp.dest('./'))
-  			.pipe(browserSync.reload({stream:true})) // Inject Styles when min style file is created
-  			.pipe(notify({ message: 'Styles task complete', onLast: true }))
-});
-
-// VENDOR SCRIPTS
-gulp.task('vendorJs', function() {
-	return gulp.src(bowerDependencies)
-		.pipe(concat('vendor.concat.js'))
-		.pipe(gulp.dest('./assets/js/concat'))
+  return gulp.src(scssFiles)
+    .pipe(plugins.sourcemaps.init())
+		.pipe(plugins.sass().on('error', plugins.sass.logError))
+		.pipe(plugins.sourcemaps.write({includeContent: false}))
+		.pipe(plugins.sourcemaps.init({loadMaps: true}))
+		.pipe(plugins.postcss([autoprefixer]))
+		.pipe(plugins.sourcemaps.write('.'))
+		.pipe(gulp.dest(cssDest))
+		.pipe(plugins.filter('**/*.css'))
+		.pipe(plugins.groupCssMediaQueries())
+		.pipe(browserSync.reload({stream:true})) // Injecter les styles quand le fichier style est créé
+		.pipe(plugins.rename({ suffix: '.min' }))
+		.pipe(plugins.uglifycss({
+			maxLineLen: 80
+		}))
+		.pipe(gulp.dest(cssDest))
+		.pipe(browserSync.reload({stream:true})) // Injecter les styles quand le fichier min est créé
+		.pipe(plugins.notify({ message: 'Styles compilés', onLast: true }))
 });
 
 // CUSTOM SCRIPTS
-gulp.task('customJs', function() {
-	return gulp.src('./assets/js/custom/*.js')
-    .pipe(jshint('./.jshintrc'))
-    .pipe(jshint.reporter('jshint-stylish'))
-		.pipe(concat('custom.concat.js'))
-    .pipe(gulp.dest('./assets/js/concat'))
-});
+gulp.task('js', function() {
+  const scriptsFilter = plugins.filter(['scripts.js'], {restore: true});
 
-// CUSTOM SCRIPTS
-gulp.task('compileJs', function() {
-  return gulp.src('./assets/js/concat/**/*.js')
-		.pipe(concat('scripts.min.js'))
-    .pipe(uglify())
-    .on('error', function (err) { gutil.log(gutil.colors.red('[Error]'), err.toString()); })
-		.pipe(gulp.dest('./assets/js'))
-		.pipe(notify({ message: 'Compile scripts task complete', onLast: true }));
-});
-
-gulp.task('js', function(callback) {
-  runSequence(['vendorJs', 'customJs'],'compileJs',callback);
+  return gulp.src(jsFiles)
+    .pipe(scriptsFilter)
+    .pipe(plugins.jshint('./.jshintrc'))
+    .pipe(plugins.jshint.reporter('jshint-stylish'))
+    .pipe(scriptsFilter.restore)
+    .pipe(plugins.filter(['**/*.js', '!**/ie/*', '!**/scripts.min.js']))
+    .pipe(plugins.order([
+			'**/vendor/*',
+			'**/*'
+		]))
+		.pipe(plugins.concat('scripts.min.js'))
+    //.pipe(plugins.uglify())
+    //.on('error', function (err) { plugins.util.log(plugins.util.colors.red('[Error]'), err.toString()); })
+		.pipe(gulp.dest(jsDest))
+		.pipe(plugins.notify({ message: 'Scripts compilés', onLast: true }));
 });
 
 // IMAGES
 gulp.task('images', function () {
-    // Add the newer pipe to pass through newer images only
-    return gulp.src(['./assets/img/raw/**/*.{png,jpg,gif}'])
-        .pipe(newer('./assets/img/'))
-        .pipe(rimraf({force: true}))
-        .pipe(imagemin({optimizationLevel: 7,progressive: true,interlaced: true}))
-        .pipe(gulp.dest('./assets/img/'))
-        .pipe(notify({message: 'Images task complete',onLast: true}));
+  // Add the newer pipe to pass through newer images only
+  return gulp.src([imgFiles])
+    .pipe(plugins.newer('./assets/img/'))
+    .pipe(plugins.rimraf({force: true}))
+    .pipe(plugins.imagemin({optimizationLevel: 7,progressive: true,interlaced: true}))
+    .pipe(gulp.dest(imgDest))
+    .pipe(plugins.notify({message: 'Images optimisées',onLast: true}));
 });
 
 
-
-
 // TÂCHE PAR DEFAUT
-gulp.task('default', ['css', 'js', 'images', 'browser-sync'], function () {
-    gulp.watch('./assets/img/**/*', ['images']);
+gulp.task('default', ['dependencies', 'css', 'js', 'images', 'browser-sync'], function () {
+    gulp.watch('./assets/img/**/*', ['images', browserSync.reload]);
     gulp.watch('./assets/css/**/*.scss', ['css']);
-    gulp.watch('./assets/js/vendor/**/*.js', ['vendorJs', 'compileJs', browserSync.reload]);
-    gulp.watch('./assets/js/custom/**/*.js', ['customJs', 'compileJs', browserSync.reload]);
+    gulp.watch(['./assets/js/**/*.js', '!./assets/js/scripts.min.js'], ['js', browserSync.reload]);
 });

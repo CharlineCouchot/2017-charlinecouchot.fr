@@ -1,0 +1,191 @@
+/* ----------------------------- */
+/* <components/menu-inline> */
+
+.menu-inline-container {
+  background: #F1F3F6;
+  position: fixed;
+  height: 40px;
+  width: 100%;
+  transition: all 350ms linear 0ms;
+  top:-50px;
+  left: 0;
+  z-index: 2;
+  @include respond-to(large-phone-up) {
+    top:auto;
+    bottom:calc(100% - 290px);
+    left:calc(0px - 100%;);
+  }
+  @include respond-to(small-up-landscape) {
+    left:auto;
+    bottom: auto;
+    top:-50px;
+    width: 70%;
+    right: 0;
+    font-size: 14px;
+  }
+  @include respond-to(small-up-portrait) {
+    top:auto;
+    bottom:calc(100% - 340px);
+    left:calc(0px - 100%;);
+  }
+  @include respond-to(medium-up) {
+    left:auto;
+    width: 70%;
+    top:-50px;
+    right: 0;
+    font-size: 14px;
+  }
+  @include respond-to(extra-large-up) {
+    width: 880px;
+  }
+
+  &.showx,
+  .no-js & {
+    top:0;
+    transition: all 350ms linear 0ms;
+    .admin-bar & {
+      top:46px
+    }
+    @include respond-to(large-phone-up) {
+      top:auto;
+      left:0;
+    }
+    @include respond-to(small-up-landscape) {
+      top:0;
+      bottom:auto;
+      left: auto;
+      .admin-bar & {
+        top:32px
+      }
+    }
+    @include respond-to(small-up-portrait) {
+      top:auto;
+      bottom:calc(100% - 340px);
+    }
+    @include respond-to(medium-up) {
+      top:0;
+      left:auto;
+      .admin-bar & {
+        top:32px
+      }
+    }
+  }
+}
+.status {
+  color: #333;
+  line-height: 38px;
+  padding-left: 45px;
+  display: none;
+  @include respond-to(large-phone-up) {
+    display: inline;
+  }
+  &:before,
+  &:after {
+    content: '';
+    position: absolute;
+    border-radius: 50%;
+    border-radius: 50%;
+
+  }
+  &.available:before,
+  &.available:after {
+    background: #4dd133;
+  }
+  &.unavailable:before,
+  &.unavailable:after {
+    background: #ff0000;
+  }
+  &:before {
+    top: 17px;
+    left: 25px;
+    width: 7px;
+    height: 7px;
+  }
+
+  &:after {
+    top: 13px;
+    left: 21px;
+    width: 15px;
+    height: 15px;
+    opacity: 0.3;
+  }
+}
+.menu-inline {
+  margin-bottom: 0;
+  white-space: nowrap;
+  display: flex;
+  justify-content: flex-end;
+  @include respond-to(large-phone-up) {
+    margin-right: 20px;
+  }
+  ul {
+    margin-bottom: 0;
+    max-width: calc(100% - 41.25px);
+    display: flex;
+    padding-left: 10px;
+    overflow-x: scroll;
+  }
+  li {
+    display: block;
+    cursor: pointer;
+    font-weight: 600;
+    line-height: 42px;
+    padding: 0 15px 0 0;
+    color: #666;
+    font-size: 14.5px;
+    white-space: nowrap;
+    @include respond-to(large-phone-up) {
+      font-size: 16px;
+      padding: 0 20px 0 0;
+    }
+    @include respond-to(medium-up) {
+      padding: 0 15px;
+    }
+
+    &.current-menu-item a,
+    a:focus,
+    a:hover,
+    .post-template-default &.menu-item.blog a,
+    .portfolio-template-default &.menu-item.portfolio a {
+      color: #333;
+    }
+
+    &.current-menu-item,
+    .post-template-default &.menu-item.blog,
+    .portfolio-template-default &.menu-item.portfolio {
+      cursor: text;
+      pointer-events: none;
+      a:hover,
+      a:focus,
+      a:active {
+        cursor: text;
+        pointer-events: none;
+      }
+    }
+  }
+}
+a#close {
+  float: right;
+  padding: 0 10px;
+  font-size: 15px;
+  font-weight: 600;
+  line-height: 42px;
+  height: 40px;
+  @include respond-to(large-phone-up) {
+    padding-right: 0;
+  }
+  i {
+    font-size: 51px;
+    vertical-align: middle;
+    display: inline-block;
+    margin-top: -6px;
+    @include respond-to(large-phone-up) {
+      font-size: 37px;
+      display: inline;
+    }
+  }
+  .no-js & {
+    display: none;
+    visibility: hidden;
+  }
+}

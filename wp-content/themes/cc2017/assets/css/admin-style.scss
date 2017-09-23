@@ -4,16 +4,9 @@
 // ---------------------------------
 //   Mixins & Variables
 
-@import "partials/mixins";
-@import "partials/variables";
-
-// ---------------------------------
-//   Normalize & Santize
-
-//@import "vendor/normalize";
-//@import "vendor/sanitize";
+@import "config/all";
 
 // ---------------------------------
 //   Correctifs
 
-@import "partials/admin/hidden-elements";
+@import "admin/hidden-elements";

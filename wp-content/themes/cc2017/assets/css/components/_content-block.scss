@@ -1,0 +1,128 @@
+/* ----------------------------- */
+/* <components/content-block> */
+
+
+.content-block {
+  position: fixed;
+  bottom: calc(0px - 150%);
+  left:0;
+  width: 100%;
+  height: 100vh;
+  transition: all 350ms linear;
+  overflow: hidden;
+  background: #FFF;
+  z-index: 1;
+  @include respond-to(large-phone-up) {
+    top:auto;
+    bottom:calc(0px - 100%);
+    height: calc(100% - 250px);
+    width: 100%;
+  }
+  @include respond-to(small-up-landscape) {
+    top:0;
+    left:auto;
+    right: calc(0px - 100%);
+    height: 100%;
+    width: 70%;
+  }
+  @include respond-to(small-up-portrait) {
+    top:auto;
+    bottom:calc(0px - 100%);
+    width: 100%;
+    height: calc(100% - 300px);
+  }
+  @include respond-to(medium-up) {
+    top:0;
+    bottom: auto;
+    right: calc(0px - 100%);
+    height: 100%;
+    width: 70%;
+  }
+  @include respond-to(extra-large-up) {
+    width: 880px;
+  }
+
+  .page.menu-open &,
+  .no-js & {
+    bottom:0;
+    transition: all 350ms linear;
+    @include respond-to(large-phone-up) {
+      bottom:0;
+    }
+    @include respond-to(small-up-landscape) {
+      bottom: auto;
+      top:0;
+      right:0;
+    }
+    @include respond-to(small-up-portrait) {
+      bottom:0;
+    }
+    @include respond-to(medium-up) {
+      bottom: auto;
+      top:0;
+      right:0;
+    }
+    @include respond-to(extra-large-up) {
+
+    }
+  }
+}
+.content-blocks {
+  .toggle {
+    display: none;
+    visibility: hidden;
+  }
+  .content {
+    position: absolute;
+    left: 0; right: 0;
+    top: 0; bottom:0;
+    overflow-x: visible;
+    overflow-y: scroll;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 350ms linear;
+    z-index: 1;
+    padding: 70px 20px 0;
+    .admin-bar & {
+      padding: 116px 20px 0;
+    }
+    @include respond-to(large-phone-up) {
+      padding: 80px 50px 0;
+      .admin-bar & {
+        padding: 113px 50px 0;
+      }
+    }
+
+    a {
+      text-decoration: underline;
+    }
+  }
+
+  &.showx .content,
+  .no-js & .toggle:checked ~ .content {
+    opacity: 1;
+    visibility: visible;
+    transition: all 350ms linear;
+  }
+
+  &.pop {
+    .content {
+      padding-top: 110px;
+      background-color: #FFF;
+      left: 100%;
+      opacity: 1;
+      z-index: 2;
+      transition: all 350ms linear 0ms;
+    }
+    &.showx .content {
+      left: 0;
+      transition: all 350ms linear 0ms;
+    }
+  }
+}
+.block-content {
+  margin: 0 0 40px;
+  @include respond-to(large-phone-up) {
+    margin: 0 0 70px;
+  }
+}

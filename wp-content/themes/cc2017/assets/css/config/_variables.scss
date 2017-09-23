@@ -1,0 +1,25 @@
+// -----------------------------
+// <variables.scss>
+
+// Best practise : (max-width: $BP) and (min-width: ($BP + 1))
+$phone: 480px !default;
+$large-phone: 736px !default;
+$small: 980px !default;
+$medium: 1024px !default;
+$large: 1280px !default;
+$extra-large: 1920px !default;
+
+
+// ---------------------------------
+// Colors
+
+$vert-clair:#9FF98A;
+$vert:#73bd62;
+$vert-fonce:darken($vert, 10%);
+
+$blanc: white;
+$blanc-fonce:#f8f8f8;
+
+$gris-clair:#A9A9A9;
+$gris:#90948F;
+$gris-fonce: #312e2f;

@@ -1,0 +1,88 @@
+/* ----------------------------- */
+/* <pages/contact> */
+
+.contact-form {
+  margin-top: 30px;
+}
+.contact-content {
+  display: table;
+  width: 100%;
+  margin-top: 30px;
+}
+.contact-details,
+.contact-icon {
+  display: table-cell;
+}
+.contact-icon {
+  width: 60px;
+  vertical-align: top;
+  font-size: 30px;
+  text-align: center;
+  color: #666;
+}
+.contact-details {
+  h3 {
+    @extend h5;
+  }
+  h3,
+  p {
+    margin-bottom: 0;
+  }
+}
+.error-form {
+  float: right;
+  margin: -24px 2px 0 0;
+  position: relative;
+  top: 0;
+  i:before {
+    color: #C33;
+    font-size: 100%;
+    vertical-align: top;
+    margin-right: 10px;
+  }
+}
+.alert-success {
+  text-align: left;
+}
+.wpcf7-form {
+  label {
+    width:100%;
+    display: block;
+    margin-bottom: 0;
+  }
+  br {
+    display: none;
+  }
+  .form-control {
+    background-color: transparent;
+    box-shadow: none;
+    border: none;
+    border-bottom: 1px solid #727272;
+    border-radius: 0;
+    width: 100%;
+    font-size: 14px;
+    transition: all 300ms ease;
+  }
+
+  .form-control:focus {
+    box-shadow: none;
+    border-bottom: 1px solid #666;
+  }
+
+  textarea {
+    resize: none;
+  }
+}
+#map {
+  height: 400px;
+  margin-top: 50px;
+  margin-left:-20px;
+  margin-right:-20px;
+  width:calc(100% + 40px);
+  @include respond-to(large-phone-up) {
+    margin-left:-50px;
+    margin-right:-50px;
+    margin-bottom: -100px;
+    width:calc(100% + 100px);
+  }
+}

@@ -7,43 +7,18 @@ Version: 1.0.0
 Text Domain: cc2017
 */
 
+//   Configuration
+@import "config/all";
 
+// Vendors
+@import "vendor/all";
 
-// ---------------------------------
-//   Mixins & Variables
+//   Components
+@import "components/all";
 
-@import "partials/breakpoints";
-@import "partials/mixins";
-@import "partials/variables";
-@import "partials/icon-font";
+// Pages
+@import "pages/all";
 
-
-// ---------------------------------
-//   Normalize & Santize
-
-@import "vendor/normalize";
-@import "vendor/sanitize";
-@import "vendor/fancybox";
-
-@import "vendor/alpha/tether";
-@import "vendor/alpha/bootstrap";
-@import "vendor/alpha/alpha";
-
-
-// ---------------------------------
-//   Structure
-
-@import "partials/structure";
-@import "partials/utils";
-
-// ---------------------------------
-//   WPCore
-
-@import "partials/wpcore";
-
-// ---------------------------------
-//   Blocks
-
-@import "partials/block/header";
-@import "partials/block/footer";
-@import "partials/block/content";
+// IE Fixes et print
+@import "config/ie";
+@import "config/print";

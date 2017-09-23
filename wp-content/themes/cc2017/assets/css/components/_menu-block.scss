@@ -1,0 +1,355 @@
+/* ----------------------------- */
+/* <components/menu-block> */
+
+.menu-blocks-container {
+  .no-js & {
+    display: none;
+    visibility: hidden;
+  }
+}
+.menu-blocks {
+  transition: all 500ms ease;
+  counter-reset: section;
+  margin: 0;
+  z-index: 999;
+  @include respond-to(large-phone-landscape) {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  @include respond-to(large-phone-up) {
+    display: block;
+  }
+
+  .page.menu-open & {
+    opacity: 0;
+    visibility: hidden;
+    z-index: -999;
+  }
+}
+.menu-block {
+  @include respond-to(large-phone-landscape) {
+    width:50%;
+  }
+  @include respond-to(large-phone-up) {
+    width: auto;
+  }
+  a {
+    background: rgba(0, 0, 0, 0);
+    cursor: pointer;
+    transform: rotate(0deg);
+    position: relative;
+    width: 100%;
+    height: auto;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+    display: table;
+    left: 0;
+    top: 0;
+    transition: all 500ms ease;
+    z-index: 99;
+
+    @include respond-to(large-phone-up) {
+      position: absolute;
+      overflow: hidden;
+      transform: rotate(-34deg);
+      width: 430px;
+      height: 300px;
+      border: 1px solid rgba(255, 255, 255, 0.4);
+      &:after {
+        content: '';
+        position: absolute;
+        top: 15px;
+        right: 15px;
+        bottom: 15px;
+        left: 15px;
+        border: 1px solid rgba(255, 255, 255, 0.4);
+        opacity: 0;
+        transition: opacity 500ms cubic-bezier(0.68, -0.55, 0.265, 1.55), transform 500ms cubic-bezier(0.68, -0.55, 0.265, 1.55);
+        transform: scale(0);
+      }
+    }
+    @include respond-to(small-up) {
+      width: 430px;
+      height: 400px;
+    }
+    @include respond-to(medium-up) {
+      width: 350px;
+      height: 300px;
+    }
+    @include respond-to(large-up) {
+      width: 430px;
+      height: 400px;
+    }
+    &:focus,
+    &:hover {
+      border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+      @include respond-to(large-phone-up) {
+        background: rgba(0, 0, 0, 0.3);
+        &:after {
+          opacity: 1;
+          transform: scale(1);
+        }
+      }
+    }
+  }
+
+  &.about-block a {
+    @include respond-to(large-phone-up) {
+      left: -151px;
+      top: 411px;
+      border-right-width: 0;
+    }
+    @include respond-to(small-up-landscape) {
+      left: 382px;
+      top: -150px;
+      height:300px;
+      border-left-width:0;
+    }
+    @include respond-to(small-up-portrait) {
+      left: -119px;
+      top: 440px;
+      border-right-width: 0;
+    }
+    @include respond-to(medium-up) {
+      left: 443px;
+      top: -124px;
+      border-left-width: 1px;
+      border-right-width: 1px;
+    }
+    @include respond-to(large-up) {
+      left: 382px;
+      top: -151px;
+      height:300px;
+    }
+    @include respond-to(extra-large-up) {
+      left: 389px;
+      top: -60px;
+    }
+  }
+  &.portfolio-block a {
+    @include respond-to(large-phone-up) {
+      left: 17px;
+      top: 659px;
+      border-top-width: 0;
+      border-right-width:0;
+    }
+    @include respond-to(small-up-landscape) {
+      left: 577px;
+      top: 89px;
+      border-top-width:0;
+      border-left-width:0;
+    }
+    @include respond-to(small-up-portrait) {
+      left: 104px;
+      top: 771px;
+      border-right-width: 0;
+      border-top-width: 0;
+    }
+    @include respond-to(medium-up) {
+      left: 611px;
+      top: 125px;
+      border-top-width: 0;
+      border-left-width: 1px;
+      border-right-width: 1px;
+    }
+    @include respond-to(large-up) {
+      left: 577px;
+      top: 89px;
+    }
+    @include respond-to(extra-large-up) {
+      left: 584px;
+      top: 179px;
+    }
+  }
+  &.blog-block a {
+    @include respond-to(large-phone-up) {
+      left: 299px;
+      top: 310px;
+      border-top-width: 0;
+    }
+    @include respond-to(small-up-landscape) {
+      left: 772px;
+      top: 428px;
+      height:300px;
+      border-top-width:0;
+      border-left-width:0;
+    }
+    @include respond-to(small-up-portrait) {
+      left: 440px;
+      top: 501px;
+      border-top-width: 0;
+      border-bottom-width: 0;
+      border-right-width: 1px;
+    }
+    @include respond-to(medium-up) {
+      left: 779px;
+      top: 374px;
+      border-top-width: 0;
+      border-right-width: 1px;
+      border-left-width: 1px;
+    }
+    @include respond-to(large-up) {
+      left: 772px;
+      top: 428px;
+      height:300px;
+    }
+    @include respond-to(extra-large-up) {
+      left: 779px;
+      top: 518px;
+    }
+  }
+  &.contact-block a {
+    @include respond-to(large-phone-up) {
+      left: 467px;
+      top: 558px;
+      border-top-width: 0;
+    }
+    @include respond-to(small-up-landscape) {
+      left: 364px;
+      top: 540px;
+      border-top-width:0;
+    }
+    @include respond-to(small-up-portrait) {
+      left: 663px;
+      top: 832px;
+      border-top-width: 1px;
+    }
+    @include respond-to(medium-up) {
+      left: 925px;
+      top: -35px;
+      border-left-width: 0;
+      border-top-width: 1px;
+    }
+    @include respond-to(large-up) {
+      left: 1067px;
+      top: 48px;
+    }
+    @include respond-to(extra-large-up) {
+      left: 1073px;
+      top: 138px;
+    }
+  }
+
+  .no-js & {
+    display: none;
+    visibility: hidden;
+  }
+}
+.menu-block-container {
+  display: table-cell;
+  vertical-align: middle;
+  transform: rotate(0deg);
+  @include respond-to(large-phone-up) {
+    transform: rotate(34deg);
+    padding: 0px 0 0 140px;
+  }
+  @include respond-to(small-up-landscape) {
+    padding: 0;
+  }
+  @include respond-to(small-up-portrait) {
+    padding: 0px 0 0 145px;
+  }
+  @include respond-to(medium-up) {
+    padding: 20px 0 0 15px;
+  }
+  .about-block & {
+    @include respond-to(large-phone-up) {
+      //padding: 0px 0 0 200px;
+    }
+    @include respond-to(small-up-landscape) {
+      padding: 150px 0 0 44px;
+    }
+    @include respond-to(small-up-portrait) {
+      padding: 0px 0 0 145px;
+    }
+    @include respond-to(medium-up) {
+      padding: 130px 0 0 52px;
+    }
+  }
+  .blog-block & {
+    @include respond-to(small-up-landscape) {
+      padding: 72px 0 0 33px
+    }
+  }
+  .contact-block & {
+    @include respond-to(large-phone-up) {
+      padding:50px 0 0 60px
+    }
+    @include respond-to(small-up) {
+      padding:0;
+    }
+  }
+}
+.menu-item {
+  cursor: pointer;
+
+  .menu-block & {
+    text-transform: uppercase;
+    position: relative;
+    color: #FFF;
+    font-weight: 600;
+    transition: all 1000ms ease;
+    font-size: 20px;
+    line-height: 2em;
+    margin: 10px 40px;
+    @include respond-to(large-phone-landscape) {
+      margin: 9px 40px;
+    }
+    @include respond-to(phone-up) {
+      line-height: 3em;
+    }
+    @include respond-to(large-phone-up) {
+      margin: 50px;
+      font-size: 28px;
+      line-height: 26px;
+    }
+    @include respond-to(small-up-portrait) {
+      font-size: 34px;
+      line-height: 32px;
+    }
+    &:before {
+      position: absolute;
+      top: -8px;
+      left: -20px;
+      font-size: 14px;
+      transition: all 500ms cubic-bezier(0.68, -0.55, 0.265, 1.55);
+      counter-increment: section;
+      content: counters(section, ".", decimal-leading-zero);
+      @include respond-to(large-phone-up) {
+        top: -40px;
+        left: -20px;
+      }
+    }
+
+    &:after {
+      transition: all 500ms cubic-bezier(0.68, -0.55, 0.265, 1.55);
+      @include respond-to(large-phone-up) {
+        position: absolute;
+        content: '';
+        top: -10px;
+        left: -20px;
+        width: 70px;
+        height: 1px;
+        background: #FFF;
+      }
+    }
+  }
+
+  .menu-block a:focus &,
+  .menu-block a:hover & {
+    &:before {
+      @include respond-to(large-phone-up) {
+        top: -20px;
+        left: -40px;
+      }
+    }
+
+    &:after {
+      top: 15px;
+      left: -20px;
+      @include respond-to(large-phone-up) {
+        top: 12px;
+        left: -40px;
+      }
+    }
+  }
+}

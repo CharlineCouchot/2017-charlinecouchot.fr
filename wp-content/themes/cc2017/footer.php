@@ -23,7 +23,7 @@
   <script>
     jQuery(document).ready(function($) {
       <?php if(is_front_page()) { ?>
-        $('.inline-menu-container').removeClass('showx');
+        $('.menu-inline-container').removeClass('showx');
         $('.page').removeClass('menu-open');
       <?php } ?>
     });

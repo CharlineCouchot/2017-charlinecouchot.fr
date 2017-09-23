@@ -1,0 +1,20 @@
+@import "normalize";
+@import "sanitize";
+@import "jquery.fancybox";
+
+
+// Overrides
+
+.fancybox-caption-wrap {
+	padding: 60px 0 0 0;
+  background:none; 
+}
+
+.fancybox-caption {
+	padding:30px;
+	text-align: center;
+  border-top: none;
+	background-color: rgba(black, 0.8);
+	font-size: 14px;
+	font-family: inherit;
+}

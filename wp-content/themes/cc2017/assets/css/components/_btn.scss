@@ -1,0 +1,104 @@
+/* ----------------------------- */
+/* <components/btn> */
+
+.btn {
+  border: 2px solid transparent;
+  text-decoration: none !important;
+  border-radius: 0;
+  padding: 12px 28px;
+  margin: 20px 0;
+  text-transform: uppercase;
+  font-size: 12px;
+  font-weight: 600;
+  transition: all 300ms ease;
+  position: relative;
+  color: #FFF;
+  background-color: #333;
+  z-index: 20;
+  letter-spacing: 2px;
+  overflow: hidden;
+  white-space: normal;
+
+  &:hover,
+  &:focus {
+    color: #666 !important;
+    background-color: #FFF;
+    border: 2px solid #666;
+    letter-spacing: 3px;
+  }
+
+  &:focus {
+    box-shadow: none;
+    color: #FFF;
+    outline: none;
+  }
+}
+
+.btn-download {
+  border: none;
+  font-size: 14px;
+  padding: 16px 55px 16px 25px;
+
+  &:focus,
+  &:hover {
+    border: none;
+    color: #FFF;
+    background-color: #333;
+    letter-spacing: 2px;
+  }
+
+  &:before {
+    position: absolute;
+    content: '\f407';
+    font-family: 'Ionicons';
+    top: calc(50% - 12px);
+    right: 16px;
+    font-size: 24px;
+  }
+
+  &:focus:before,
+  &:hover:before {
+    animation-duration: 1s;
+    animation-fill-mode: both;
+    animation-iteration-count: infinite;
+    animation-name: fadeOutDown;
+    transform-origin: center bottom;
+  }
+
+  &:after {
+    content: "";
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.2);
+    right: 0;
+    top: 0;
+    height: 100%;
+    width: 0;
+    z-index: -1;
+    transition: all 300ms ease;
+  }
+
+  &:focus:after,
+  &:hover:after {
+    width: 50px;
+    height: 70px;
+    right: -5px;
+    top: -5px;
+    transform: rotate(15deg);
+  }
+}
+
+.btn.disabled {
+  opacity: 1;
+}
+
+.btn-email {
+  position: relative;
+  &:before {
+    position: absolute;
+    left: 0;
+    top: 45px;
+    content: '';
+    border-top: 1px solid #F1F3F6;
+    width: 100%;
+  }
+}

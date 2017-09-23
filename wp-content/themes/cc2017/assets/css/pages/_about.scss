@@ -1,0 +1,294 @@
+/* ----------------------------- */
+/* <pages/about> */
+
+.subheading {
+  font-size: 22px;
+  font-weight: 300;
+  line-height: 2.2rem;
+  margin-bottom: 15px;
+  text-transform: none;
+  @include respond-to(large-phone-up) {
+    font-size: 26px;
+    line-height: 2.6rem;
+  }
+  @include respond-to(small-up) {
+    font-size: 30px;
+    line-height: 2em;
+    margin-bottom: 30px
+  }
+}
+.info-list {
+  border-top: 1px solid #ddd;
+  padding-bottom: 20px;
+  padding-top: 20px;
+  margin: 20px 0;
+  overflow: auto;
+  span {
+    color: #333;
+    font-weight: 400;
+    margin-right: 5px;
+  }
+  div {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+.skillset {
+  font-size: 14px;
+  & + .skillset {
+    margin-top: 20px;
+  }
+  .skillset-title {
+    font-size: 17px
+  }
+  .skillset-subtitle {
+    column-break-inside: avoid;
+    page-break-inside: avoid;
+    break-before: column;
+    opacity: 0.6;
+  }
+  .skill-subset-container {
+    & + .skill-subset-container {
+      margin-top: 20px;
+    }
+    @include respond-to(large-phone-up) {
+      column-count: 3;
+      column-gap: 20px;
+      & + .skill-subset-container {
+        margin-bottom: 0;
+      }
+    }
+  }
+  .skill-subset {
+    & + .skill-subset {
+      margin-top: 15px;
+    }
+    @include respond-to(large-phone-up) {
+      & + .skill-subset {
+        margin-top: 0;
+      }
+    }
+  }
+}
+.skill {
+  margin-top: 10px;
+  break-inside: avoid-column;
+}
+.skill-name {
+  color: #333;
+  font-weight: 500;
+  line-height: 1.2;
+  span {
+    font-weight: 300;
+  }
+  h6 {
+    margin:0;
+    text-transform: none;
+    display: inline;
+    font-size: inherit;
+    line-height: inherit;
+  }
+}
+.skill-level {
+  font-size: 12px;
+  opacity: 0.8;
+}
+.icon-list li {
+  padding-left: 25px;
+  &:before {
+    position: absolute;
+    content: '\f3fd';
+    font-family: 'Ionicons';
+    font-size: 24px;
+    left: 20px;
+    color: #666;
+  }
+}
+.timeline {
+  position: relative;
+  &:before {
+    background: #ddd;
+    bottom: 0;
+    left: 18px;
+    position: absolute;
+    top: 50px;
+    width: 1px;
+    height: calc(100% - 50px);
+    @include respond-to(small-up) {
+      content: "";
+    }
+  }
+  &:after {
+    @extend %ion-after;
+    top: 0;
+    left: -5px;
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    text-align: center;
+    color: #ddd;
+    font-size: 36px;
+    line-height: 45px;
+    display: none;
+  }
+  &.experience:after {
+    @extend .ion-briefcase:before;
+    @include respond-to(small-up) {
+      display: inline-block;
+    }
+  }
+  &.education:after {
+    @extend .ion-ribbon-b:before;
+    @include respond-to(small-up) {
+      display: inline-block;
+    }
+  }
+}
+.exp {
+  padding: 0px;
+  position: relative;
+  & + .exp {
+    padding-top: 20px
+  }
+  @include respond-to(large-phone-up) {
+    padding: 20px 0 0 80px;
+  }
+  @include respond-to(small-up) {
+    padding: 20px 20px 0 80px;
+  }
+  &:after {
+    background: #FFF;
+    border: 2px solid #ddd;
+    border-radius: 50%;
+    content: "";
+    height: 20px;
+    position: absolute;
+    text-align: center;
+    width: 20px;
+    top: 22px;
+    left: -30px;
+    @include respond-to(large-phone-up) {
+      top: 24px;
+      left: 9px;
+    }
+    @include respond-to(small-up) {
+      content: "";
+    }
+  }
+  &:first-of-type:after {
+    top: 2px;
+    @include respond-to(large-phone-up) {
+      top: 24px;
+    }
+  }
+
+  .hgroup {
+    margin-bottom: 5px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    @include respond-to(small-up) {
+      flex-wrap: wrap;
+    }
+    .exp-title,
+    .exp-dates,
+    .exp-place {
+      &, h4, h5 {
+        text-transform: none;
+        line-height: 1.5;
+      }
+      h4, h5 {
+        display: inline
+      }
+    }
+    .exp-title {
+      @extend h4;
+      margin-bottom: 0;
+      span {
+        color: #666;
+      }
+    }
+    .exp-dates {
+      @extend h5;
+      font-size: 14px;
+      font-weight: 400;
+      text-align: right;
+      color: #727272;
+      padding-left: 0;
+      position: relative;
+      margin-bottom: 0;
+      @include respond-to(large-phone-up) {
+        padding-left: 30px;
+      }
+
+      &:before {
+        color: #ddd;
+        left: 0;
+        left: 10px;
+        position: absolute;
+        @include respond-to(large-phone-up) {
+          content: "/";
+        }
+      }
+
+      span.current {
+        font-style: italic;
+      }
+    }
+    .exp-place {
+      font-size:13px;
+      opacity: 0.8;
+    }
+
+  }
+  &.work {
+    .exp-place {
+      width: 100%;
+      line-height: 1.8;
+    }
+  }
+  &.education {
+    .exp-title {
+      width: 100%;
+    }
+  }
+  p {
+    margin-bottom: 5px;
+  }
+
+  ul {
+    margin-left: 20px;
+    li {
+      list-style-type: circle;
+      list-style-position: outside;
+    }
+  }
+  p, li {
+    @include respond-to(large-phone) {
+      font-size: 14px;
+      line-height: 1.9;
+    }
+  }
+}
+.exp-holder {
+  margin-top: 0;
+  @include respond-to(small-up) {
+    margin-top: 70px;
+  }
+}
+.service {
+  text-align: center;
+  @include respond-to(large-phone-up) {
+    padding-top: 25px;
+  }
+  .service-title {
+    @extend h4;
+    margin: 10px 0;
+    font-size: 14px;
+  }
+}
+.service-icon {
+  font-size: 30px;
+  margin-bottom: 10px;
+  color: #666;
+}

@@ -1,0 +1,292 @@
+/* ----------------------------- */
+/* <components/name-block> */
+
+.typed-cursor {
+  display: none;
+}
+.name-block {
+  transform: rotate(0deg);
+  transform-origin: 50% 50%;
+  position: relative;
+  width: 100%;
+  height: auto;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  transition: all 500ms linear;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  @include respond-to(large-phone-up) {
+    width: 500px;
+    height: 500px;
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    position: absolute;
+    transform: rotate(-34deg);
+    left: 70px;
+    top: -140px;
+  }
+  @include respond-to(small-up) {
+    width: 700px;
+    height: 700px;
+  }
+  @include respond-to(small-up-portrait) {
+    left: 110px;
+    top: -180px;
+  }
+  @include respond-to(small-up-landscape) {
+    left: -190px;
+    top: 10px;
+    display: table;
+  }
+  @include respond-to(medium-up) {
+    left: -200px;
+    top: -80px;
+  }
+  @include respond-to(large-up) {
+    left: -190px;
+    top: 10px;
+  }
+  @include respond-to(extra-large-up) {
+    left: -190px;
+    top: 90px;
+  }
+
+  .page.menu-open & {
+    @include respond-to(small-up-landscape) {
+      top: 0;
+      transform: rotate(0deg);
+      left: 0;
+      height: 100%;
+      width: 30%;
+      display: table;
+      border-color: transparent;
+    }
+    @include respond-to(extra-large-up) {
+      width: 400px;
+      left: 300px;
+    }
+  }
+}
+.name-block-container {
+  transform: rotate(0deg);
+  transform-origin: 50% 50%;
+  transition: all 500ms linear;
+  padding-top: 35px;
+  padding-bottom: 15px;
+  width:100%;
+  .admin-bar & {
+    margin-top: 46px;
+  }
+  @include respond-to(large-phone-landscape) {
+    padding-top: 35px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+  }
+  @include respond-to(large-phone-up) {
+    transform: rotate(34deg);
+    position: relative;
+    top: 60px;
+    left: 100px;
+    width: auto;
+  }
+  @include respond-to(small-up-landscape) {
+    padding: 0 0 0 240px;
+    position: static;
+    top:auto;
+    left:auto;
+    display: table-cell;
+    vertical-align: middle;
+  }
+  @include respond-to(small-up-portrait) {
+    top: 70px;
+    left: 130px;
+  }
+  .page.menu-open & {
+    @include respond-to(large-phone-up) {
+      margin-top: 20px;
+      margin-left: -30px;
+    }
+    @include respond-to(small-up-landscape) {
+      padding: 0 15px;
+      transform: rotate(0deg);
+      margin-left:0;
+    }
+    @include respond-to(small-up-portrait) {
+      top: 25px;
+      left: 120px;
+      padding-top: 0;
+      padding-bottom: 0;
+    }
+  }
+  //.name-block-titles,
+  .name-block-btns {
+    transition: all 500ms linear;
+    text-align: center;
+    @include respond-to(large-phone-landscape) {
+      width: 50%;
+    }
+    @include respond-to(large-phone-up) {
+      text-align: left;
+    }
+    .page.menu-open & {
+      @include respond-to(small-up-portrait) {
+        opacity: 0;
+        visibility: hidden;
+      }
+    }
+  }
+  .name-block-titles {
+    @include respond-to(large-phone-up) {
+      margin-left: -45px;
+    }
+    @include respond-to(small-up) {
+      margin-left: 0;
+    }
+  }
+  .name-block-btns {
+    @include respond-to(large-phone-landscape) {
+      text-align: right;
+    }
+  }
+  .name-block-title,
+  .name-block-subtitle {
+    font-weight: 700;
+    color: #FFF;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+  }
+
+  .name-block-title {
+    @extend h1;
+    font-size: 36px;
+    line-height: 1.1;
+    .page.menu-open & {
+      cursor: pointer;
+    }
+    @include respond-to(large-phone-up) {
+      font-size: 40px;
+    }
+    @include respond-to(small-up-portrait) {
+      line-height: 55px;
+      font-size: 50px;
+    }
+    @include respond-to(medium-up) {
+      line-height: 55px;
+      font-size: 50px;
+    }
+    .name-block-logo {
+      max-width: 100%;
+      display: block;
+      margin-top: 5px;
+
+      -webkit-filter: drop-shadow(0 0 5px rgba(255,255,255,0.9));
+      -ms-filter: "progid:DXImageTransform.Microsoft.Dropshadow(OffX=0, OffY=0, Color='#FFF')";
+      filter: "progid:DXImageTransform.Microsoft.Dropshadow(OffX=0, OffY=0, Color='#FFF')";
+      @include respond-to(large-phone-up) {
+        max-width: 330px;
+        margin-bottom: -10px;
+      }
+      @include respond-to(small-up-landscape) {
+        max-width: 330px;
+        .page.menu-open & {
+          max-width: 100%;
+        }
+      }
+      @include respond-to(small-up-portrait) {
+        max-width: 450px;
+      }
+      @include respond-to(medium-up) {
+        max-width: 360px;
+      }
+    }
+    span {
+      font-size: 22px;
+      line-height: 22px;
+      font-weight: 300;
+      display: block;
+      text-transform: none;
+      @include respond-to(large-phone-up) {
+        font-size: 26px;
+        line-height: 26px;
+      }
+    }
+  }
+  .name-block-subtitle {
+    transition: all 500ms linear;
+    @extend h2;
+    font-size: 19px;
+    line-height: 19px;
+    min-height: 26px;
+    @include respond-to(large-phone-up) {
+      font-size: 22px;
+      line-height: 22px;
+    }
+    @include respond-to(small-up-landscape) {
+      .page.menu-open & {
+        min-height: 44px;
+      }
+    }
+  }
+  .name-block-btn {
+    margin-bottom: 0;
+    margin-top: 0;
+    @include respond-to(large-phone-up) {
+      margin-top: 20px;
+    }
+  }
+}
+.social {
+  margin: 15px 0 0 0;
+  transition: all 500ms linear;
+  text-align: center;
+  @include respond-to(small-up-landscape) {
+    position: absolute;
+    bottom: 15%;
+  }
+
+  @include respond-to(large-phone-up) {
+    text-align: left;
+    .page.menu-open & {
+      opacity: 0;
+    }
+  }
+
+  @include respond-to(medium-up) {
+    .page.menu-open & {
+      opacity: 1;
+    }
+  }
+
+  li {
+    display: inline-block;
+    margin-right: 2px;
+    text-align: center;
+  }
+  a {
+    color: #FFF;
+    display: inline-block;
+    height: 35px;
+    width: 35px;
+    transition: all 500ms ease;
+    font-size: 0;
+    text-shadow: 0 0 15px rgba(0, 0, 0, 0);
+    &:hover,
+    &:focus {
+      color: #333;
+      text-shadow: 0 0 15px rgba(0, 0, 0, 0.9);
+    }
+  }
+  i {
+    line-height: 32px;
+    font-size: 35px;
+    display: block;
+    &.fa-etsy {
+      font-size:31px;
+      margin-bottom: 1px;
+    }
+  }
+}
