@@ -67,6 +67,9 @@
   <section class="page menu-open">
       <div class="light-overlay"></div>
       <div class="container">
+        <div class="language-block">
+          <?php do_action("etm_languagemenu"); ?>
+        </div>
           <div class="name-block">
               <div class="name-block-container">
                   <div class="name-block-titles">
@@ -103,7 +106,7 @@
                   <div class="name-block-btns">
                     <a class="name-block-btn btn btn-download" href="<?php echo $option_cvLink; ?>"><?php echo __('Télécharger mon CV', 'cc2017'); ?></a>
                   </div>
-                  <ul class="social">
+                  <ul class="name-block-social">
                       <li><a href="<?php echo $option_socialLinkedIn; ?>"><i class="fa fa-linkedin" aria-hidden="true"></i> Linked In</a></li>
                       <li><a href="<?php echo $option_socialInstagram; ?>"><i class="fa fa-instagram" aria-hidden="true"></i>  Instagram</a></li>
                       <li><a href="<?php echo $option_socialGithub; ?>"><i class="fa fa-github-alt" aria-hidden="true"></i> Github</a></li>

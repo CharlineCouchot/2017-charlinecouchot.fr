@@ -127,7 +127,7 @@
     transition: all 500ms linear;
     text-align: center;
     @include respond-to(large-phone-landscape) {
-      width: 50%;
+      width: 55%;
     }
     @include respond-to(large-phone-up) {
       text-align: left;
@@ -239,7 +239,7 @@
     }
   }
 }
-.social {
+.name-block-social {
   margin: 15px 0 0 0;
   transition: all 500ms linear;
   text-align: center;
@@ -250,14 +250,19 @@
 
   @include respond-to(large-phone-up) {
     text-align: left;
+  }
+
+  @include respond-to(small-up-portrait) {
     .page.menu-open & {
       opacity: 0;
+      visibility: hidden;
     }
   }
 
   @include respond-to(medium-up) {
     .page.menu-open & {
       opacity: 1;
+      visibility: visible;
     }
   }
 

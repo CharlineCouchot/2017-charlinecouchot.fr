@@ -1,0 +1,43 @@
+.language-block {
+  position: absolute;
+  transition: all 500ms linear;
+  left:3px;
+  z-index: 1;
+  @include respond-to(large-phone-up) {
+    top: 5px;
+    right:5px;
+  }
+  @include respond-to(small-up-portrait) {
+    left: auto;
+    right:0px;
+  }
+  @include respond-to(small-up-landscape) {
+    left:5px;
+    right:auto;
+    z-index: 3;
+  }
+  @include respond-to(medium-up) {
+    left:5px;
+    z-index: 3;
+  }
+  .admin-bar & {
+    margin-top: 46px;
+    @media screen and (min-width: 783px) {
+      margin-top: 32px;
+    }
+  }
+  .page.menu-open & {
+
+  }
+  .etm_menu {
+    div.cs-skin-elastic {
+      color: white;
+    }
+    .cs-select {
+      span {
+        font-family: inherit;
+        font-size: 14px !important;
+      }
+    }
+  }
+}

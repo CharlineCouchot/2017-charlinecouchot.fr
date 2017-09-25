@@ -89,7 +89,7 @@ jQuery(document).ready(function($) {
 
   var $mainContent = $('#content-box'),
     URL = '',
-    $siteURL = 'https://' + top.location.host.toString(),
+    $siteURL = 'http://' + top.location.host.toString(),
     $location = window.location.href,
     //$ajaxSpinner = $('#ajax-loader'),
     $el,
@@ -97,11 +97,13 @@ jQuery(document).ready(function($) {
     $title,
     $bodyClasses,
     $allLinks = $('a');
-
+    console.log($location);
   $(document).on("click", "a[href^='" + $siteURL + "']:not([href*='/wp-admin/']):not([href*='/wp-login.php']):not([href$='/feed/']):not([href$='.pdf']):not([href$='.png']):not([href$='.jpg']):not([href$='.gif'])", function() {
     $el = $(this);
     $href = $el.attr('href');
     $location = window.location.href;
+
+    console.log($href);
 
     if ($href !== $location) {
 

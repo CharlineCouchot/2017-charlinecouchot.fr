@@ -11,7 +11,7 @@
   transition: all 350ms linear;
   overflow: hidden;
   background: #FFF;
-  z-index: 1;
+  z-index: 2;
   @include respond-to(large-phone-up) {
     top:auto;
     bottom:calc(0px - 100%);
