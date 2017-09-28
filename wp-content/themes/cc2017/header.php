@@ -18,6 +18,11 @@
  $option_email              = get_field('general-email', 'option');
  $option_address            = get_field('general-address', 'option');
  $option_subtitle           = get_field('general-subtitle', 'option');
+
+ $menu_name = 'mainmenu';
+ $locations = get_nav_menu_locations();
+ $menu      = wp_get_nav_menu_object( $locations[ $menu_name ] );
+ $menuitems = wp_get_nav_menu_items( $menu->term_id, array( 'order' => 'DESC' ) );
 ?>
 
 <!DOCTYPE html>
@@ -68,7 +73,8 @@
       <div class="light-overlay"></div>
       <div class="container">
         <div class="language-block">
-          <?php do_action("etm_languagemenu"); ?>
+            <?php do_action('wpml_add_language_selector'); ?>
+          </nav>
         </div>
           <div class="name-block">
               <div class="name-block-container">
@@ -115,10 +121,7 @@
                   </ul>
               </div>
           </div>
-          <?php $menu_name = 'mainmenu';
-                $locations = get_nav_menu_locations();
-                $menu = wp_get_nav_menu_object( $locations[ $menu_name ] );
-                $menuitems = wp_get_nav_menu_items( $menu->term_id, array( 'order' => 'DESC' ) ); ?>
+
           <nav class="menu-blocks-container" role="navigation" aria-hidden="true">
             <ul class="menu-blocks">
             <?php foreach( $menuitems as $item ) {?>
@@ -134,7 +137,7 @@
                   </li>
               <?php } ?>
             </ul>
-        </nav>
+          </nav>
           <div class="menu-inline-container showx">
               <?php /*<span class="status<?php if( $option_freelance === true ) { ?> available<?php } else { ?> unavailable<?php } ?>">
                 if( $option_freelance === true ) { ?>

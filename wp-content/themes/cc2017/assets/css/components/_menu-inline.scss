@@ -178,7 +178,10 @@ a#close {
     font-size: 51px;
     vertical-align: middle;
     display: inline-block;
-    margin-top: -6px;
+
+    @include respond-to(large-phone-up) {
+      margin-top: -6px;
+    }
     @include respond-to(large-phone-up) {
       font-size: 37px;
       //display: inline;

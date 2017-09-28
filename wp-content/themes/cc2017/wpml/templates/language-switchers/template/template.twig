@@ -1,0 +1,13 @@
+<ul class="{{ css_classes }}">
+  {% for code, language in languages %}
+    <li class="{{ language.css_classes }}">
+       <a href="{{ language.url }}" class="no-ajax">
+           {% if language.flag_url %}
+               <img src="{{ language.flag_url }}" alt="{{ language.code }}" title="{{ language.flag_title }}">
+           {% endif %}
+           {{ language.native_name }}
+           ({{ language.display_name }})
+       </a>
+    </li>
+  {% endfor %}
+</ul>

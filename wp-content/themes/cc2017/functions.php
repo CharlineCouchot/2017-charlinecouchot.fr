@@ -61,11 +61,15 @@
 
 // Menus personnalisés ------------------------------------------------
 
-    if (function_exists('register_nav_menus')) {
-        register_nav_menus(array(
-            'mainmenu'    => __('Menu principal', 'cc2017'),
-        ));
+    function cc_register_nav_menus() {
+      register_nav_menus(
+        array(
+          'mainmenu'        => __('Menu principal', 'cc2017'),
+          'languagemenu'    => __('Menu de traduction', 'cc2017'),
+        )
+      );
     }
+    add_action( 'init', 'cc_register_nav_menus' );
 
 // --------------------------------------------------------------------
 
@@ -124,6 +128,14 @@
 
 
     add_editor_style();
+
+    function cc_wpml_ls_dirs_to_scan( $dirs ) {
+      $folder_name = basename( dirname( __FILE__ ) );
+      $dirs[]      = trailingslashit( WP_PLUGIN_DIR ) . $folder_name . '/templates/';
+      return $dirs;
+    }
+    add_filter( 'wpml_ls_directories_to_scan', 'cc_wpml_ls_dirs_to_scan' );
+
 
 // --------------------------------------------------------------------
 

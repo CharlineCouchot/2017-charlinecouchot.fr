@@ -26,18 +26,19 @@
       margin-top: 32px;
     }
   }
-  .page.menu-open & {
-
+  .wpml-ls-current-language {
+    display: none;
   }
-  .etm_menu {
-    div.cs-skin-elastic {
-      color: white;
-    }
-    .cs-select {
-      span {
-        font-family: inherit;
-        font-size: 14px !important;
-      }
-    }
+  ul {
+    margin-left: 5px;
+    margin-bottom: 0;
+  }
+  a {
+    color: white;
+    font-family: inherit;
+    font-size: 13px;
+    text-transform: uppercase;
+    font-weight: bold;
+    text-shadow: 0 0 7px rgba(0, 0, 0, 1);
   }
 }
