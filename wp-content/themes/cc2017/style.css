@@ -15137,7 +15137,7 @@ a#close {
     font-size: 51px;
     vertical-align: middle;
     display: inline-block; }
-    @media screen and (min-width: 737px) {
+    @media screen and (max-width: 736px) {
       a#close i {
         margin-top: -6px; } }
     @media screen and (min-width: 737px) {

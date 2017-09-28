@@ -179,7 +179,7 @@ a#close {
     vertical-align: middle;
     display: inline-block;
 
-    @include respond-to(large-phone-up) {
+    @include respond-to(large-phone) {
       margin-top: -6px;
     }
     @include respond-to(large-phone-up) {
