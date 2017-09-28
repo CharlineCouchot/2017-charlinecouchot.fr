@@ -8,7 +8,7 @@
 .clear {*zoom:1;}
 img {max-width:100%;vertical-align:bottom;height:auto;}
 a {color:inherit;text-decoration:none;}
-a:focus {outline:0;}
+html.no-touchevents a:focus {outline:0;}
 a:hover,
 a:active {outline:0;}
 input:focus {outline:0;}

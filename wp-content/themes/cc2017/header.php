@@ -5,6 +5,7 @@
 */
 
  $option_bg                 = get_field('general-bg', 'option');
+ $option_accent             = get_field('general-accent', 'option');
  $option_gradientStart      = get_field('general-gradient-start', 'option');
  $option_gradientEnd        = get_field('general-gradient-end', 'option');
  $option_gradientDirection  = get_field('general-gradient-direction', 'option');
@@ -46,11 +47,15 @@
     <?php wp_head(); ?>
 
     <style>
+    .name-block-social a:hover,
+    .name-block-social a:focus {
+      color: <?php echo $option_gradientStart; ?>;
+    }
     .content a:hover,
     .content a:focus,
-    .social a:hover,
-    .social a:focus {
-      color: <?php echo $option_gradientStart; ?>;
+    #close a:hover,
+    #close a:focus {
+      color: <?php echo $option_accent; ?>;
     }
     .page {
       background-image: url("<?php echo $option_bg; ?>"), -moz-linear-gradient(<?php echo $option_gradientDirection; ?>, <?php echo $option_gradientStart; ?> 0%, <?php echo $option_gradientEnd; ?> 100%);
