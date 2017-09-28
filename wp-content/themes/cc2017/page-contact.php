@@ -16,7 +16,7 @@ get_header(); ?>
   <h2 class="block-title"><?php the_title(); ?></h2>
   <div class="row">
           <div class="col-md-6">
-              <?php echo do_shortcode( '[contact-form-7 id="126"]' ); ?>
+              <?php the_content(); ?>
           </div>
 
           <div class="col-md-5 offset-md-1">

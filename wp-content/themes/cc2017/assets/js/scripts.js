@@ -97,7 +97,7 @@ jQuery(document).ready(function($) {
     $title,
     $bodyClasses,
     $allLinks = $('a');
-    console.log($location);
+
   $(document).on("click", "a[href^='" + $siteURL + "']:not([href*='/wp-admin/']):not([href*='/wp-login.php']):not([href$='/feed/']):not([href$='.pdf']):not([href$='.png']):not([href$='.jpg']):not([href$='.gif']):not(.no-ajax)", function() {
     $el = $(this);
     $href = $el.attr('href');
@@ -137,6 +137,12 @@ jQuery(document).ready(function($) {
         });
 
         setTimeout(ajaxReload, 300);
+
+        jQuery.get("/wp-content/plugins/contact-form-7/includes/js/jquery.form.min.js");
+        jQuery.get("/wp-content/plugins/contact-form-7/includes/js/scripts.js");
+        if (jQuery('.wpcf7-form').length > 0) {
+          jQuery('.wpcf7-form').wpcf7InitForm();
+        }
       });
     }
     return false;

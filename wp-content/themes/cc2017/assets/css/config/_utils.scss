@@ -11,7 +11,10 @@ a {color:inherit;text-decoration:none;}
 html.no-touchevents a:focus {outline:0;}
 a:hover,
 a:active {outline:0;}
-input:focus {outline:0;}
+input:focus {
+  outline:0;
+  box-shadow: none !important
+}
 ol, ul {}
 select {width:100%;}
 .right {float:right;}
