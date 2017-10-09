@@ -121,7 +121,7 @@
                     </script>
                   </div>
                   <div class="name-block-btns">
-                    <a class="name-block-btn btn btn-download" href="<?php echo $option_cvLink; ?>"><?php echo __('Télécharger mon CV', 'cc2017'); ?></a>
+                    <a class="name-block-btn btn btn-download" href="<?php echo $option_cvLink; ?>" target="_blank"><?php echo __('Télécharger mon CV', 'cc2017'); ?></a>
                   </div>
                   <ul class="name-block-social">
                       <li><a href="<?php echo $option_socialLinkedIn; ?>"><i class="fa fa-linkedin" aria-hidden="true"></i> Linked In</a></li>
