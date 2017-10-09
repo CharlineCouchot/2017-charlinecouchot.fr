@@ -6,6 +6,7 @@
 
  $option_bg                 = get_field('general-bg', 'option');
  $option_accent             = get_field('general-accent', 'option');
+ $option_gradient           = get_field('general-gradient', 'option');
  $option_gradientStart      = get_field('general-gradient-start', 'option');
  $option_gradientEnd        = get_field('general-gradient-end', 'option');
  $option_gradientDirection  = get_field('general-gradient-direction', 'option');
@@ -58,10 +59,15 @@
       color: <?php echo $option_accent; ?>;
     }
     .page {
-      background-image: url("<?php echo $option_bg; ?>"), -moz-linear-gradient(<?php echo $option_gradientDirection; ?>, <?php echo $option_gradientStart; ?> 0%, <?php echo $option_gradientEnd; ?> 100%);
-      background-image: url("<?php echo $option_bg; ?>"), -webkit-linear-gradient(<?php echo $option_gradientDirection; ?>, <?php echo $option_gradientStart; ?> 0%,<?php echo $option_gradientEnd; ?> 100%);
-      background-image: url("<?php echo $option_bg; ?>"), linear-gradient(<?php echo $option_gradientDirection; ?>, <?php echo $option_gradientStart; ?> 0%,<?php echo $option_gradientEnd; ?> 100%);
-      filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='<?php echo $option_gradientStart; ?>', endColorstr='<?php echo $option_gradientEnd; ?>',GradientType=1 );
+      <?php if($option_gradient == true) { ?>
+        background-image: url("<?php echo $option_bg; ?>"), -moz-linear-gradient(<?php echo $option_gradientDirection; ?>, <?php echo $option_gradientStart; ?> 0%, <?php echo $option_gradientEnd; ?> 100%);
+        background-image: url("<?php echo $option_bg; ?>"), -webkit-linear-gradient(<?php echo $option_gradientDirection; ?>, <?php echo $option_gradientStart; ?> 0%,<?php echo $option_gradientEnd; ?> 100%);
+        background-image: url("<?php echo $option_bg; ?>"), linear-gradient(<?php echo $option_gradientDirection; ?>, <?php echo $option_gradientStart; ?> 0%,<?php echo $option_gradientEnd; ?> 100%);
+        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='<?php echo $option_gradientStart; ?>', endColorstr='<?php echo $option_gradientEnd; ?>',GradientType=1 );
+        background-blend-mode: hard-light;
+      <?php } else { ?>
+        background-image: url("<?php echo $option_bg; ?>");
+      <?php } ?>
     }
     </style>
 </head>
