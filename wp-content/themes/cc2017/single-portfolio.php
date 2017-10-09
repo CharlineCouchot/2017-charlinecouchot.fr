@@ -61,8 +61,10 @@ get_header(); ?>
             <?php } ?>
         </div>
         <div class="project-body">
-          <h2><?php echo __('Quelques mots sur le projet', 'cc2017'); ?> :</h2>
-          <?php the_content(); ?>
+          <?php if ( !empty( get_the_content() ) ){  ?>
+            <h2><?php echo __('Quelques mots sur le projet', 'cc2017'); ?> :</h2>
+            <?php the_content(); ?>
+          <?php } ?>
           <?php if($option_implication['value']) { ?>
             <div class="tags"><h2><?php echo __('Mon implication', 'cc2017'); ?> :</h2> <?php echo $option_implication['value']; ?></div>
           <?php } ?>
