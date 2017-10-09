@@ -24,7 +24,6 @@ html {
   overflow-y: scroll;
   background-size: cover;
   background-position: center center;
-  background-blend-mode: hard-light;
   z-index: 0;
   @include respond-to(large-phone-up) {
     overflow-y: hidden;
