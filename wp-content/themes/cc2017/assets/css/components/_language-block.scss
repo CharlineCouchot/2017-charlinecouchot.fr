@@ -1,0 +1,44 @@
+.language-block {
+  position: absolute;
+  transition: all 500ms linear;
+  left:3px;
+  z-index: 1;
+  @include respond-to(large-phone-up) {
+    top: 5px;
+    right:5px;
+  }
+  @include respond-to(small-up-portrait) {
+    left: auto;
+    right:0px;
+  }
+  @include respond-to(small-up-landscape) {
+    left:5px;
+    right:auto;
+    z-index: 3;
+  }
+  @include respond-to(medium-up) {
+    left:5px;
+    z-index: 3;
+  }
+  .admin-bar & {
+    margin-top: 46px;
+    @media screen and (min-width: 783px) {
+      margin-top: 32px;
+    }
+  }
+  .wpml-ls-current-language {
+    display: none;
+  }
+  ul {
+    margin-left: 5px;
+    margin-bottom: 0;
+  }
+  a {
+    color: white;
+    font-family: inherit;
+    font-size: 13px;
+    text-transform: uppercase;
+    font-weight: bold;
+    text-shadow: 0 0 7px rgba(0, 0, 0, 1);
+  }
+}

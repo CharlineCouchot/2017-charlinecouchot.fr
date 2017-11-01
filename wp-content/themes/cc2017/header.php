@@ -5,6 +5,8 @@
 */
 
  $option_bg                 = get_field('general-bg', 'option');
+ $option_accent             = get_field('general-accent', 'option');
+ $option_gradient           = get_field('general-gradient', 'option');
  $option_gradientStart      = get_field('general-gradient-start', 'option');
  $option_gradientEnd        = get_field('general-gradient-end', 'option');
  $option_gradientDirection  = get_field('general-gradient-direction', 'option');
@@ -18,6 +20,11 @@
  $option_email              = get_field('general-email', 'option');
  $option_address            = get_field('general-address', 'option');
  $option_subtitle           = get_field('general-subtitle', 'option');
+
+ $menu_name = 'mainmenu';
+ $locations = get_nav_menu_locations();
+ $menu      = wp_get_nav_menu_object( $locations[ $menu_name ] );
+ $menuitems = wp_get_nav_menu_items( $menu->term_id, array( 'order' => 'DESC' ) );
 ?>
 
 <!DOCTYPE html>
@@ -41,17 +48,26 @@
     <?php wp_head(); ?>
 
     <style>
-    .content a:hover,
-    .content a:focus,
-    .social a:hover,
-    .social a:focus {
+    .name-block-social a:hover,
+    .name-block-social a:focus {
       color: <?php echo $option_gradientStart; ?>;
     }
+    .content a:hover,
+    .content a:focus,
+    #close a:hover,
+    #close a:focus {
+      color: <?php echo $option_accent; ?>;
+    }
     .page {
-      background-image: url("<?php echo $option_bg; ?>"), -moz-linear-gradient(<?php echo $option_gradientDirection; ?>, <?php echo $option_gradientStart; ?> 0%, <?php echo $option_gradientEnd; ?> 100%);
-      background-image: url("<?php echo $option_bg; ?>"), -webkit-linear-gradient(<?php echo $option_gradientDirection; ?>, <?php echo $option_gradientStart; ?> 0%,<?php echo $option_gradientEnd; ?> 100%);
-      background-image: url("<?php echo $option_bg; ?>"), linear-gradient(<?php echo $option_gradientDirection; ?>, <?php echo $option_gradientStart; ?> 0%,<?php echo $option_gradientEnd; ?> 100%);
-      filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='<?php echo $option_gradientStart; ?>', endColorstr='<?php echo $option_gradientEnd; ?>',GradientType=1 );
+      <?php if($option_gradient == true) { ?>
+        background-image: url("<?php echo $option_bg; ?>"), -moz-linear-gradient(<?php echo $option_gradientDirection; ?>, <?php echo $option_gradientStart; ?> 0%, <?php echo $option_gradientEnd; ?> 100%);
+        background-image: url("<?php echo $option_bg; ?>"), -webkit-linear-gradient(<?php echo $option_gradientDirection; ?>, <?php echo $option_gradientStart; ?> 0%,<?php echo $option_gradientEnd; ?> 100%);
+        background-image: url("<?php echo $option_bg; ?>"), linear-gradient(<?php echo $option_gradientDirection; ?>, <?php echo $option_gradientStart; ?> 0%,<?php echo $option_gradientEnd; ?> 100%);
+        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='<?php echo $option_gradientStart; ?>', endColorstr='<?php echo $option_gradientEnd; ?>',GradientType=1 );
+        background-blend-mode: hard-light;
+      <?php } else { ?>
+        background-image: url("<?php echo $option_bg; ?>");
+      <?php } ?>
     }
     </style>
 </head>
@@ -67,6 +83,10 @@
   <section class="page menu-open">
       <div class="light-overlay"></div>
       <div class="container">
+        <div class="language-block">
+            <?php do_action('wpml_add_language_selector'); ?>
+          </nav>
+        </div>
           <div class="name-block">
               <div class="name-block-container">
                   <div class="name-block-titles">
@@ -101,9 +121,9 @@
                     </script>
                   </div>
                   <div class="name-block-btns">
-                    <a class="name-block-btn btn btn-download" href="<?php echo $option_cvLink; ?>"><?php echo __('Télécharger mon CV', 'cc2017'); ?></a>
+                    <a class="name-block-btn btn btn-download" href="<?php echo $option_cvLink; ?>" target="_blank"><?php echo __('Télécharger mon CV', 'cc2017'); ?></a>
                   </div>
-                  <ul class="social">
+                  <ul class="name-block-social">
                       <li><a href="<?php echo $option_socialLinkedIn; ?>"><i class="fa fa-linkedin" aria-hidden="true"></i> Linked In</a></li>
                       <li><a href="<?php echo $option_socialInstagram; ?>"><i class="fa fa-instagram" aria-hidden="true"></i>  Instagram</a></li>
                       <li><a href="<?php echo $option_socialGithub; ?>"><i class="fa fa-github-alt" aria-hidden="true"></i> Github</a></li>
@@ -112,10 +132,7 @@
                   </ul>
               </div>
           </div>
-          <?php $menu_name = 'mainmenu';
-                $locations = get_nav_menu_locations();
-                $menu = wp_get_nav_menu_object( $locations[ $menu_name ] );
-                $menuitems = wp_get_nav_menu_items( $menu->term_id, array( 'order' => 'DESC' ) ); ?>
+
           <nav class="menu-blocks-container" role="navigation" aria-hidden="true">
             <ul class="menu-blocks">
             <?php foreach( $menuitems as $item ) {?>
@@ -131,7 +148,7 @@
                   </li>
               <?php } ?>
             </ul>
-        </nav>
+          </nav>
           <div class="menu-inline-container showx">
               <?php /*<span class="status<?php if( $option_freelance === true ) { ?> available<?php } else { ?> unavailable<?php } ?>">
                 if( $option_freelance === true ) { ?>

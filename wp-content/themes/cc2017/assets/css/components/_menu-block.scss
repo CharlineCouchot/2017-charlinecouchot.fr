@@ -79,7 +79,7 @@
       width: 430px;
       height: 400px;
     }
-    &:focus,
+    html.no-touchevents &:focus,
     &:hover {
       border-bottom: 1px solid rgba(255, 255, 255, 0.5);
       @include respond-to(large-phone-up) {
@@ -334,7 +334,7 @@
     }
   }
 
-  .menu-block a:focus &,
+  html.no-touchevents .menu-block a:focus &,
   .menu-block a:hover & {
     &:before {
       @include respond-to(large-phone-up) {

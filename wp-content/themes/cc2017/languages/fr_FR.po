@@ -1,0 +1,490 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Charline Couchot 2017\n"
+"POT-Creation-Date: 2017-09-27 11:17+0200\n"
+"PO-Revision-Date: 2017-09-27 16:33+0200\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: en\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.8.5\n"
+"X-Poedit-Basepath: ..\n"
+"X-Poedit-WPHeader: style.css\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;esc_attr__;"
+"esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c;_n_noop:1,2;"
+"_nx_noop:3c,1,2;__ngettext_noop:1,2\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPathExcluded-0: *.js\n"
+
+#: archive-portfolio.php:9 assets/admin/post-types.php:88
+#: assets/admin/post-types.php:89 assets/admin/post-types.php:115
+msgid "Portfolio"
+msgstr ""
+
+#: archive-portfolio.php:22
+msgid "Filtres"
+msgstr ""
+
+#: archive-portfolio.php:24
+msgid "Tout"
+msgstr ""
+
+#: archive-portfolio.php:41
+msgid "Voir les détails"
+msgstr ""
+
+#: assets/admin/post-types.php:8
+msgctxt "Taxonomy General Name"
+msgid "Compétences"
+msgstr ""
+
+#: assets/admin/post-types.php:9
+msgctxt "Taxonomy Singular Name"
+msgid "Compétence"
+msgstr ""
+
+#: assets/admin/post-types.php:10 page-profile.php:33
+msgid "Compétences"
+msgstr ""
+
+#: assets/admin/post-types.php:11
+msgid "Toutes les compétences"
+msgstr ""
+
+#: assets/admin/post-types.php:12
+msgid "Compétence parente"
+msgstr ""
+
+#: assets/admin/post-types.php:13
+msgid "Compétence parente :"
+msgstr ""
+
+#: assets/admin/post-types.php:14 assets/admin/post-types.php:15
+msgid "Ajouter une compétence"
+msgstr ""
+
+#: assets/admin/post-types.php:16
+msgid "Éditer la compétence"
+msgstr ""
+
+#: assets/admin/post-types.php:17
+msgid "Mettre à jour la compétence"
+msgstr ""
+
+#: assets/admin/post-types.php:18
+msgid "Voir la compétence"
+msgstr ""
+
+#: assets/admin/post-types.php:19 assets/admin/post-types.php:58
+msgid "Séparer les éléments par une virgule"
+msgstr ""
+
+#: assets/admin/post-types.php:20
+msgid "Ajouter ou supprimer des compétences"
+msgstr ""
+
+#: assets/admin/post-types.php:21 assets/admin/post-types.php:60
+msgid "Choisir parmi les plus utilisées"
+msgstr ""
+
+#: assets/admin/post-types.php:22 assets/admin/post-types.php:61
+msgid "Éléments populaires"
+msgstr ""
+
+#: assets/admin/post-types.php:23
+msgid "Rechercher une compétence"
+msgstr ""
+
+#: assets/admin/post-types.php:24 assets/admin/post-types.php:63
+#: assets/admin/post-types.php:102
+msgid "Introuvable"
+msgstr ""
+
+#: assets/admin/post-types.php:25 assets/admin/post-types.php:64
+msgid "Pas de résultat"
+msgstr ""
+
+#: assets/admin/post-types.php:26 assets/admin/post-types.php:65
+msgid "Liste des résultats"
+msgstr ""
+
+#: assets/admin/post-types.php:27
+msgid "Naviguer les compétences"
+msgstr ""
+
+#: assets/admin/post-types.php:47
+msgctxt "Taxonomy General Name"
+msgid "Catégories"
+msgstr ""
+
+#: assets/admin/post-types.php:48
+msgctxt "Taxonomy Singular Name"
+msgid "Catégorie"
+msgstr ""
+
+#: assets/admin/post-types.php:49
+msgid "Catégories"
+msgstr ""
+
+#: assets/admin/post-types.php:50
+msgid "Toutes les catégories"
+msgstr ""
+
+#: assets/admin/post-types.php:51
+msgid "Catégorie parente"
+msgstr ""
+
+#: assets/admin/post-types.php:52
+msgid "Catégorie parente :"
+msgstr ""
+
+#: assets/admin/post-types.php:53 assets/admin/post-types.php:54
+msgid "Ajouter une catégorie"
+msgstr ""
+
+#: assets/admin/post-types.php:55
+msgid "Éditer la catégorie"
+msgstr ""
+
+#: assets/admin/post-types.php:56
+msgid "Mettre à jour la catégorie"
+msgstr ""
+
+#: assets/admin/post-types.php:57
+msgid "Voir la catégorie"
+msgstr ""
+
+#: assets/admin/post-types.php:59
+msgid "Ajouter ou supprimer des éléments"
+msgstr ""
+
+#: assets/admin/post-types.php:62
+msgid "Rechercher un élément"
+msgstr ""
+
+#: assets/admin/post-types.php:66
+msgid "Naviguer les éléments"
+msgstr ""
+
+#: assets/admin/post-types.php:86
+msgctxt "Post Type General Name"
+msgid "Portfolio"
+msgstr ""
+
+#: assets/admin/post-types.php:87
+msgctxt "Post Type Singular Name"
+msgid "Portfolio"
+msgstr ""
+
+#: assets/admin/post-types.php:90
+msgid "Archives de portfolio"
+msgstr ""
+
+#: assets/admin/post-types.php:91
+msgid "Attributs d'élément de portfolio"
+msgstr ""
+
+#: assets/admin/post-types.php:92
+msgid "Élément parent :"
+msgstr ""
+
+#: assets/admin/post-types.php:93
+msgid "Tous les éléments"
+msgstr ""
+
+#: assets/admin/post-types.php:94
+msgid "Ajouter un élément de portfolio"
+msgstr ""
+
+#: assets/admin/post-types.php:95
+msgid "Ajouter"
+msgstr ""
+
+#: assets/admin/post-types.php:96
+msgid "Nouvel élément de portfolio"
+msgstr ""
+
+#: assets/admin/post-types.php:97
+msgid "Éditer l'élément de portfolio"
+msgstr ""
+
+#: assets/admin/post-types.php:98
+msgid "Mettre à jour l'élément de portfolio"
+msgstr ""
+
+#: assets/admin/post-types.php:99
+msgid "Voir l'élément"
+msgstr ""
+
+#: assets/admin/post-types.php:100
+msgid "Voir les éléments"
+msgstr ""
+
+#: assets/admin/post-types.php:101
+msgid "Rechercher l'élément"
+msgstr ""
+
+#: assets/admin/post-types.php:103
+msgid "Aucun élément dans la corbeille"
+msgstr ""
+
+#: assets/admin/post-types.php:104
+msgid "Image à la une"
+msgstr ""
+
+#: assets/admin/post-types.php:105
+msgid "Définir l'image à la une"
+msgstr ""
+
+#: assets/admin/post-types.php:106
+msgid "Retirer l'image à la une"
+msgstr ""
+
+#: assets/admin/post-types.php:107
+msgid "Utiliser en tant qu'image à la une"
+msgstr ""
+
+#: assets/admin/post-types.php:108
+msgid "Insérer dans l'élément"
+msgstr ""
+
+#: assets/admin/post-types.php:109
+msgid "Charger dans cet élément"
+msgstr ""
+
+#: assets/admin/post-types.php:110
+msgid "Liste des éléments"
+msgstr ""
+
+#: assets/admin/post-types.php:111
+msgid "Navigation de la liste d'éléments"
+msgstr ""
+
+#: assets/admin/post-types.php:112
+msgid "Filtrer les éléments"
+msgstr ""
+
+#: assets/admin/post-types.php:116
+msgid "Post Type Description"
+msgstr ""
+
+#: comments.php:16
+#, php-format
+msgid "%d réponse"
+msgid_plural "%d réponses"
+msgstr[0] ""
+msgstr[1] ""
+
+#: comments.php:33
+msgid "Répondre"
+msgstr ""
+
+#: comments.php:49
+msgid "Les champs marqués <span class=\"required\">*</span> sont requis."
+msgstr ""
+
+#: comments.php:53
+msgid "Name"
+msgstr ""
+
+#: comments.php:58 page-contact.php:46
+msgid "Email"
+msgstr ""
+
+#: comments.php:66 comments.php:82
+msgctxt "noun"
+msgid "Comment"
+msgstr ""
+
+#: comments.php:76
+msgid "Laisser une réponse"
+msgstr ""
+
+#: comments.php:77
+#, php-format
+msgid "Répondre à %s"
+msgstr ""
+
+#: comments.php:78
+msgid "Annuler la réponse"
+msgstr ""
+
+#: comments.php:79
+msgid "Poster la réponse"
+msgstr ""
+
+#: comments.php:88
+#, php-format
+msgid "Vous devez être <a href=\"%s\">connecté.e</a> pour laisser une réponse."
+msgstr ""
+
+#: comments.php:94
+#, php-format
+msgid ""
+"Connecté.e en tant que <a href=\"%1$s\">%2$s</a>. <a href=\"%3$s\" title="
+"\"Se déconnecter de ce compte\">Se déconnecter</a> ?"
+msgstr ""
+
+#: functions.php:66
+msgid "Menu principal"
+msgstr ""
+
+#: functions.php:151
+msgid "Précédent"
+msgstr ""
+
+#: functions.php:155
+msgid "page en cours"
+msgstr ""
+
+#: functions.php:159
+msgid "Suivant"
+msgstr ""
+
+#: header.php:74
+msgid "Bienvenue."
+msgstr ""
+
+#: header.php:104
+msgid "Télécharger mon CV"
+msgstr ""
+
+#: header.php:143
+msgid "Navigation principale"
+msgstr ""
+
+#: header.php:148
+msgid "Fermer le panneau"
+msgstr ""
+
+#: page-blog.php:14
+msgid "Blog"
+msgstr ""
+
+#: page-blog.php:37
+msgid "Lire la suite"
+msgstr ""
+
+#: page-blog.php:47
+msgid "Désolée, il n'y a pas encore de contenu ici. Revenez plus tard !"
+msgstr ""
+
+#: page-contact.php:28
+msgid "Adresse"
+msgstr ""
+
+#: page-profile.php:44 page-profile.php:86
+msgid "ans d'expérience"
+msgstr ""
+
+#: page-profile.php:50 page-profile.php:92
+msgid "Notions élémentaires"
+msgstr ""
+
+#: page-profile.php:53 page-profile.php:95
+msgid "Notions professionnelles"
+msgstr ""
+
+#: page-profile.php:56 page-profile.php:98
+msgid "Bilingue"
+msgstr ""
+
+#: page-profile.php:59 page-profile.php:101
+msgid "Langue natale"
+msgstr ""
+
+#: page-profile.php:65 page-profile.php:107
+msgid "Débutante"
+msgstr ""
+
+#: page-profile.php:68 page-profile.php:110
+msgid "Intermédiaire"
+msgstr ""
+
+#: page-profile.php:71 page-profile.php:113
+msgid "Bonne maîtrise"
+msgstr ""
+
+#: page-profile.php:74 page-profile.php:116
+msgid "Expertise"
+msgstr ""
+
+#: page-profile.php:131
+msgid "Expérience professionnelle"
+msgstr ""
+
+#: page-profile.php:154
+msgid "Formation"
+msgstr ""
+
+#: page-profile.php:177
+msgid "Services"
+msgstr ""
+
+#: single-portfolio.php:23 single-portfolio.php:85
+msgid "Projet suivant"
+msgstr ""
+
+#: single-portfolio.php:29 single-portfolio.php:91
+msgid "Projet précédent"
+msgstr ""
+
+#: single-portfolio.php:46
+msgid "Client"
+msgstr ""
+
+#: single-portfolio.php:49
+msgid "Dates de réalisation"
+msgstr ""
+
+#: single-portfolio.php:53
+msgid "Compétences mises en oeuvre"
+msgstr ""
+
+#: single-portfolio.php:60
+msgid "Lieu"
+msgstr ""
+
+#: single-portfolio.php:64
+msgid "Quelques mots sur le projet"
+msgstr ""
+
+#: single-portfolio.php:67
+msgid "Mon implication"
+msgstr ""
+
+#: single.php:36
+msgid "Partager cet article"
+msgstr ""
+
+#: single.php:37
+msgid "sur Facebook"
+msgstr ""
+
+#: single.php:38
+msgid "sur Twitter"
+msgstr ""
+
+#: single.php:39
+msgid "sur Pinterest"
+msgstr ""
+
+#. Theme Name of the plugin/theme
+msgid "Charline Couchot 2017"
+msgstr ""
+
+#. Description of the plugin/theme
+msgid "Thème Wordpress pour le portfolio professionnel de Charline Couchot"
+msgstr ""
+
+#. Author of the plugin/theme
+msgid "Charline Couchot"
+msgstr ""
+
+#. Author URI of the plugin/theme
+msgid "http://www.charlinecouchot.fr"
+msgstr ""

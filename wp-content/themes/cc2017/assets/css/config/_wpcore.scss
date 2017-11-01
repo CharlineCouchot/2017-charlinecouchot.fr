@@ -5,18 +5,18 @@
     margin: 5px 20px 20px 0;
 }
 
-.aligncenter,
-div.aligncenter {
+.aligncenter:not(.etm_menu),
+div.aligncenter:not(.etm_menu) {
     display: block;
     margin: 5px auto 5px auto;
 }
 
-.alignright {
+.alignright:not(.etm_menu) {
     float: right;
     margin: 5px 0 20px 20px;
 }
 
-.alignleft {
+.alignleft:not(.etm_menu) {
     float: left;
     margin: 5px 20px 20px 0;
 }
