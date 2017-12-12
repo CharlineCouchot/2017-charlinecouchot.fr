@@ -1,132 +1,108 @@
 
-<img src="wp-content/themes/cc2017/assets/img/cc2017-logo_final_bow.png" width="500"/>
+<img src="wp-content/themes/editions-triades-2017/assets/images/logo.svg" width="300"/>
 
 **Version 1.0.0** (13.09.2017)
 
-## Where am I ? / Où suis-je ?
-You are currently browsing the repository for my personal portfolio, blog, and general private sandbox for all things WordPress, Git, Sass, Gulp, etc.
-__Vous êtes actuellement en train de consulter le dépôt de mon portfolio, blog, et plus généralement mon bac à sable personnel pour toutes mes expérimentations WordPress, Git, Sass, Gulp, etc.__
+## Où suis-je ?
+Vous êtes sur le dépôt de la refonte 2017 du site des Editions Triades.
 
-## Requirements / Dépendances:
+## Dépendances:
   * Node >= 0.12.x ([nodejs.org](https://nodejs.org/))
   * npm >=2.11.x (`npm install -g npm@latest`)
   * php >= 5.4.0
 
 ## Installation
+Les projets WordPress devraient de manière générale, versionner le moins de choses possibles. Les fichiers de coeur et les médias devront être télécharger, respectivement depuis le site officiel de WordPress et depuis le serveur de preprod/prod du site, et ne doivent pas être versionnés, car ces fichiers évoluent et sont mis à jour fréquemment.
+À des fins de développement, les extensions ont été incluses dans le versionnage, mais c'est une pratique controversée. **Il est préférable de vérifier sur le serveur de prod et/ou preprod si de nouvelles extensions sont installées car elles sont susceptibles de l'avoir été uniquement sur serveur distant, et non en local, et donc, ne seront pas versionnées.** Cela pourrait donc naturellement impacter négativement votre environnement local.
+
+#### Vhost
+Pour le développement en local, le fichier gulpfile.js (voir plus bas) utilise un vhost `local.editions-triades.com`. Il vous faudra donc le mettre en place chez vous.
+
 #### Clone
-Clone the repository in an empty folder that will contain the rest of the WordPress architecture.
-__Cloner le dépôt dans un dossier vide qui contiendra ensuite l'architecture WordPress.__
+Cloner le dépôt dans un dossier vide qui contiendra ensuite l'architecture WordPress.
   * `$ cd -your-wordpress-directory`.
-  * `$ git clone git@gitlab.com:charlinecouchot/charlinecouchot-fr.git .`
+  * `$ git clone git@gitlab.sdv.fr:wordpress/editions-triades.git .`
 
 #### WordPress
-  * Download ([WordPress](https://wordpress.org/download/)) in you preferred language and place the files in your base directory
-  * __Télécharger ([WordPress](https://wordpress.org/download/)) dans la langue de votre choix et le placer dans votre dossier de base__
+  * Télécharger ([WordPress](https://wordpress.org/download/)) dans la langue de votre choix et le placer dans votre dossier de base.
+
+#### Base de données
+  * Pensez à récupérer une copie de la base de données du site de production et éventuellement adapter les informations contenues dans le fichier `wp-config.php` en fonction de votre installation. Il est préférable de conserver la même configuration locale afin de ne pas modifier le fichier wp-config.php pour chaque intervenant dans le projet.
+
+#### Médias
+  * Pensez également à récupérer une copie du dossier `wp-content/uploads/` sur le serveur de production pour avoir les images.
+
+## Workflow
+
+### Gulp
+
+Ce projet utilise [gulp](https://gulpjs.com) pour compiler les ressources. Pour plus de détails, consultez le fichier `gulpfile.js`.
+  * Installer gulp globalement avec `npm install -g gulp`
+  * Dans le répertoire du thème, lancer la commande `npm install && gulp`
+  * Utiliser gulp (commande `gulp` dans le répertoire du thème) pour compiler les ressources et lancer browserSync
+  * **ÉVITEZ DE MODIFIER LA CONFIGURATION GULP**. Pour une meilleure continuité de développement, le fichier est pensé pour éffectuer des tâches simples. Ce fichier étant versionné, votre intervention sur celui-ci pourrait impacter le développement d'un autre intervenant.
+
+### git-flow
+
+Le projet est équipé d'un workflow de type git-flow. Cela signifie que dans la mesure du possible, il est préférable d'utiliser cette méthodologie pour les développements de fonctionnalités. Si vous n'êtes pas familiers avec la méthodologie git-flow, voici un exellent guide pour débuter : [cliquez ici](https://www.git-tower.com/learn/git/ebook/en/command-line/advanced-topics/git-flow). Pour le projet initial l'intégralité du développement sera fait sur la branche `develop`, sauf si deux intervenants doivent travailler en même temps. En quel cas, répartissez le travail et ouvrez des features.
 
 
-#### Workflow
-This project uses bower to manage vendors and [gulp](https://gulpjs.com) to compile assets. For details see `gulpfile.js`.
-  * Install gulp and Bower globally with `npm install -g gulp bower`
-  * in the theme directory run `npm install && bower install && gulp`
-  * you can now use gulp (run `gulp` in your theme directory) to compile and optimize your asset files and run browserSync
-
-__Ce projet utilise bower pour gérer les dépendances et [gulp](https://gulpjs.com) pour compiler les ressources. Pour plus de détails, consultez le fichier `gulpfile.js`.__
-  * __Installer gulp et Bower globalement avec `npm install -g gulp bower`__
-  * __Dans le répertoire du thème, lancer la commande `npm install && bower install && gulp`__
-  * __Utiliser gulp (commande `gulp` dans le répertoire du thème) pour compiler les ressources et lancer browserSync__
-
-<!---
 ## Usage
 
-### General / Général
-* All important files provide a description/version at the top. Make sure to read it first.
+### Général
+* La plupart des fichiers sont décrits en début de fichier. N'hésitez pas à lire et fournir de nouveaux renseignements en cas d'édition.
 
-### Important Files/Folders
+### Fichiers importants
 
-##### Functions
-* `functions-access.php` (functions that control access to the site)
-* `functions-backend.php` (backend related functions)
-* `functions-dev.php` (functions used for development purposes)
-* `functions-elements.php` (functions to output ACF flexible elements)
-* `functions-wpsetup.php` (WordPress setup)
+##### Fonctions
+* `functions-fronted.php` (fonctions et tags liés au frontend)
+* `functions-backend.php` (fonctions et tags liés au backend)
+* `functions-dev.php` (fonctions de développement)
+* `functions-wpsetup.php` (préréglages de WordPress)
+* `functions-posttypes.php` (instanciation des types de contenus personnalisés)
+* `functions-widgets.php` (instanciation des zones de widgets et des widgets customisés)
+* `functions-woocommerce.php` (fonctions et hooks de customisation pour les templates woocommerce qui ne peuvent pas être surchargés dans le dossier woocommerce)
 
 ##### CSS
-* `assets/styles/content.scss` (content related styles)
-* `assets/styles/general.scss` (re-usable classes and settings)
-* `assets/styles/main.scss` (gathers all .scss files for compiling with gulp)
-* `assets/styles/nav.scss` (navigation)
-* `assets/styles/essentials.scss` (required SASS functions and all presets for responsive, **this file is not meant to be changed**)
-* `assets/styles/vars.scss` (manages scaling, all colors, fonts and other presets)
+* `style.css` (le fichier est OBLIGATOIRE à cet endroit pour le bon fonctionnement du thème. Cependant pour une organisation plus claire, il ne contient que les informations de thème, le reste des styles étant rangé dans styles-main.css)
+* `assets/styles/styles-main.css` (styles principaux utilisés sur le front)
+* `assets/styles/styles-admin.css` (styles de correction dans l'administration (cacher les pubs des plugins, etc.))
+* `assets/styles/styles-editor.css` (styles de l'éditeur WYSIWYG)
+* `assets/styles/styles-woocommerce.css` (styles WooCommerce. Voué à disparaître pour être intégré dans styles-main.css)
 
+L'arborescence des fichiers SCSS est établie comme suit :
+* Fichiers de compilation en racine du dossier `assets/styles/scss/`, compilés vers `assets/styles/`
+* Chaque dossier de partiels contient un fichier `_all.scss` qui réunit tous les partiels dans ce dossier. C'est dans la plupart des cas ce fichier qui sera importé dans le fichier d'importation.
+* `assets/styles/scss/vendor` contient les éléments de styles fabriqués par de tierces personnes (plugins, frameworks, etc)
+* `assets/styles/scss/config` contient les fichiers de base pour Sass (variables, mixins) et pour le style en général (structure, textes basiques, icon-fonts)
+* `assets/styles/scss/components` contient les composants réutilisables
+* `assets/styles/scss/pages` contient une feuille de style par type de page et ses styles propres. Attention à éviter d'y mettre des composants réutilisables
+* `assets/styles/scss/fixes` contient les feuilles de correction Print et IE.
 
 
 ##### Templates
-The Wordpress default templates (like page.php, single.php) receive their content from the associated file inside the template folder. This way all templates are grouped together. `index.php` is forwarded to `page.php`.
+* `template-home.php`   affiche la page d'accueil
 
-* `str-footer.php`      footer content that shows up at the bottom of the page (this is content, don't mix this up with `footer.php`)
-* `str-elements.php`    template for ACF flexible elements
-* `temp-home.php`       displays default content and a full width teaser image
-* `temp-subsites.php`   displays default content and content of the respective child pages
-* `wp-home.php`         WP blog default
-* `wp-page.php`         WP page default
-* `wp-single.php`       WP post default
-
-All templates are seperate into three categories recognizable by their prefix:
-* **`wp`**: wordpress default templates.
-* **`temp`**: individual site templates.
-* **`str`**: structure files that have to be included in other sites or the main structure.
+Les templates WooCommerce, lorsqu'ils peuvent être surchargés, respectent obligatoirement l'aborescence du dossier `plugins/woocommerce/templates/` mais dans le dossier `woocommerce/` de ce thème.
 
 
-### Responsive/Fluid presets
-
-#### Scaling
-By default, the layout will scale with the viewport-width as all units are `rem` based and `html` uses font-size as the root unit.
-This scaling can be configured at the `SIZE/SCALING` section in `vars.scss`. It is also possible to stop the scaling at a certain viewport-width. See instructions inside `vars.scss`.
+### Responsive
 
 #### Mixins/Classes
-**defined by variables**
-* The width of the two available variables `mobile` and `desktop` are defined in vars.scss. Usage (with default values):
-* min 800px `@include desktop {...}`
-* max 799px`@include mobile {...}`
+**mixins**
+La maquette prévoit deux breakpoints (`$large:1195px` et `$small:683px`) qui sont appelés dans les fichiers scss avec les mixins suivants :
+* max 683px `@include respond-to(small) {...}`
+* max 1195px `@include respond-to(large) {...}`
+* min 684px `@include respond-to(small-up) {...}`
+* min 1196px `@include respond-to(large-up) {...}`
 
-**defined by individual pixel widths**
-* at least 750px: `@include vpw_min(750px)`
-* at most 500px: `@include vpw_max(500px)`
-* between 1000px and 1200px: `vpw(1000px, 1200px)`
-
-**defined by ascepct-ratio**
-* at least 16:9: `@include asr_min(16,9) { ... }`
-* at most 4:3: `@include asr_max(4,3) { ... }`
-
-**defined by css-class**
-the two available classes `mobile` and `desktop` perform as followed (with default values):
+**classes**
+Deux classes `hide_small` et `hide_large` sont disponibles et réalisent les actions suivantes :
 ```SCSS
-.desktop {
-	// hidden while < 800px;
+.hide_large {
+	// masqué en dessus de 684px;
 }
-.mobile {
-	// hidden while > 799;
+.hide_small {
+	// masqué au dessous de 683px
 }
 ```
-
-
-## About
-Author: Flurin Dürst
-
-Contact: [flurin@flurinduerst.ch](mailto:flurin@flurinduerst.ch)
-
-Twitter: [@flurinduerst](https://twitter.com/flurinduerst)
-
-### Contribution
-* Fork it
-* Create your feature branch
-* Commit your changes
-* Push to the branch
-* Create new Pull Request
-
-Feel free to contact me if you have questions or need any advice.
-
-### License
-WPDistillery is released under the MIT Public License.
-
-Note: The "About" section in `README.md` and the author (`@author`) notice in the file-headers shall not be edited or deleted without permission. For Details see [License](LICENSE.md). Thank you. --W
